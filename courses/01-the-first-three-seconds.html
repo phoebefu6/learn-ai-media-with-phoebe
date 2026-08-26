@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 1 of 6. Your video does not lose people at the end. It loses them in the first three seconds. Find the dead air in a real waveform, watch the retention ladder climb from 16 to 72 percent, and see both obvious improvements backfire.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="The first three seconds - learn ai media with phoebe">
+<meta property="og:description" content="Session 1 of 6. Real silence detection on a real waveform, and the retention ladder from 16 to 72 percent.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/courses/01-the-first-three-seconds.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The first three seconds - learn ai media with phoebe">
+<meta name="twitter:description" content="Session 1 of 6. Where video actually loses people, measured rather than guessed.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 1 · The first three seconds - learn ai media with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=2">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-media-with-phoebe</a> / Session 1 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI Media with Phoebe · Session 1 of 6</div>
+    <h1>The first <span class="accent">three seconds</span></h1>
+    <p class="sub">Nobody abandons your video at the end. They abandon it before you have finished clearing your throat. Tonight you run a real silence detector over a real waveform, watch it find four stretches of dead air you cannot hear yourself, and climb a retention ladder from 16 percent to 72. Then you switch on the two things every instinct tells you to do, and watch both of them make it worse.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 Start here</span>
+      <span class="chip audience">Anyone who makes video for an audience that can leave</span>
+      <span class="chip audience">No editing experience assumed</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:5">3-22 · Where video actually loses people</span>
+      <span class="a3" style="flex:4">22-40 · Build-along: climb the ladder</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Why this course starts here</span>
+      <h2>The category is moving fast enough to break its own courses</h2>
+      <span class="tag concept">3 min live</span>
+    </div>
+    <p class="lede">Before anything else, a warning about the ground we are standing on. Most material teaching this subject is teaching a tool landscape that has already changed, and the clearest example is sitting 29 days away from us.</p>
+
+    <div class="callout warn">
+      <p><strong>OpenAI has left video.</strong> The Sora consumer app shut on 26 April 2026, and the Sora 2 API sunsets on <strong>24 September 2026</strong>. OpenAI's own deprecations page lists every Sora model and the Videos API itself, and the column headed "recommended replacement" contains a dash. There is no successor. No reason was given. The only public statement was "We're saying goodbye to the Sora app."</p>
+      <p>Every article, tutorial and course that teaches "Sora, Veo and Runway" as the three pillars of this field is already wrong. <strong>That is not a footnote about one product. It is the reason this course teaches judgment rather than button positions</strong>, because the buttons have a half-life of about a year and the judgment does not.</p>
+    </div>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Two more that break the standard outline<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>If you go looking for the obvious next thing after Veo 3, you will not find it.</p>
+        <ul>
+          <li><strong>There is no Veo 4.</strong> Google broke its own naming sequence and launched <strong>Gemini Omni</strong> instead, described as a model that "can create anything from any input, starting with video". Any roadmap slide predicting Veo 4 is predicting something that does not exist.</li>
+          <li><strong>Every Google video model is still marked Preview</strong>, including Veo 3.1 and Gemini Omni Flash. No stable video model is listed at all. Preview is not a formality: Veo 2 and Veo 3 were announced deprecated on 15 June 2026 and <strong>shut down on 30 June, fifteen days later</strong>.</li>
+        </ul>
+        <p>So the working assumption for the whole course is this. Anything you learn about a specific model is perishable. Anything you learn about how attention behaves is not, and that is what tonight is about.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 1 ============ -->
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers where attention is actually lost</span>
+      <h2>The ladder, and which rung is free</h2>
+      <span class="tag concept">8 min live</span>
+    </div>
+    <p class="lede">Below is the shape of the thing you are going to build tonight. Five changes to the same sixty seconds of footage. Read the size of the first jump before anything else.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A ladder chart showing viewer retention climbing from 16 percent on the raw cut to 72 percent after five changes, with the largest single jump coming from saying the point in the first three seconds">
+        <style>
+          .m1L { font: 700 12px Inter, sans-serif; fill: #0F172A; }
+          .m1V { font: 700 13px Inter, sans-serif; fill: #fff; }
+          .m1N { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+          .m1D { font: 700 11px Inter, sans-serif; fill: #B45309; }
+        </style>
+        <text class="m1L" x="228" y="44" text-anchor="end">the raw cut</text>
+        <rect x="240" y="28" width="86" height="24" rx="5" fill="#CBD5E1"/>
+        <text class="m1V" x="283" y="45" text-anchor="middle" fill="#0F172A">16%</text>
+
+        <text class="m1L" x="228" y="90" text-anchor="end">say the point in 3s</text>
+        <rect x="240" y="74" width="204" height="24" rx="5" fill="#475569"/>
+        <text class="m1V" x="342" y="91" text-anchor="middle">38%</text>
+        <text class="m1D" x="458" y="91">+22 points, and it costs nothing but nerve</text>
+
+        <text class="m1L" x="228" y="136" text-anchor="end">cut the dead air</text>
+        <rect x="240" y="120" width="279" height="24" rx="5" fill="#475569"/>
+        <text class="m1V" x="380" y="137" text-anchor="middle">52%</text>
+        <text class="m1N" x="533" y="137">runtime falls 60s to 47.6s</text>
+
+        <text class="m1L" x="228" y="182" text-anchor="end">burn in captions</text>
+        <rect x="240" y="166" width="344" height="24" rx="5" fill="#475569"/>
+        <text class="m1V" x="412" y="183" text-anchor="middle">64%</text>
+
+        <text class="m1L" x="228" y="228" text-anchor="end">crop for where it plays</text>
+        <rect x="240" y="212" width="387" height="24" rx="5" fill="#334155"/>
+        <text class="m1V" x="434" y="229" text-anchor="middle">72%</text>
+
+        <line x1="240" y1="256" x2="820" y2="256" stroke="#E5E7EB" stroke-width="1"/>
+
+        <text class="m1L" x="228" y="288" text-anchor="end">add more, it feels thin</text>
+        <rect x="240" y="272" width="301" height="24" rx="5" fill="#FEF2F2" stroke="#991B1B" stroke-width="1.5"/>
+        <text class="m1V" x="390" y="289" text-anchor="middle" fill="#991B1B">56%</text>
+
+        <text class="m1L" x="228" y="326" text-anchor="end">branded intro animation</text>
+        <rect x="240" y="310" width="317" height="24" rx="5" fill="#FEF2F2" stroke="#991B1B" stroke-width="1.5"/>
+        <text class="m1V" x="398" y="327" text-anchor="middle" fill="#991B1B">59%</text>
+        <text class="m1N" x="571" y="327">both of these are the instinct, and both go backwards</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the biggest single gain is the one that needs no tool at all</figcaption>
+    </figure>
+
+    <p>Look at the gap between the first two bars. <strong>The largest improvement available to you costs nothing, needs no software, and is available to somebody with a phone.</strong> It is simply saying what the video is about before you say hello. Every rung above it is smaller, and every rung above it needs a tool.</p>
+
+    <p>That ordering is the argument of this entire course. The tools are genuinely useful, and sessions 2 and 3 go deep into what they can and cannot do. But if you spend your budget on generation and skip the first three seconds, you have bought the small lever and skipped the big one.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What the numbers on this page are, exactly<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Worth being precise, because most content in this field is not.</p>
+        <p><strong>The silence detection is real.</strong> The playground below holds a sixty-second audio envelope. When you press detect, it genuinely scans that envelope for runs below 0.085 amplitude lasting at least 0.4 seconds, and reports what it finds. The four gaps and the 12.4 seconds are computed at the moment you click, not stored. So is the 47.6 second runtime, which is arithmetic on the cut points it found.</p>
+        <p><strong>The retention curve is a model.</strong> It is a teaching model of how attention behaves, built to be directionally honest, and it is not a measurement of your audience or anybody else's. The page tells you that on the widget itself rather than burying it here.</p>
+        <p>The distinction matters more than it sounds. A course that presents a model as a measurement is doing the thing this whole field does badly, and you should hold the rest of the material to the same line. When session 5 gives you physics benchmark scores, those are measurements from published papers. When it gives you an iteration cost, you will get an explicit warning that no independent audit of that number exists.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2 ============ -->
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the dead air you cannot hear</span>
+      <h2>You are a bad judge of your own pauses</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Every speaker leaves gaps. Almost nobody hears their own, because when you were recording you were thinking, and thinking feels like a moment rather than four seconds. A detector does not have that problem.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sixty second waveform with four bands of silence marked in red, totalling 12.4 seconds, which is one fifth of the runtime">
+        <style>
+          .m2T { font: 700 11px Inter, sans-serif; fill: #991B1B; }
+          .m2N { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+          .m2A { font: 700 12px Inter, sans-serif; fill: #0F172A; }
+          .m2X { font: 400 10px Inter, sans-serif; fill: #9CA3AF; }
+        </style>
+        <rect x="60" y="40" width="760" height="90" fill="#F8FAFC" rx="4"/>
+        <rect x="146" y="40" width="44" height="90" fill="#FEF2F2"/>
+        <rect x="330" y="40" width="63" height="90" fill="#FEF2F2"/>
+        <rect x="507" y="40" width="32" height="90" fill="#FEF2F2"/>
+        <rect x="668" y="40" width="18" height="90" fill="#FEF2F2"/>
+        <path d="M60 85 L72 62 L84 104 L96 70 L108 96 L120 66 L132 100 L144 85 L190 85 L202 68 L214 100 L226 64 L238 102 L250 70 L262 98 L274 66 L286 100 L298 72 L310 96 L322 85 L393 85 L405 64 L417 102 L429 68 L441 98 L453 70 L465 100 L477 66 L489 96 L501 85 L539 85 L551 70 L563 98 L575 64 L587 100 L599 68 L611 96 L623 72 L635 98 L647 66 L659 85 L686 85 L698 68 L710 100 L722 66 L734 98 L746 70 L758 96 L770 68 L782 100 L794 72 L806 92 L820 85" fill="none" stroke="#475569" stroke-width="1.6"/>
+        <line x1="60" y1="85" x2="820" y2="85" stroke="#CBD5E1" stroke-width="0.8"/>
+        <text class="m2T" x="168" y="32" text-anchor="middle">3.4s</text>
+        <text class="m2T" x="361" y="32" text-anchor="middle">5.0s</text>
+        <text class="m2T" x="523" y="32" text-anchor="middle">2.5s</text>
+        <text class="m2T" x="677" y="32" text-anchor="middle">1.5s</text>
+        <text class="m2X" x="60" y="146">0s</text>
+        <text class="m2X" x="820" y="146" text-anchor="end">60s</text>
+        <text class="m2A" x="60" y="184">Four gaps. 12.4 seconds. A fifth of the runtime, spent on nothing.</text>
+        <text class="m2N" x="60" y="210">The speaker heard four small pauses while they gathered a thought.</text>
+        <text class="m2N" x="60" y="234">The viewer heard twelve seconds of a person not talking, and left during the second one.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the detector is running on the real envelope in the playground below</figcaption>
+    </figure>
+
+    <p>Cutting these is not an editorial decision and it costs you nothing. You said the same words. The viewer receives them in 47.6 seconds instead of 60, and the version they receive feels like it was made by somebody who valued their time. <strong>That perception is doing more work than the twelve seconds.</strong></p>
+
+    <p>This is also the one place in the whole course where the tools are unambiguously worth it. Finding these by hand means scrubbing a timeline. Every serious editor now does it automatically, and session 3 covers what each one will and will not do, including the constraints their marketing pages do not mention.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The constraint nobody puts on the feature page<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A preview of session 3, because it changes whether you should rely on this.</p>
+        <p>Descript's filler-word removal, the best-known version of this feature, <strong>"currently detects filler words in English transcripts only"</strong>. That is from its own documentation. If you work in any other language, the feature does not exist for you, and nothing on the marketing page says so.</p>
+        <p>There is a second one that catches people out. The option called "avoid harsh cuts" deliberately skips filler words that "can't be removed without clipping into nearby words or leaving behind an awkward cut". This is good behaviour and it is also why <strong>the number of fillers removed will never match the number detected</strong>. People report this as a bug. It is the feature working correctly.</p>
+        <p>The pattern generalises, and it is the spine of session 3: across every vendor in this category, the advertised feature is never the real constraint. The real constraint is English-only, or single-face-only, or two-seconds-maximum, and it is always three clicks deeper than the page that sold it to you.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3 ============ -->
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers what those three seconds are spent on</span>
+      <h2>Three seconds is the entire budget</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Not the opening. The budget. Whatever occupies the first three seconds is what you spent your one guaranteed piece of attention on, and most video spends it on throat-clearing.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A comparison of what occupies the first three seconds in a typical video versus a re-cut one, showing that the typical version delivers nothing the viewer came for">
+        <style>
+          .m3H { font: 700 12px Inter, sans-serif; fill: #0F172A; }
+          .m3S { font: 700 11px Inter, sans-serif; }
+          .m3N { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+          .m3T { font: 400 10px Inter, sans-serif; fill: #9CA3AF; }
+          .m3R { font: 700 12px Inter, sans-serif; fill: #991B1B; }
+          .m3G { font: 700 12px Inter, sans-serif; fill: #166534; }
+        </style>
+        <text class="m3T" x="200" y="34">0s</text>
+        <text class="m3T" x="440" y="34" text-anchor="middle">1.5s</text>
+        <text class="m3T" x="680" y="34" text-anchor="end">3s</text>
+
+        <text class="m3H" x="188" y="66" text-anchor="end">Typical</text>
+        <rect x="200" y="48" width="120" height="28" rx="4" fill="#FEE2E2"/>
+        <text class="m3S" x="260" y="67" text-anchor="middle" fill="#991B1B">logo sting</text>
+        <rect x="324" y="48" width="150" height="28" rx="4" fill="#FEE2E2"/>
+        <text class="m3S" x="399" y="67" text-anchor="middle" fill="#991B1B">"hi everyone"</text>
+        <rect x="478" y="48" width="202" height="28" rx="4" fill="#FEE2E2"/>
+        <text class="m3S" x="579" y="67" text-anchor="middle" fill="#991B1B">"so today I wanted to talk about..."</text>
+        <text class="m3R" x="200" y="100">Nothing the viewer came for. The decision to leave is made here.</text>
+
+        <text class="m3H" x="188" y="152" text-anchor="end">Re-cut</text>
+        <rect x="200" y="134" width="480" height="28" rx="4" fill="#DCFCE7"/>
+        <text class="m3S" x="440" y="153" text-anchor="middle" fill="#166534">"Your captions are wrong 7 percent of the time. Here is how to check."</text>
+        <text class="m3G" x="200" y="186">The whole proposition, delivered before the greeting.</text>
+
+        <line x1="200" y1="212" x2="820" y2="212" stroke="#E5E7EB" stroke-width="1"/>
+        <text class="m3N" x="200" y="240">Same footage. Same length. Same words, in a different order.</text>
+        <text class="m3N" x="200" y="264">The greeting still happens. It happens at second four, to the people who stayed.</text>
+        <text class="m3N" x="200" y="288">This is the only change in the ladder that requires no tool, no budget and no new skill.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the re-cut version has not removed the greeting, it has reordered it</figcaption>
+    </figure>
+
+    <p>The objection people raise here is that it feels abrupt, and it does, for about a week. What it actually is is respectful: it assumes the viewer has somewhere else to be, which they do. <strong>The greeting is not deleted, it is demoted</strong> to second four, where it is heard by an audience that has already decided to stay.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why this is harder than it looks<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The mechanical part takes ten minutes. The hard part is that <strong>you have to know what your video is about in one sentence</strong>, and a surprising number of videos do not.</p>
+        <p>If you cannot write that sentence, the problem was never the edit. The video does not have a point yet, and no amount of generation, captioning or cropping will give it one. Every rung above the first on that ladder is amplification, and amplification of nothing is still nothing.</p>
+        <p>This is also why the trap lever exists in the simulator. "It feels thin, add more" is the response of somebody who has sensed the missing sentence and reached for volume instead. The number goes down because the viewer can tell.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ BUILD ALONG ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Climb the ladder, then break it</h2>
+      <span class="tag demo">★ 18 min · everyone builds</span>
+    </div>
+    <p class="lede">The detector below runs for real on a real envelope. The retention curve is a teaching model and says so on the widget. Work through the steps in order, and spend the most time on the last two.</p>
+
+    <div id="media-live"></div>
+
+    <div class="steps">
+      <div class="step"><p><strong>Press detect before touching anything else.</strong> Watch it scan the waveform and mark four regions. It reports 12.4 seconds across four gaps. That is computed from the envelope at the moment you click, so change the threshold and the answer genuinely changes with it.</p></div>
+      <div class="step"><p><strong>Turn on "say the point in the first three seconds" alone.</strong> Retention goes from 16 to 38 percent. Sit with the size of that. It is bigger than the next three levers combined, and it is the only one that needs no tool, no subscription and no skill.</p></div>
+      <div class="step"><p><strong>Add "cut the dead air".</strong> Retention reaches 52 percent and the runtime readout drops from 60 to 47.6 seconds, because the cut points the detector actually found are being applied.</p></div>
+      <div class="step"><p><strong>Add captions, then the crop.</strong> 64, then 72 percent. Both are real production choices with a real cost in time, and both are worth less than the free one you did first. That ordering is the whole lesson.</p></div>
+      <div class="step"><p><strong>Now, from 72, switch on "add more, it feels thin".</strong> It falls to 56. This is the instinct that produces most bad video: the piece feels slight, so you pad it. The padding is what people leave during.</p></div>
+      <div class="step"><p><strong>Finally, from 72, switch on the branded intro animation.</strong> It falls to 59. Nobody in the building will tell you this, because the intro was expensive and somebody signed it off. It spends the only three seconds you are guaranteed on something the viewer did not come for.</p></div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Why both traps are in the simulator rather than in a bullet list.</strong> You will be asked for both of these by name, usually by somebody senior, and usually with a good reason attached. Having watched the number go down yourself is a different kind of knowledge from having read that it goes down. Take the screenshot.</p>
+    </div>
+
+    <div class="scorecard" data-title="Before you publish anything" data-foot="Five rows. The first one is free and most people skip it.">
+      <div class="sc-row"><div class="sc-q">The point is stated inside the first three seconds<em>Not teased. Stated. Before any greeting.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You have run a detector over it rather than trusting your own ear<em>You cannot hear your own pauses. Nobody can.</em></div></div>
+      <div class="sc-row"><div class="sc-q">There are captions, and somebody has read them<em>Session 4 is about why the automatic ones are not finished.</em></div></div>
+      <div class="sc-row"><div class="sc-q">It is cropped for the place it will actually play<em>Not for the timeline you edited it on.</em></div></div>
+      <div class="sc-row"><div class="sc-q">Nothing was added because it felt thin<em>If it is thin, it is short. Short is not a defect.</em></div></div>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 2</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Find a video you published and watch the first three seconds only.</strong> Then stop it. Write down what a stranger now knows about what the video is for. If the answer is nothing, you have found your biggest available gain.</li>
+      <li><strong>Re-cut those three seconds and nothing else.</strong> No new footage. Move the sentence that says the point to the front, and delete whatever was there. This is the exercise, and it takes about ten minutes.</li>
+      <li><strong>Run any filler-and-silence tool over the same video.</strong> Note two numbers: how much dead air it found, and how much of it you had noticed. The gap between those is the point.</li>
+      <li><strong>Check one claim from tonight yourself.</strong> Open OpenAI's deprecations page and find the Sora rows. Confirm the September date and the empty replacement column with your own eyes. Getting into that habit is worth more than any single fact in this course.</li>
+      <li><strong>Optional, and it will annoy you:</strong> find any course or article published before mid-2026 that teaches AI video, and count how many of its named tools still exist in the form described.</li>
+    </ol>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 1 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Of the five changes in the ladder, which produced the largest single gain, and what did it cost?</p>
+      <button class="qopt" type="button">A · Burning in captions, because most viewing is silent, and it costs a caption tool</button>
+      <button class="qopt" type="button">B · Saying the point in the first three seconds, which gained 22 points and costs nothing at all</button>
+      <button class="qopt" type="button">C · Cropping for the platform, because the aspect ratio determines everything downstream</button>
+      <p class="qwhy">16 to 38 percent, larger than the next three levers combined. Captions and cropping are both real and both worth doing. They are worth less than the free one, which is why the ordering matters more than the list.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · A colleague wants a five-second branded animation at the top of every video. What does the simulator show, and why?</p>
+      <button class="qopt" type="button">A · Retention improves slightly, because recognisable branding builds trust before the content starts</button>
+      <button class="qopt" type="button">B · Retention is unchanged, because viewers skip intros automatically</button>
+      <button class="qopt" type="button">C · Retention falls from 72 to 59 percent, because it spends the only three seconds you are guaranteed on something the viewer did not come for</button>
+      <p class="qwhy">The three seconds are not free real estate. They are the entire budget of attention you are given before the decision to stay or leave is made. Anything occupying them has to be the reason someone stays.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Why does this course open with the Sora retirement rather than with a tool tutorial?</p>
+      <button class="qopt" type="button">A · Because it demonstrates that tool knowledge in this field is perishable, while knowledge of how attention behaves is not</button>
+      <button class="qopt" type="button">B · Because Sora was the best tool and its loss changes what is possible</button>
+      <button class="qopt" type="button">C · Because OpenAI's decision signals that AI video generation is not commercially viable</button>
+      <p class="qwhy">No reason for the shutdown was ever given, so B and C are both speculation. What is verifiable is the pattern: the app closed in April, the API closes in September, the replacement column is empty, and Google shut two Veo models with fifteen days' notice. Perishability is the lesson.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL COVERAGE ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The Sora retirement, from OpenAI's own deprecations page</span><span class="note">Model IDs, the 24 September 2026 API sunset, the empty replacement column, and the 26 April 2026 app shutdown</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Google model status and the Veo 2 and 3 shutdown</span><span class="note">Preview status for every current video model, and the fifteen days between the deprecation notice and the shutdown</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Real silence detection, run in your browser</span><span class="note">Threshold, minimum gap, cut points and resulting runtime all computed live rather than stored</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">The retention ladder</span><span class="note">A teaching model, labelled as one on the widget itself. Directionally honest, not a measurement of any real audience</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Tool constraints, captions law, failure modes and disclosure</span><span class="note">Not covered here by design. Sessions 2 through 6 take each one to primary sources</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Full source map with every URL: <span class="mono">materials/official-course-map.md</span> in this repo, including a quarantine list of what is deliberately not stated.</p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 1 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>The biggest lever is free</b><span>Say the point in the first three seconds. 16 to 38 percent, no tool required.</span></div>
+      <div class="cheat-item"><b>You cannot hear your own pauses</b><span>Four gaps, 12.4 seconds, a fifth of the runtime. The speaker noticed none of them.</span></div>
+      <div class="cheat-item"><b>Padding is what people leave during</b><span>Adding more because it feels thin took 72 percent down to 56.</span></div>
+      <div class="cheat-item"><b>The intro animation costs you the whole budget</b><span>72 down to 59. Three seconds is all the attention you are given.</span></div>
+      <div class="cheat-item"><b>Sora dies 24 September 2026</b><span>Replacement column empty. Tool knowledge here has a half-life of about a year.</span></div>
+      <div class="cheat-item"><b>Model versus measurement</b><span>The detection is real. The curve is a model. Any course that blurs those is doing it wrong.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>Tonight was about attention, which does not change when the tools do. Session 2 is about the tools themselves: what Veo, Runway, ElevenLabs and Descript actually produce, what each second genuinely costs, and the clip-length and resolution limits that decide what you can make before you have written a word.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 1 of 6 · learn-ai-media-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="../index.html">← All sessions</a> &nbsp;·&nbsp; <a href="02-what-the-tools-cost.html">Next: What the tools cost →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+<script src="../assets/media-live.js?v=1"></script>
+</body>
+</html>

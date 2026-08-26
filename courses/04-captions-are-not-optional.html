@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 4 of 6. At Level A a transcript substitutes for audio description. At Level AA it does not, and every US mandate points at AA. Plus what auto-captions actually score across 11 services and 221 hours, and the error-rate gap that holds across all five vendors tested.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Captions are not optional - learn ai media with phoebe">
+<meta property="og:description" content="Session 4 of 6. The Level A escape hatch that disappears at Level AA, and what auto-captions actually score.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/courses/04-captions-are-not-optional.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Captions are not optional - learn ai media with phoebe">
+<meta name="twitter:description" content="Session 4 of 6. Where the real caption obligations live, and what the automatic ones actually score.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 4 · Captions are not optional - learn ai media with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=2">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-media-with-phoebe</a> / Session 4 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI Media with Phoebe · Session 4 of 6</div>
+    <h1>Captions are <span class="accent">not optional</span></h1>
+    <p class="sub">Almost every organisation that tells you it is accessible is making a Level A claim and presenting it as Level AA. The gap between those two letters is one sentence in a W3C document, and it is the highest-value thing in this entire course. Then we look at what the automatic captions actually score: 11 services, 221 hours, an average of 7.0 percent, and a per-file range that runs to 53.8. Averages are how this field hides.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Medium</span>
+      <span class="chip audience">Anyone who publishes video anywhere a regulator can see it</span>
+      <span class="chip audience">No legal background assumed</span>
+      <span class="chip time">50 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · The trap</span>
+      <span class="a2" style="flex:5">3-24 · What the numbers actually say</span>
+      <span class="a3" style="flex:4">24-44 · Build-along: audit one file</span>
+      <span class="a4" style="flex:1">44-50 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Start with the trap, because it catches almost everyone</span>
+      <h2>Two success criteria, one letter apart, and the difference is everything</h2>
+      <span class="tag concept">4 min live</span>
+    </div>
+    <p class="lede">You have heard somebody say "we're accessible, we have transcripts". That sentence is true at one conformance level and false at the one every legal mandate actually points at, and almost nobody in the room knows which is which.</p>
+
+    <div class="callout warn">
+      <p><strong>Here is the whole thing, in W3C's own words.</strong> "At Level A in Success Criterion 1.2.3, authors do have the choice of providing either an audio description or a full text alternative. If they wish to conform at Level AA, under Success Criterion 1.2.5 <strong>authors must provide an audio description</strong>."</p>
+      <p>Read it twice. <strong>At Level A, a transcript substitutes for audio description. At Level AA, that escape hatch closes.</strong> The DOJ's ADA Title II web rule adopts WCAG 2.1 <strong>Level AA</strong>. So does most of what anyone means when they say "the standard". Which means the transcript-on-the-page answer, the one your organisation almost certainly gives, is a Level A answer wearing an AA badge.</p>
+    </div>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A decision diagram showing that Success Criterion 1.2.3 at Level A lets you choose between a full text alternative and an audio description, but that the text alternative branch dead ends at Level AA because Success Criterion 1.2.5 requires an audio description">
+        <style>
+          .f1T { font: 700 12px Inter, sans-serif; fill: #0F172A; }
+          .f1S { font: 400 11px Inter, sans-serif; fill: #475569; }
+          .f1K { font: 700 11px Inter, sans-serif; fill: #6B7280; }
+          .f1R { font: 700 12px Inter, sans-serif; fill: #991B1B; }
+          .f1RS { font: 400 11px Inter, sans-serif; fill: #991B1B; }
+          .f1G { font: 700 12px Inter, sans-serif; fill: #166534; }
+          .f1GS { font: 400 11px Inter, sans-serif; fill: #166534; }
+          .f1N { font: 400 12px Inter, sans-serif; fill: #475569; }
+        </style>
+
+        <text class="f1K" x="20" y="32">The fork that almost every "we are accessible" claim falls into</text>
+
+        <rect x="20" y="150" width="140" height="60" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.2"/>
+        <text class="f1T" x="90" y="176" text-anchor="middle">Prerecorded video</text>
+        <text class="f1S" x="90" y="194" text-anchor="middle">with a speech track</text>
+
+        <line x1="160" y1="180" x2="182" y2="180" stroke="#94A3B8" stroke-width="1.4"/>
+        <polygon points="190,180 180,175 180,185" fill="#94A3B8"/>
+
+        <rect x="190" y="150" width="170" height="60" rx="6" fill="#FFF7ED" stroke="#FB923C" stroke-width="1.4"/>
+        <text class="f1T" x="275" y="176" text-anchor="middle">SC 1.2.3 · Level A</text>
+        <text class="f1S" x="275" y="194" text-anchor="middle">gives you a choice</text>
+
+        <path d="M360 180 H388 V100 H405" fill="none" stroke="#94A3B8" stroke-width="1.4"/>
+        <polygon points="415,100 405,95 405,105" fill="#94A3B8"/>
+        <path d="M360 180 H388 V260 H405" fill="none" stroke="#94A3B8" stroke-width="1.4"/>
+        <polygon points="415,260 405,255 405,265" fill="#94A3B8"/>
+
+        <rect x="415" y="70" width="180" height="60" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.2"/>
+        <text class="f1T" x="505" y="96" text-anchor="middle">Full text alternative</text>
+        <text class="f1S" x="505" y="114" text-anchor="middle">a transcript on the page</text>
+
+        <rect x="415" y="230" width="180" height="60" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.2"/>
+        <text class="f1T" x="505" y="256" text-anchor="middle">Audio description</text>
+        <text class="f1S" x="505" y="274" text-anchor="middle">a narrated track you record</text>
+
+        <line x1="595" y1="100" x2="630" y2="100" stroke="#94A3B8" stroke-width="1.4"/>
+        <polygon points="640,100 630,95 630,105" fill="#94A3B8"/>
+        <line x1="595" y1="260" x2="630" y2="260" stroke="#94A3B8" stroke-width="1.4"/>
+        <polygon points="640,260 630,255 630,265" fill="#94A3B8"/>
+
+        <rect x="640" y="70" width="220" height="60" rx="6" fill="#FEF2F2" stroke="#991B1B" stroke-width="1.6"/>
+        <text class="f1R" x="750" y="96" text-anchor="middle">DEAD END at Level AA</text>
+        <text class="f1RS" x="750" y="114" text-anchor="middle">SC 1.2.5 removes the choice</text>
+
+        <rect x="640" y="230" width="220" height="60" rx="6" fill="#F0FDF4" stroke="#166534" stroke-width="1.6"/>
+        <text class="f1G" x="750" y="256" text-anchor="middle">Conforms at Level AA</text>
+        <text class="f1GS" x="750" y="274" text-anchor="middle">audio description is required</text>
+
+        <line x1="20" y1="330" x2="860" y2="330" stroke="#E5E7EB" stroke-width="1"/>
+        <text class="f1N" x="20" y="356">W3C states it outright: "At Level A in Success Criterion 1.2.3, authors do have the choice</text>
+        <text class="f1N" x="20" y="376">of providing either an audio description or a full text alternative. If they wish to conform at</text>
+        <text class="f1N" x="20" y="396">Level AA, under Success Criterion 1.2.5 authors must provide an audio description."</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the upper branch is legitimate, and it stops being legitimate one level up</figcaption>
+    </figure>
+
+    <p>Notice what this figure is not saying. It is not saying transcripts are worthless. A transcript is a genuine conformance route <strong>at Level A</strong>, and it is genuinely useful to real people. It is saying that the sentence "we have transcripts, so we're compliant" is answering a question nobody asked, because the level being demanded is the one where that answer does not count.</p>
+
+    <p>Captions are a separate obligation and they sit lower still. <strong>SC 1.2.2 Captions (Prerecorded) is Level A</strong>, and it reads: "Captions are provided for all prerecorded audio content in synchronized media, except when the media is a media alternative for text and is clearly labeled as such." That is the floor. Everything in this session is about what sits above it.</p>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Which version of WCAG you are actually being held to<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Three facts that stop most of the version confusion in this area.</p>
+        <ul>
+          <li><strong>Guideline 1.2 is unchanged from WCAG 2.0.</strong> Nothing was added to it in 2.1 or in 2.2. So the 1.2.3 versus 1.2.5 fork you just read is not new, is not contested, and has been sitting in plain sight for well over a decade.</li>
+          <li><strong>WCAG 2.2 is a W3C Recommendation of 12 December 2024.</strong> That is the current finished version.</li>
+          <li><strong>WCAG 3.0 is still a Working Draft.</strong> Its own status text says "It is inappropriate to cite this document as other than a work in progress". If somebody hands you a compliance plan built on WCAG 3.0, they have built it on a draft that says not to.</li>
+        </ul>
+        <p>And one more that catches federal work specifically: <strong>Section 508 still incorporates WCAG 2.0</strong>, so US federal procurement is anchored a full version behind the ADA Title II rule. Two different parts of the same government are pointing at two different documents. You need to know which one is pointing at you.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 1 ============ -->
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers what the automatic captions actually score</span>
+      <h2>7.0 percent average, and a per-file range that runs to 53.8</h2>
+      <span class="tag concept">7 min live</span>
+    </div>
+    <p class="lede">There is a real peer-reviewed benchmark for this, and almost nobody quotes it because the vendor numbers are easier to find. Kuhn, Kersken, Reuter, Egger and Zimmermann, in ACM Transactions on Accessible Computing, put 11 commercial and open ASR services through 120 three-minute samples: 221 hours of audio, 3,840 transcriptions.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A bar chart of average word error rate for nine ASR services, from Whisper large v2 at 2.9 percent to Google at 20.1 percent, with a shaded band behind the bars showing that the per file error rate ranged from 0 to 53.8 percent and a dashed line at the 7.0 percent overall average">
+        <style>
+          .f2L { font: 400 11px Inter, sans-serif; fill: #0F172A; }
+          .f2V { font: 700 11px Inter, sans-serif; fill: #334155; }
+          .f2A { font: 700 11px Inter, sans-serif; fill: #B45309; }
+          .f2B { font: 700 11px Inter, sans-serif; fill: #92400E; }
+          .f2X { font: 400 10px Inter, sans-serif; fill: #9CA3AF; }
+          .f2N { font: 400 12px Inter, sans-serif; fill: #475569; }
+        </style>
+
+        <text class="f2A" x="241" y="40">overall average 7.0%</text>
+        <text class="f2B" x="800" y="40" text-anchor="end">per-file WER: 0% to 53.8%</text>
+
+        <rect x="150" y="48" width="655" height="272" fill="#FEF3C7" opacity="0.55"/>
+        <line x1="235" y1="48" x2="235" y2="320" stroke="#B45309" stroke-width="1.4" stroke-dasharray="5 4"/>
+
+        <text class="f2L" x="142" y="84" text-anchor="end">Whisper large-v2</text>
+        <rect x="150" y="70" width="35" height="20" rx="3" fill="#475569"/>
+        <text class="f2V" x="191" y="84">2.9%</text>
+
+        <text class="f2L" x="142" y="112" text-anchor="end">Speechmatics</text>
+        <rect x="150" y="98" width="40" height="20" rx="3" fill="#475569"/>
+        <text class="f2V" x="196" y="112">3.3%</text>
+
+        <text class="f2L" x="142" y="140" text-anchor="end">Amazon</text>
+        <rect x="150" y="126" width="54" height="20" rx="3" fill="#475569"/>
+        <text class="f2V" x="210" y="140">4.4%</text>
+
+        <text class="f2L" x="142" y="168" text-anchor="end">Microsoft</text>
+        <rect x="150" y="154" width="54" height="20" rx="3" fill="#475569"/>
+        <text class="f2V" x="210" y="168">4.4%</text>
+
+        <text class="f2L" x="142" y="196" text-anchor="end">Rev</text>
+        <rect x="150" y="182" width="54" height="20" rx="3" fill="#475569"/>
+        <text class="f2V" x="210" y="196">4.4%</text>
+
+        <text class="f2L" x="142" y="224" text-anchor="end">AssemblyAI</text>
+        <rect x="150" y="210" width="55" height="20" rx="3" fill="#475569"/>
+        <text class="f2V" x="211" y="224">4.5%</text>
+
+        <text class="f2L" x="142" y="252" text-anchor="end">Deepgram</text>
+        <rect x="150" y="238" width="101" height="20" rx="3" fill="#475569"/>
+        <text class="f2V" x="257" y="252">8.3%</text>
+
+        <text class="f2L" x="142" y="280" text-anchor="end">IBM</text>
+        <rect x="150" y="266" width="136" height="20" rx="3" fill="#475569"/>
+        <text class="f2V" x="292" y="280">11.2%</text>
+
+        <text class="f2L" x="142" y="308" text-anchor="end">Google</text>
+        <rect x="150" y="294" width="245" height="20" rx="3" fill="#334155"/>
+        <text class="f2V" x="401" y="308">20.1%</text>
+
+        <line x1="150" y1="326" x2="820" y2="326" stroke="#CBD5E1" stroke-width="1"/>
+        <text class="f2X" x="150" y="342" text-anchor="middle">0%</text>
+        <text class="f2X" x="272" y="342" text-anchor="middle">10%</text>
+        <text class="f2X" x="394" y="342" text-anchor="middle">20%</text>
+        <text class="f2X" x="515" y="342" text-anchor="middle">30%</text>
+        <text class="f2X" x="637" y="342" text-anchor="middle">40%</text>
+        <text class="f2X" x="759" y="342" text-anchor="middle">50%</text>
+
+        <text class="f2N" x="20" y="368">Google 20.1% is seven times Whisper's 2.9%. But the shaded band is the real lesson:</text>
+        <text class="f2N" x="20" y="390">a provider with a low average can still hand back a 53.8% file, and no average tells you which.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the bars are averages, the band is what actually happened to individual files</figcaption>
+    </figure>
+
+    <p>The averages are the headline and they are not the story. <strong>Per-file WER ranged from 0 percent to 53.8 percent.</strong> The paper says it plainly: "Providers that achieve a relatively low average WER can show a high error rate for an individual sample."</p>
+
+    <p>Sit with what that means operationally. You pick a vendor on its average. You upload two hundred videos. Some unknown subset of them come back at rates that make the captions actively misleading, and <strong>nothing in your pipeline flags which ones</strong>, because the average was fine. An average is a promise about a population. Your viewer is watching one file.</p>
+
+    <p>W3C's own position on this is not ambiguous: <strong>"Automatically-generated captions do not meet user needs or accessibility requirements, unless they are confirmed to be fully accurate."</strong> Its own worked examples are the kind of error that reads as perfectly fluent English: "4 to 5 minutes" becoming "45 minutes", and "should <strong>not</strong> preheat" becoming "should <strong>know to</strong> preheat". Neither looks like an error on the screen. Both invert the instruction.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why the fluent errors are the dangerous ones<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A garbled caption is annoying and harmless, because the reader can see it is broken and discounts it. A grammatical caption that says the opposite of what was said is neither.</p>
+        <p>"Should not preheat" to "should know to preheat" costs one small word and reverses a safety instruction. There is no visual signal that anything went wrong. The reader who depends on captions has no second channel to check it against, which is precisely the point: <strong>the person least able to catch the error is the person the caption exists for.</strong></p>
+        <p>This is also why "spot check a few" is a weaker control than it feels. Spot checking catches the obviously broken file. The fluent inversion survives a spot check, because it reads fine.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2 ============ -->
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the four ways the number lies to you</span>
+      <h2>Before you compare two WER figures, ask what was done to them</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">The same study that produced the benchmark also produced four findings that change how you read every accuracy claim you will ever be shown. Three of them are about measurement. The fourth is about invention.</p>
+
+    <div class="callout tip">
+      <p><strong>Normalisation roughly halves the reported number.</strong> The same audio scored <strong>21.83 percent raw and 10.16 percent fully normalised</strong>. Normalisation strips things like punctuation and capitalisation before comparing, so a transcript that got every word right but every sentence boundary wrong scores beautifully.</p>
+      <p>Two consequences. First, <strong>vendor and research WER figures are not comparable unless the normalisation is stated</strong>, and vendors almost never state it. Second, the FCC requires correct punctuation and capitalisation, which is exactly what normalisation throws away before scoring. So a normalised WER can look excellent on a file that fails the regulatory requirement.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step"><p><strong>Streaming is significantly worse than batch.</strong> 10.9 percent against 9.37 percent on English in the same study. If your captions are generated live, you are on the worse curve by construction, and no amount of vendor selection moves you onto the better one.</p></div>
+      <div class="step"><p><strong>Custom vocabularies did not significantly improve WER.</strong> 8.61 percent to 8.10 percent, not statistically significant. This is the feature every vendor sells you when you say "but our domain has specialist terms".</p></div>
+      <div class="step"><p><strong>And yet supply the vocabulary anyway.</strong> The same study found that specialist terms and names <strong>only appeared at all when a vocabulary was supplied</strong>. So it does not move the aggregate score, and it is still the difference between your drug names and your speaker names being present or absent. Two true things that point in opposite directions, which is why you need both of them.</p></div>
+      <div class="step"><p><strong>ASR does not only mis-hear, it invents.</strong> Koenecke and colleagues, "Careless Whisper" at ACM FAccT 2024, found that roughly <strong>1 percent of transcriptions contained entire hallucinated phrases with no counterpart in the audio</strong>, and about <strong>38 percent of those carried explicit harms</strong>: fabricated violence, invented personal attributes, made-up authority.</p></div>
+    </div>
+
+    <p>Run the last one against a real artefact. A forty-minute recorded lecture is not a small number of transcription units, and 1 percent of it is several confidently fabricated sentences that a viewer reads as authoritative because they are sitting in the same caption track as the real ones. <strong>There is no visual difference between a sentence the speaker said and a sentence the model produced.</strong></p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What to ask a caption vendor, in the order that gets answers<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Four questions. The first two are the ones that make sales calls go quiet.</p>
+        <ul>
+          <li><strong>"Is that WER normalised, and how?"</strong> If they cannot answer, the number is not comparable to anything and you should treat it as marketing copy rather than a measurement.</li>
+          <li><strong>"What is your per-file distribution, not your average?"</strong> The published benchmark range is 0 to 53.8 percent. If a vendor will only give you a mean, you are being told about the population and sold a promise about the file.</li>
+          <li><strong>"Is this figure from streaming or batch?"</strong> Those are different systems with different error rates. A batch number quoted at you for a live use case is not wrong, it is just not about you.</li>
+          <li><strong>"What did you measure it on?"</strong> Clean studio audio with one native speaker is the easiest case in existence, and it is not the case you have.</li>
+        </ul>
+        <p>One vendor example worth knowing as a hygiene lesson rather than a data point. <strong>ElevenLabs' own blog describes Scribe as having "the lowest automated transcription word error rate in Italian (98.7%), English (96.7%)".</strong> A 98.7 percent word error rate would mean almost every word is wrong. Those are accuracy figures mislabelled as WER in the vendor's own copy. Use it to calibrate how carefully these numbers are handled, and never as a WER number.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3 ============ -->
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers the disparities, which are measured</span>
+      <h2>The gap is roughly 2x and it holds across all five vendors</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Koenecke and colleagues, in PNAS in 2020, tested five commercial ASR systems against 73 Black speakers and 42 white speakers, 19.8 hours of audio, matched on age and gender. Read the chart before the commentary, because the shape of it is the argument.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Paired bar chart of word error rate for five commercial speech recognition systems, showing an average of 0.35 for Black speakers against 0.19 for white speakers, with a similar gap present in all five vendors individually">
+        <style>
+          .f3T { font: 400 11px Inter, sans-serif; fill: #334155; }
+          .f3L { font: 700 12px Inter, sans-serif; fill: #0F172A; }
+          .f3S { font: 400 12px Inter, sans-serif; fill: #475569; }
+          .f3V { font: 700 11px Inter, sans-serif; fill: #334155; }
+          .f3X { font: 400 10px Inter, sans-serif; fill: #9CA3AF; }
+          .f3N { font: 400 12px Inter, sans-serif; fill: #475569; }
+        </style>
+
+        <text class="f3T" x="190" y="24">Word error rate, five commercial systems, 73 Black and 42 white speakers</text>
+        <rect x="190" y="36" width="12" height="12" rx="2" fill="#334155"/>
+        <text class="f3T" x="208" y="46">Black speakers</text>
+        <rect x="310" y="36" width="12" height="12" rx="2" fill="#CBD5E1"/>
+        <text class="f3T" x="328" y="46">white speakers</text>
+
+        <text class="f3L" x="182" y="89" text-anchor="end">Average of five</text>
+        <rect x="190" y="70" width="420" height="14" rx="2" fill="#334155"/>
+        <text class="f3V" x="616" y="81">0.35</text>
+        <rect x="190" y="87" width="228" height="14" rx="2" fill="#CBD5E1"/>
+        <text class="f3V" x="424" y="98">0.19</text>
+
+        <text class="f3L" x="182" y="133" text-anchor="end">Apple</text>
+        <rect x="190" y="114" width="540" height="14" rx="2" fill="#475569"/>
+        <text class="f3V" x="736" y="125">0.45</text>
+        <rect x="190" y="131" width="276" height="14" rx="2" fill="#E2E8F0"/>
+        <text class="f3V" x="472" y="142">0.23</text>
+
+        <text class="f3L" x="182" y="177" text-anchor="end">Microsoft</text>
+        <rect x="190" y="158" width="324" height="14" rx="2" fill="#475569"/>
+        <text class="f3V" x="520" y="169">0.27</text>
+        <rect x="190" y="175" width="180" height="14" rx="2" fill="#E2E8F0"/>
+        <text class="f3V" x="376" y="186">0.15</text>
+
+        <text class="f3L" x="182" y="221" text-anchor="end">IBM</text>
+        <rect x="190" y="202" width="252" height="14" rx="2" fill="#475569"/>
+        <text class="f3V" x="448" y="213">0.21</text>
+        <rect x="190" y="219" width="120" height="14" rx="2" fill="#E2E8F0"/>
+        <text class="f3V" x="316" y="230">0.10</text>
+
+        <text class="f3L" x="182" y="265" text-anchor="end">Amazon</text>
+        <rect x="190" y="246" width="216" height="14" rx="2" fill="#475569"/>
+        <text class="f3V" x="412" y="257">0.18</text>
+        <rect x="190" y="263" width="96" height="14" rx="2" fill="#E2E8F0"/>
+        <text class="f3V" x="292" y="274">0.08</text>
+
+        <text class="f3L" x="182" y="309" text-anchor="end">Google</text>
+        <rect x="190" y="290" width="204" height="14" rx="2" fill="#475569"/>
+        <text class="f3V" x="400" y="301">0.17</text>
+        <rect x="190" y="307" width="132" height="14" rx="2" fill="#E2E8F0"/>
+        <text class="f3V" x="328" y="318">0.11</text>
+
+        <line x1="190" y1="334" x2="790" y2="334" stroke="#CBD5E1" stroke-width="1"/>
+        <text class="f3X" x="190" y="350" text-anchor="middle">0</text>
+        <text class="f3X" x="310" y="350" text-anchor="middle">0.10</text>
+        <text class="f3X" x="430" y="350" text-anchor="middle">0.20</text>
+        <text class="f3X" x="550" y="350" text-anchor="middle">0.30</text>
+        <text class="f3X" x="670" y="350" text-anchor="middle">0.40</text>
+        <text class="f3X" x="790" y="350" text-anchor="middle">0.50</text>
+
+        <text class="f3N" x="20" y="382">The gap is roughly 2x and it holds across all five vendors, so it is not one bad vendor.</text>
+        <text class="f3N" x="20" y="404">The controlled replication closes the obvious objection: on 206 identical short phrases spoken</text>
+        <text class="f3N" x="20" y="426">by both groups, matched on gender and age, the error rate for Black speakers stayed near double.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - every vendor in the study shows the gap, which is what makes it a property of the method rather than of a product</figcaption>
+    </figure>
+
+    <p>The obvious objection to a result like this is that the two groups were saying different things, so the systems were being asked harder questions on one side. <strong>The study anticipated it and closed it.</strong> Using <strong>206 identical short phrases</strong> spoken by both groups, matched on gender and age, error rates for Black speakers remained roughly double. Same words. Same length. Same measurement. Double the errors.</p>
+
+    <p>The authors attribute the cause to the acoustic model, which points at insufficient training data rather than at the language model. And it is not a 2020 artefact that newer architectures cleaned up: a later study finds that <strong>wav2vec 2.0, HuBERT, WavLM and XLS-R "perpetuate the bias in performance against AAVE"</strong>. Architecture changed. The gap did not.</p>
+
+    <p>The same shape appears with accent. <strong>ESL speakers averaged 10.2 percent WER against 7.0 percent for native speakers</strong>, a relative degradation of roughly 46 percent, with a worst case of 28.1 percent on Google. Whisper was the exception, holding at 3.3 percent on both. And this is an English-centric result before you leave English at all: <strong>German averaged 15.3 percent against English at 7.0.</strong></p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What this changes about how you deploy, in practical terms<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The finding is about systems, not about speakers, and the deployment consequence follows from that.</p>
+        <p>If you run auto-captions across a body of content with a diverse set of speakers, <strong>the caption quality your audience receives is not uniform</strong>, and it varies in a direction the measurements have already established. A single organisation-wide accuracy figure averages across that variation and reports a number that is true of nobody in particular.</p>
+        <p>Two things follow. Review budget should not be spread evenly, because the error is not spread evenly. And any accuracy figure you report internally should say what it was measured on, because a figure derived from your clearest native-speaker recordings will overstate what everyone else is getting.</p>
+        <p>Note also that the vendor ordering here is not the vendor ordering in the benchmark chart above. Different studies, different years, different audio. That is a reason to test on your own material rather than to pick a winner off either chart.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 4 ============ -->
+  <section class="section" id="part-4">
+    <div class="section-kicker">
+      <span class="klabel">Part 4 · covers the standard that is not a standard</span>
+      <h2>The 99 percent rule is industry convention, not law</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Everyone in this field quotes a 99 percent accuracy standard. It is worth knowing where it comes from, which is nowhere. It is not in WCAG. It is not in the FCC rules. It is not in DCMP's Captioning Key.</p>
+
+    <div class="callout warn">
+      <p><strong>The National Deaf Center confirms the vacuum directly:</strong> "Currently, there is no standard threshold that would dictate when ASR captions are accurate enough to be used as a form of effective communication."</p>
+      <p>What the same source does say, and what is therefore defensible to quote: "When automatically generated captions average at <strong>60%-70% accuracy</strong>, communication cannot be reasonably assumed to be as effective or equivalent to the audio", and poor auto-captions "can <strong>negatively impact</strong> students who are relying on captions."</p>
+    </div>
+
+    <p>So the honest position is narrower and more useful than the folklore. There is no numeric threshold in law. There is a documented level at which the claim of effective communication fails. Between those two facts sits a judgment you have to make and be able to defend, which is a different job from copying a number off a vendor page.</p>
+
+    <p>And there is a deeper problem with anchoring on a percentage at all. <strong>WER is a poor proxy for usability.</strong> Kafle and Huenerfauth, at ASSETS '17, gave 30 DHH participants ASR outputs of <strong>identical WER</strong> and found they systematically preferred the one favoured by a word-importance-weighted metric. Two caption files can score the same 95 percent and differ wildly in how usable they are, <strong>because WER treats "the" and the speaker's name as equally weighted errors.</strong></p>
+
+    <p>Which means a caption pipeline tuned to maximise a WER score is optimising something the people using it do not experience. Losing a determiner and losing a proper noun cost the same in the metric and cost nothing like the same in the room.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Three accuracy claims this course refuses to repeat<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Naming what has been left out is part of the method, so here are three that circulate constantly and are not on any page of this course.</p>
+        <ul>
+          <li><strong>All 3Play Media accuracy figures</strong>, including the 99.6 percent measured claim and the 84.7 to 94.4 percent competitor range. These sit on marketing pages with no published methodology. They may well be right. There is no way to check, which is the same thing as unusable.</li>
+          <li><strong>"Comprehension drops sharply below 95 percent accuracy."</strong> No peer-reviewed study exists. The citation trail dead-ends at a marketing redirect. It is industry folklore repeated confidently enough to sound sourced.</li>
+          <li><strong>"32 characters per line, per DCMP."</strong> Covered in the next part, and it is simply not in the document.</li>
+        </ul>
+        <p>One thing from 3Play is worth keeping, not as data but as a teaching device: <strong>"For a sentence of 8 words, a 95% accuracy rate means there will be an average of 2.5 errors in every sentence."</strong> That is arithmetic, and it does the useful work of making a percentage feel like a sentence.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ BUILD ALONG ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Audit one real caption file against the numbers that exist</h2>
+      <span class="tag demo">★ 18 min · everyone builds</span>
+    </div>
+    <p class="lede">Take one video you have already published with automatic captions. Not a sample, not a demo file, one of yours. The DCMP Captioning Key gives you concrete numbers to check it against, and the interesting part is which of them you fail.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 285" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four specification tiles from the DCMP Captioning Key showing 130, 140 and 160 words per minute by reading level, a minimum caption duration of 40 frames, a maximum of 6 seconds, and a preference for no more than two lines, plus a warning that no characters per line rule exists in the document">
+        <style>
+          .f4H { font: 700 12px Inter, sans-serif; fill: #0F172A; }
+          .f4B { font: 700 20px Inter, sans-serif; fill: #0F172A; }
+          .f4S { font: 400 11px Inter, sans-serif; fill: #475569; }
+          .f4R { font: 700 12px Inter, sans-serif; fill: #991B1B; }
+          .f4RS { font: 400 11px Inter, sans-serif; fill: #7F1D1D; }
+        </style>
+
+        <text class="f4H" x="20" y="36">DCMP Captioning Key, the numbers it actually states</text>
+
+        <rect x="20" y="56" width="195" height="110" rx="7" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+        <text class="f4B" x="117" y="102" text-anchor="middle">130 / 140 / 160</text>
+        <text class="f4S" x="117" y="128" text-anchor="middle">words per minute, by</text>
+        <text class="f4S" x="117" y="146" text-anchor="middle">lower, middle, upper level</text>
+
+        <rect x="236" y="56" width="195" height="110" rx="7" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+        <text class="f4B" x="333" y="102" text-anchor="middle">40 frames</text>
+        <text class="f4S" x="333" y="128" text-anchor="middle">minimum duration,</text>
+        <text class="f4S" x="333" y="146" text-anchor="middle">1 second 10 frames</text>
+
+        <rect x="452" y="56" width="195" height="110" rx="7" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+        <text class="f4B" x="549" y="102" text-anchor="middle">6 seconds</text>
+        <text class="f4S" x="549" y="128" text-anchor="middle">maximum duration</text>
+        <text class="f4S" x="549" y="146" text-anchor="middle">for a single caption</text>
+
+        <rect x="668" y="56" width="195" height="110" rx="7" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+        <text class="f4B" x="765" y="102" text-anchor="middle">2 lines</text>
+        <text class="f4S" x="765" y="128" text-anchor="middle">preferred maximum</text>
+        <text class="f4S" x="765" y="146" text-anchor="middle">per caption</text>
+
+        <rect x="20" y="190" width="843" height="76" rx="7" fill="#FEF2F2" stroke="#991B1B" stroke-width="1.4"/>
+        <text class="f4R" x="38" y="216">There is no characters-per-line rule anywhere in the Captioning Key.</text>
+        <text class="f4RS" x="38" y="236">The "32 characters per line" figure everyone quotes comes from the CEA-608 broadcast caption grid,</text>
+        <text class="f4RS" x="38" y="254">which is a different thing. Attributing it to DCMP is one of the most repeated errors in this field.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - four numbers that are in the document, and one that is not</figcaption>
+    </figure>
+
+    <p>The word-per-minute figures count <strong>every word, including speaker IDs and sound effects</strong>, which is the part people miss when they check. And background music under 5 seconds is not captioned at all. These are small, checkable, and almost never checked.</p>
+
+    <div class="steps">
+      <div class="step"><p><strong>Export the caption file, do not read the burned-in version.</strong> You want the timings, and the burned-in version hides them. Any editor that produced the captions can give you an SRT or a VTT.</p></div>
+      <div class="step"><p><strong>Find every caption longer than 6 seconds and every caption shorter than 40 frames.</strong> Both are DCMP violations, and automatic captioners produce both routinely because they segment on pauses rather than on reading time.</p></div>
+      <div class="step"><p><strong>Count words per minute across the fastest thirty seconds.</strong> Include speaker IDs and sound-effect descriptions in the count. Compare against 130, 140 or 160 depending on who your audience is. A talking-head video recorded at a natural pace will frequently be over.</p></div>
+      <div class="step"><p><strong>Now read the transcript against the audio, for one minute only.</strong> One minute. Count errors and classify each one: harmless, changes meaning, or fabricated. You are looking for the third category specifically, because roughly 1 percent of transcriptions contain phrases with no counterpart in the audio at all.</p></div>
+      <div class="step"><p><strong>Check whether every proper noun survived.</strong> Names, products, drug names, place names. These are the errors that cost the reader the most and the metric the least, which is precisely the finding from the identical-WER study.</p></div>
+      <div class="step"><p><strong>Finally, ask the question this session opened with.</strong> Does this video have an audio description, or does it have a transcript? If it has a transcript, you are conforming at Level A and you should stop describing it as AA.</p></div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Why one minute rather than the whole file.</strong> Because you will actually do one minute, and the error rate you find in it is the honest input to a decision about the other thirty-nine. A review plan that requires reading everything is a review plan nobody runs, and an unrun plan scores zero regardless of how rigorous it looked.</p>
+    </div>
+
+    <div class="scorecard" data-title="Is this video actually compliant, or does it just feel compliant" data-foot="Six rows. Most organisations pass the first two and fail the third.">
+      <div class="sc-row"><div class="sc-q">Captions exist for all prerecorded audio in synchronised media<em>SC 1.2.2, Level A. This is the floor, not the goal.</em></div></div>
+      <div class="sc-row"><div class="sc-q">A human has read the captions against the audio<em>Not spot checked. Read. The fluent inversions survive spot checks.</em></div></div>
+      <div class="sc-row"><div class="sc-q">There is an audio description, not only a transcript<em>The transcript route is Level A only. SC 1.2.5 removes the choice at AA.</em></div></div>
+      <div class="sc-row"><div class="sc-q">Caption durations sit between 40 frames and 6 seconds<em>Automatic captioners break both ends routinely.</em></div></div>
+      <div class="sc-row"><div class="sc-q">Every proper noun in the file has been verified<em>WER weights them like "the". Your reader does not.</em></div></div>
+      <div class="sc-row"><div class="sc-q">Any accuracy figure you quote states what it was measured on<em>And whether it was normalised, which roughly halves it.</em></div></div>
+    </div>
+  </section>
+
+  <!-- ============ PART 5 ============ -->
+  <section class="section" id="part-5">
+    <div class="section-kicker">
+      <span class="klabel">Part 5 · covers the deadline that moved</span>
+      <h2>Four days before it hit, the date changed</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">The DOJ's ADA Title II web rule, 89 FR 31320 of 24 April 2024, adopts WCAG 2.1 Level AA. Everyone who prepared for it prepared for 24 April 2026. On 20 April 2026, four days out, DOJ published an Interim Final Rule extending both dates by a year.</p>
+
+    <table class="clean">
+      <thead>
+        <tr><th>Entity size</th><th>Current deadline</th><th>Has it passed?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Public entities serving 50,000 or more persons</td><td><strong>26 April 2027</strong></td><td>No, roughly 8 months out</td></tr>
+        <tr><td>Under 50,000, and special district governments</td><td><strong>26 April 2028</strong></td><td>No</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>Any material written before April 2026 that cites "April 24, 2026" is now wrong.</strong> That includes a large amount of training content, a large amount of consultancy deck, and probably something currently sitting in your own organisation's compliance folder. It is a live example of why compliance dates get re-verified rather than remembered.</p>
+
+    <div class="callout warn">
+      <p><strong>Two caveats that must travel with this, every time you repeat it.</strong></p>
+      <p>First, <strong>the extension delays only the WCAG technical conformance date. It does not suspend Title II's underlying effective-communication obligations</strong>, which have supported claims for years and are unaffected by any of this. "We have until 2027" is a statement about one rule, not about your exposure.</p>
+      <p>Second, <strong>the eCFR text of 28 CFR 35.200 still shows the original dates.</strong> If you look it up in the CFR you will read the superseded version and believe it. Cite ada.gov.</p>
+    </div>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why this course keeps making you re-check dates yourself<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Session 1 opened with a model retirement. This session closes with a regulatory date that moved with four days' notice. Session 6 will hand you an EU date that a widely reported "delay" did not actually change.</p>
+        <p>The pattern is the point. <strong>In this category, the thing most likely to make you wrong is not a hard concept, it is a fact you learned correctly two years ago.</strong> Nobody sends you a correction. The old number keeps circulating because it is in everyone's slides, and the corrected one is only on the primary source.</p>
+        <p>So the habit this course is really trying to build is small and slightly tedious: before you say a date out loud, open the page it came from. It takes ninety seconds and it is the difference between being current and being confidently out of date.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 5</h2>
+      <span class="tag exercise">40 min</span>
+    </div>
+    <ol>
+      <li><strong>Find your organisation's accessibility statement and read what it claims.</strong> Look for the word "transcript" and the words "Level AA" in the same document. If both are there and audio description is not mentioned, you have found a Level A claim presented as AA compliance. This takes about five minutes and it is the single most valuable thing on this list.</li>
+      <li><strong>Run the one-minute audit from the build-along on a published video.</strong> Count errors, classify them into harmless, meaning-changing and fabricated. Write down the three numbers. That is your baseline and you did not have one before.</li>
+      <li><strong>Check the SC 1.2.5 wording yourself.</strong> Open W3C's Understanding page for Audio Description (Prerecorded) and find the sentence quoted at the top of this session. Read it in its own context. This is the fact you are most likely to be argued with about, so you want to have seen it.</li>
+      <li><strong>Verify the ADA dates on ada.gov, then look up 28 CFR 35.200 on the eCFR.</strong> Note that the two disagree. That disagreement is the exercise: knowing which source wins is worth more than knowing either date.</li>
+      <li><strong>Ask your caption vendor whether their published WER is normalised.</strong> Send the email. Whatever comes back, you will have learned something about the number, or about the vendor.</li>
+      <li><strong>Optional, and it will change how you read every vendor page:</strong> find three caption accuracy claims online and try to trace each one to a published methodology. Note how many attempts end at another marketing page.</li>
+    </ol>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 4 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Your organisation publishes video with captions and a full transcript, and states that it conforms to WCAG Level AA. What is wrong with that?</p>
+      <button class="qopt" type="button">A · Nothing, because a full text alternative satisfies both 1.2.3 and 1.2.5</button>
+      <button class="qopt" type="button">B · At Level A, SC 1.2.3 lets you choose a text alternative instead of audio description. At Level AA, SC 1.2.5 removes that choice and requires audio description, so this is a Level A claim being presented as AA</button>
+      <button class="qopt" type="button">C · Nothing is wrong, because captions alone satisfy Level AA and the transcript is a bonus</button>
+      <p class="qwhy">W3C states it outright: at Level A authors "do have the choice"; at Level AA "authors must provide an audio description". Every US legal mandate points at Level AA, which is why this is the highest-value sentence in the course. Captions are a separate obligation under SC 1.2.2, and that one is Level A.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · A vendor shows you a 4 percent WER and a research paper shows you an 8 percent WER on the same task. What is the first thing to establish before comparing them?</p>
+      <button class="qopt" type="button">A · Which one used a larger test corpus, since sample size determines reliability</button>
+      <button class="qopt" type="button">B · Which one is more recent, since models improve continuously</button>
+      <button class="qopt" type="button">C · Whether each figure was normalised, because normalisation roughly halves reported WER, from 21.83 percent raw to 10.16 percent fully normalised on the same audio</button>
+      <p class="qwhy">Normalisation strips punctuation and capitalisation before scoring, so it can nearly halve the number. Vendor and research figures are not comparable unless the normalisation is stated, and the FCC requires exactly the punctuation and capitalisation that normalisation discards. Corpus size and recency matter, but neither can rescue two numbers measured on different rules.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Where does the "99 percent caption accuracy standard" come from?</p>
+      <button class="qopt" type="button">A · Nowhere binding. It is industry convention: not in WCAG, not in the FCC rules, not in DCMP. The National Deaf Center states that no standard threshold exists at all</button>
+      <button class="qopt" type="button">B · The FCC caption quality rules, which set 99 percent as the minimum for broadcast</button>
+      <button class="qopt" type="button">C · WCAG 2.1 Level AA, which defines it as the pass mark for synchronised media</button>
+      <p class="qwhy">NDC is explicit: "there is no standard threshold that would dictate when ASR captions are accurate enough". What is defensible from the same source is that at 60-70 percent accuracy, communication cannot reasonably be assumed equivalent. And WER is a weak proxy anyway: given identical WER, DHH participants systematically preferred one output over another, because WER weights "the" and the speaker's name the same.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL COVERAGE ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">WCAG 2.2, SC 1.2.2, 1.2.3 and 1.2.5, plus the W3C Understanding page</span><span class="note">The Level A choice, the Level AA requirement, and the verbatim sentence that closes the transcript route. Guideline 1.2 is unchanged from WCAG 2.0</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Kuhn, Kersken, Reuter, Egger and Zimmermann, ACM TACCESS 16(4)</span><span class="note">11 services, 221 hours, 3,840 transcriptions. Per-service averages, the 7.0 percent overall, the 0 to 53.8 percent per-file range, streaming versus batch, custom vocabularies, and normalisation</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Koenecke et al., PNAS 2020, 117(14), and the AAVE follow-up</span><span class="note">Five systems, 73 Black and 42 white speakers, 19.8 hours, the 0.35 against 0.19 average, the per-vendor table, and the 206-phrase controlled replication</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Koenecke et al., "Careless Whisper", ACM FAccT 2024</span><span class="note">Roughly 1 percent of transcriptions containing entirely hallucinated phrases, and about 38 percent of those carrying explicit harms</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">DCMP Captioning Key, and the National Deaf Center</span><span class="note">130, 140 and 160 wpm by level, 40 frames minimum, 6 seconds maximum, two lines preferred. NDC on the absence of any threshold and the 60-70 percent statement</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Kafle and Huenerfauth, ASSETS '17</span><span class="note">30 DHH participants, identical-WER outputs, systematic preference for the word-importance-weighted result</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">ADA Title II web rule and the April 2026 Interim Final Rule</span><span class="note">26 April 2027 and 26 April 2028, the four-day margin, the stale eCFR text, and the effective-communication duty the extension does not touch</span></div>
+      <div class="covered-row"><span class="status pill amber">✕</span><span class="name">All 3Play Media accuracy figures, deliberately excluded</span><span class="note">The 99.6 percent measured claim and the 84.7 to 94.4 percent competitor range are marketing pages with no published methodology. Only its "2.5 errors in every 8-word sentence" arithmetic is used, as a teaching device</span></div>
+      <div class="covered-row"><span class="status pill amber">✕</span><span class="name">"32 characters per line, per DCMP" and "comprehension drops below 95 percent"</span><span class="note">The first is absent from the Captioning Key entirely and comes from the CEA-608 grid. The second has no peer-reviewed source and its citation trail ends at a marketing redirect</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Physics failure modes, drift, dubbing and disclosure law</span><span class="note">Not covered here by design. Sessions 5 and 6 take each one to primary sources</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Full source map with every URL: <span class="mono">materials/official-course-map.md</span> in this repo, including a quarantine list of what is deliberately not stated.</p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 4 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Level A lets you choose. Level AA does not</b><span>SC 1.2.3 accepts a transcript instead of audio description. SC 1.2.5 requires the audio description. Every US mandate points at AA.</span></div>
+      <div class="cheat-item"><b>The average hides the file that matters</b><span>7.0 percent overall across 11 services, and a per-file range of 0 to 53.8 percent. Ask for the distribution, not the mean.</span></div>
+      <div class="cheat-item"><b>Normalisation roughly halves the number</b><span>21.83 percent raw became 10.16 percent normalised on the same audio. Two WER figures are not comparable until you know the rules.</span></div>
+      <div class="cheat-item"><b>The gap holds across every vendor tested</b><span>0.35 against 0.19 on average, and present in all five. The 206 identical phrases close the "different words" objection.</span></div>
+      <div class="cheat-item"><b>99 percent is convention, not law</b><span>Not in WCAG, the FCC rules or DCMP. NDC: no standard threshold exists. What is defensible is that 60-70 percent is not effective communication.</span></div>
+      <div class="cheat-item"><b>The ADA dates moved with four days to spare</b><span>26 April 2027 and 26 April 2028. Cite ada.gov, because the eCFR still shows the old text, and the extension delays conformance only.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>Tonight was about the obligations that already exist and the measurements that already exist to test them against. Session 5 turns the same instrument on the generated video itself: physics benchmarks where the best model scores 29.5 out of 100, identity and wardrobe drift as formally scored defects, the lip-sync metrics that make dubbing comparable, and one widely quoted iteration cost that nobody has actually audited.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 4 of 6 · learn-ai-media-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="../index.html">← All sessions</a> &nbsp;·&nbsp; <a href="05-how-it-fails-measured.html">Next: How it fails, measured →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

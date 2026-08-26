@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 5 of 6. Generated video looks better than it understands. Physics-IQ puts the best model at 29.5 out of 100.0, drift has formal scores and named dimensions, and the one big iteration number in circulation does not survive contact with its own footnote.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="How it fails, measured - learn ai media with phoebe">
+<meta property="og:description" content="Session 5 of 6. Physics-IQ, VideoPhy-2, VBench-2.0 and the isochrony problem. Visual realism does not imply physical understanding.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/courses/05-how-it-fails-measured.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How it fails, measured - learn ai media with phoebe">
+<meta name="twitter:description" content="Session 5 of 6. The failure modes of generated video, with numbers rather than vibes.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 5 · How it fails, measured - learn ai media with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=2">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-media-with-phoebe</a> / Session 5 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI Media with Phoebe · Session 5 of 6</div>
+    <h1>How it <span class="accent">fails</span>, measured</h1>
+    <p class="sub">Generated video has got very good at looking right and has not got noticeably better at being right. Those are two different capabilities, they are measured separately, and the numbers are further apart than anybody selling you a model would like. Tonight you read the actual benchmark scores, learn the names of the failure modes so you can ask for them by name, and then meet the one number in this field that you should refuse to repeat.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 Core session</span>
+      <span class="chip audience">Anyone commissioning, approving or paying for generated video</span>
+      <span class="chip audience">No maths beyond reading a bar chart</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:5">3-24 · What the benchmarks actually measure</span>
+      <span class="a3" style="flex:4">24-40 · Build-along: score a clip yourself</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">The sentence the whole session hangs on</span>
+      <h2>Visual realism does not imply physical understanding</h2>
+      <span class="tag concept">3 min live</span>
+    </div>
+    <p class="lede">You have spent four sessions learning what these tools cost and where they stop. Tonight is different. Tonight is about the thing they do wrong while appearing to do it right, which is the failure mode that survives review, gets approved, ships, and then gets noticed by a viewer.</p>
+
+    <div class="callout warn">
+      <p><strong>Google DeepMind built a benchmark called Physics-IQ to test whether video models understand what happens next.</strong> Real-world behaviour scores 100.0. The best model in the set scored <strong>29.5</strong>. The paper's own conclusion is that physical understanding in these models is <strong>"severely limited, and unrelated to visual realism"</strong>.</p>
+      <p>Read that last clause twice. Not "correlated but lagging". <strong>Unrelated.</strong> The model that produced the most convincing-looking footage in the set scored 10.0, near the bottom. So the quality signal you have been trained your whole life to trust, does it look real, carries no information at all about whether the physics is right.</p>
+    </div>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Why this is the session that changes how you review<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Every other failure you have met in this course announces itself. A tool refuses your language, a clip caps at eight seconds, a caption is visibly garbled. You find those by trying.</p>
+        <p>Physical error does not announce itself. A liquid that pours slightly wrong, a cloth that settles slightly wrong, a shadow that moves before the thing casting it, all of these render at full fidelity, in perfect focus, with beautiful colour. Your eye says fine. Your eye is not the instrument being tested.</p>
+        <p>So the practical shift tonight is this. <strong>Stop reviewing generated video by watching it once and asking whether it looks good.</strong> Start reviewing it against a named list of failure modes, because the research community has already built that list and given every item on it a score. You are going to learn the names, because a named defect can be asked for, tracked and rejected. An unnamed one just gets waved through with "something feels off".</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 1 ============ -->
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers what the physics benchmarks found</span>
+      <h2>The gap is not a rounding error</h2>
+      <span class="tag concept">7 min live</span>
+    </div>
+    <p class="lede">Here is Physics-IQ in full. Six models, one benchmark, and a ceiling drawn where real-world physical behaviour sits. Look at the empty space to the right of every bar before you read any label.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A bar chart of Physics-IQ scores against a real-world ceiling of 100. VideoPoet scores 29.5, Lumiere 23.0, Runway Gen 3 22.8, Stable Video Diffusion 14.8, Pika 1.0 13.0 and Sora 10.0, leaving most of the chart empty">
+        <style>
+          .p1L { font: 700 12px Inter, sans-serif; fill: #0F172A; }
+          .p1V { font: 700 12px Inter, sans-serif; fill: #0F172A; }
+          .p1W { font: 700 13px Inter, sans-serif; fill: #fff; }
+          .p1N { font: 400 11px Inter, sans-serif; fill: #6B7280; }
+          .p1T { font: 400 10px Inter, sans-serif; fill: #9CA3AF; }
+          .p1F { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+          .p1B { font: 700 12px Inter, sans-serif; fill: #991B1B; }
+        </style>
+
+        <line x1="800" y1="34" x2="800" y2="318" stroke="#991B1B" stroke-width="1.4" stroke-dasharray="4 4"/>
+
+        <text class="p1L" x="228" y="58" text-anchor="end">the real world</text>
+        <rect x="240" y="40" width="560" height="26" rx="5" fill="#0F172A"/>
+        <text class="p1W" x="788" y="58" text-anchor="end">100.0</text>
+
+        <rect x="240" y="80" width="560" height="26" rx="5" fill="#F1F5F9"/>
+        <text class="p1L" x="228" y="98" text-anchor="end">VideoPoet</text>
+        <rect x="240" y="80" width="165" height="26" rx="5" fill="#475569"/>
+        <text class="p1V" x="415" y="98">29.5</text>
+        <text class="p1N" x="460" y="98">the best score any model in the set recorded</text>
+
+        <rect x="240" y="120" width="560" height="26" rx="5" fill="#F1F5F9"/>
+        <text class="p1L" x="228" y="138" text-anchor="end">Lumiere</text>
+        <rect x="240" y="120" width="129" height="26" rx="5" fill="#475569"/>
+        <text class="p1V" x="379" y="138">23.0</text>
+
+        <rect x="240" y="160" width="560" height="26" rx="5" fill="#F1F5F9"/>
+        <text class="p1L" x="228" y="178" text-anchor="end">Runway Gen 3</text>
+        <rect x="240" y="160" width="128" height="26" rx="5" fill="#475569"/>
+        <text class="p1V" x="378" y="178">22.8</text>
+
+        <rect x="240" y="200" width="560" height="26" rx="5" fill="#F1F5F9"/>
+        <text class="p1L" x="228" y="218" text-anchor="end">Stable Video Diffusion</text>
+        <rect x="240" y="200" width="83" height="26" rx="5" fill="#64748B"/>
+        <text class="p1V" x="333" y="218">14.8</text>
+
+        <rect x="240" y="240" width="560" height="26" rx="5" fill="#F1F5F9"/>
+        <text class="p1L" x="228" y="258" text-anchor="end">Pika 1.0</text>
+        <rect x="240" y="240" width="73" height="26" rx="5" fill="#64748B"/>
+        <text class="p1V" x="323" y="258">13.0</text>
+
+        <rect x="240" y="280" width="560" height="26" rx="5" fill="#F1F5F9"/>
+        <text class="p1L" x="228" y="298" text-anchor="end">Sora</text>
+        <rect x="240" y="280" width="56" height="26" rx="5" fill="#64748B"/>
+        <text class="p1V" x="306" y="298">10.0</text>
+        <text class="p1B" x="350" y="298">last place, and the most realistic looking of the six</text>
+
+        <text class="p1T" x="240" y="336" text-anchor="middle">0</text>
+        <text class="p1T" x="380" y="336" text-anchor="middle">25</text>
+        <text class="p1T" x="520" y="336" text-anchor="middle">50</text>
+        <text class="p1T" x="660" y="336" text-anchor="middle">75</text>
+        <text class="p1T" x="800" y="336" text-anchor="middle">100</text>
+
+        <line x1="60" y1="352" x2="820" y2="352" stroke="#E5E7EB" stroke-width="1"/>
+        <text class="p1F" x="60" y="378">Physics-IQ, Google DeepMind. Each score is a percentage of real-world physical behaviour.</text>
+        <text class="p1L" x="60" y="402">The finding: physical understanding is severely limited, and unrelated to visual realism.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the empty space to the right of each bar is the part nobody puts in a launch video</figcaption>
+    </figure>
+
+    <p>Take the ranking seriously for a second, because it is doing something unusual. <strong>Sora came last.</strong> Sora was, at the time of this benchmark, the model people pointed at when they wanted to show how far generated video had come. It produced the footage that went round the internet. And on the question of whether it knows what happens next, it scored 10.0 out of 100.0.</p>
+
+    <p>If realism and physics were even loosely coupled, that could not happen. The fact that it does happen is the finding. <strong>You cannot infer one from the other, in either direction, and every review process built on "watch it and see if it looks right" is measuring the wrong axis.</strong></p>
+
+    <p>A second benchmark, VideoPhy-2, comes at the same question from the other side and lands in the same place. On its hard subset, <strong>the best model achieved 22 percent joint performance</strong>, and the paper singles out where the models come apart: they struggle <strong>"particularly with conservation laws like mass and momentum"</strong>. Which is to say, things appearing, things vanishing, and things moving with an energy nothing gave them.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The 47.7 percent you will meet in a summary somewhere<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>If you go looking for VideoPhy-2 yourself, there is a decent chance the first thing you find is a figure of <strong>47.7 percent</strong> rather than 22. It circulates in aggregator summaries and secondhand write-ups, it is roughly double, and it makes the field look about twice as capable as it is.</p>
+        <p><strong>Use 22 percent.</strong> That is the paper's own statement about the best model on the hard subset. The higher number is not traceable to that claim, and once you have quoted it in a deck you have made your whole argument dependent on somebody else's summarising.</p>
+        <p>This is not a footnote about one benchmark. It is a working habit. In a field where the primary sources are free, public and about eight pages long, quoting a summary of a paper instead of the paper is a choice, and it is the choice that puts wrong numbers into presentations. Session 1 asked you to check the Sora deprecation page with your own eyes. Same instruction, different document.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2 ============ -->
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the failure modes that have formal names</span>
+      <h2>Drift is scored, not shrugged at</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">The most common complaint about generated video is that the person changes partway through. People describe this as glitchiness, as if it were random noise. It is not. It is a set of specific, separately measured dimensions, and it is worth knowing them by name.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four frames of the same generated character in one shot, with three scored dimensions marked below: identity holds for three frames then fails, clothing changes at frame three, and a held object disappears at frame three and returns at frame four">
+        <style>
+          .d1L { font: 700 12px Inter, sans-serif; fill: #0F172A; }
+          .d1A { font: 700 11px Inter, sans-serif; fill: #0F172A; }
+          .d1T { font: 400 10px Inter, sans-serif; fill: #9CA3AF; }
+          .d1F { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+          .d1G { font: 700 14px Inter, sans-serif; fill: #166534; }
+          .d1R { font: 700 14px Inter, sans-serif; fill: #991B1B; }
+        </style>
+
+        <text class="d1L" x="288" y="92" text-anchor="end">the same character,</text>
+        <text class="d1L" x="288" y="110" text-anchor="end">one continuous shot</text>
+
+        <text class="d1T" x="365" y="36" text-anchor="middle">start</text>
+        <text class="d1T" x="505" y="36" text-anchor="middle">+2s</text>
+        <text class="d1T" x="645" y="36" text-anchor="middle">+4s</text>
+        <text class="d1T" x="785" y="36" text-anchor="middle">+6s</text>
+
+        <rect x="300" y="44" width="130" height="110" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.4"/>
+        <circle cx="365" cy="78" r="13" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.4"/>
+        <rect x="347" y="96" width="36" height="40" rx="6" fill="#475569"/>
+        <rect x="395" y="112" width="11" height="16" rx="2" fill="#B45309"/>
+
+        <rect x="440" y="44" width="130" height="110" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.4"/>
+        <circle cx="505" cy="78" r="13" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.4"/>
+        <rect x="487" y="96" width="36" height="40" rx="6" fill="#475569"/>
+        <rect x="535" y="112" width="11" height="16" rx="2" fill="#B45309"/>
+
+        <rect x="580" y="44" width="130" height="110" rx="6" fill="#FEF2F2" stroke="#991B1B" stroke-width="1.4"/>
+        <circle cx="645" cy="78" r="13" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.4"/>
+        <rect x="627" y="96" width="36" height="40" rx="6" fill="#0F766E"/>
+
+        <rect x="720" y="44" width="130" height="110" rx="6" fill="#FEF2F2" stroke="#991B1B" stroke-width="1.4"/>
+        <circle cx="785" cy="76" r="16" fill="#FEF3C7" stroke="#B45309" stroke-width="1.6"/>
+        <rect x="767" y="96" width="36" height="40" rx="6" fill="#0F766E"/>
+        <rect x="815" y="112" width="11" height="16" rx="2" fill="#B45309"/>
+
+        <text class="d1A" x="288" y="205" text-anchor="end">Human Temporal Consistency - Identity</text>
+        <text class="d1G" x="365" y="206" text-anchor="middle">✓</text>
+        <text class="d1G" x="505" y="206" text-anchor="middle">✓</text>
+        <text class="d1G" x="645" y="206" text-anchor="middle">✓</text>
+        <text class="d1R" x="785" y="206" text-anchor="middle">✗</text>
+
+        <text class="d1A" x="288" y="239" text-anchor="end">Human Temporal Consistency - Clothes</text>
+        <text class="d1G" x="365" y="240" text-anchor="middle">✓</text>
+        <text class="d1G" x="505" y="240" text-anchor="middle">✓</text>
+        <text class="d1R" x="645" y="240" text-anchor="middle">✗</text>
+        <text class="d1R" x="785" y="240" text-anchor="middle">✗</text>
+
+        <text class="d1A" x="288" y="273" text-anchor="end">Instance Preservation</text>
+        <text class="d1G" x="365" y="274" text-anchor="middle">✓</text>
+        <text class="d1G" x="505" y="274" text-anchor="middle">✓</text>
+        <text class="d1R" x="645" y="274" text-anchor="middle">✗</text>
+        <text class="d1G" x="785" y="274" text-anchor="middle">✓</text>
+
+        <line x1="60" y1="294" x2="820" y2="294" stroke="#E5E7EB" stroke-width="1"/>
+        <text class="d1F" x="60" y="318">Identity and clothing are scored separately. VBench-2.0 scores 18 dimensions in all.</text>
+        <text class="d1F" x="60" y="342">Complex Plot stays below 12% for every model tested. Dynamic Spatial Relationship below 22%.</text>
+        <text class="d1F" x="60" y="366">Human Anatomy runs 59.72% to 88.58%, so the best model still gets about one in nine wrong.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - three of the eighteen dimensions VBench-2.0 scores, all failing inside one six-second shot</figcaption>
+    </figure>
+
+    <p>The detail worth taking away is that <strong>identity and clothing are scored as two different things.</strong> Somebody sat down, looked at the failure space, and decided that a face becoming a different face and a jacket becoming a different jacket are distinct enough problems to need separate numbers. That tells you how routine both are.</p>
+
+    <p><strong>Instance Preservation</strong> is the third one on the diagram, and it is the objects. A cup in the hand, a sign on a wall, a second person in the background. They are supposed to persist. Sometimes they blink out and come back, which is the thing that makes a shot unusable in a way you cannot fix in the edit.</p>
+
+    <p>Then there are the two numbers on that chart that should decide what you commission at all. <strong>Complex Plot scores below 12 percent for every model tested. Dynamic Spatial Relationship scores below 22 percent for every model tested.</strong> Not the worst model. Every model. If your brief involves a sequence of events with a causal order, or two things moving in a defined relationship to each other, you are asking for the two things nothing in the field currently does.</p>
+
+    <p>And <strong>Human Anatomy ranges from 59.72 to 88.58 percent</strong>. Take the top of that range, the best result anyone posted. Roughly <strong>one generation in nine still comes back anatomically wrong.</strong> That is your realistic reroll rate on a shot with a person in it, from the best model, before anything else has gone wrong.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Turning the dimension names into a review vocabulary<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The reason to memorise the names is not to sound technical. It is that a named defect behaves completely differently inside an organisation from an unnamed one.</p>
+        <p>"Something feels off about shot four" is a matter of taste, and it loses to whoever is more senior in the room. <strong>"Shot four fails clothing consistency at 00:03, her jacket changes colour"</strong> is an observation with a location and a category. It gets fixed, or it gets consciously accepted, and either way somebody made a decision about it.</p>
+        <p>Build yourself a short list and put it on the review template: identity, clothing, instance preservation, anatomy, spatial relationship, plot order. Six items. Watch the clip once per item rather than once in total, which is slower and is the entire trick, because the reason drift ships is that people watch a ten-second clip once and their attention lands on the face.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3 ============ -->
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers where to go for honest limitations</span>
+      <h2>The vendor documents are the worse source</h2>
+      <span class="tag concept">4 min live</span>
+    </div>
+    <p class="lede">You would expect the company that built the model to know its weaknesses best. Right now, in this category, that expectation is simply wrong, and it is worth stating plainly rather than politely.</p>
+
+    <div class="callout warn">
+      <p><strong>OpenAI's Sora 2 System Card contains no technical-limitations section at all.</strong> Not a thin one. None. That was verified by extracting the full seven-page PDF and looking. What it does contain is language pointing in the opposite direction, describing more accurate physics and sharper realism.</p>
+      <p>Meanwhile a public benchmark paper, free to read, scored that same family of models at the bottom of a six-model field on physical understanding. <strong>The honest account of what the tool cannot do exists. It is just not in the document the vendor wrote about the tool.</strong></p>
+    </div>
+
+    <p>Session 3 taught you that the real constraint is always three clicks deeper than the marketing page. This is the harder version of the same lesson: sometimes the constraint is not deeper in the vendor's material, it is <strong>not in the vendor's material at all</strong>, and the only place it exists is a paper by people with no commercial stake in the answer.</p>
+
+    <p>It is worth being fair about the asymmetry, though, because it is not universal. You have already seen counter-examples in this course. Google DeepMind publishes that consistent spoken audio "remains an area of active development". Descript documents that its own filler-word removal is English-only. C2PA writes its own limitations into its security documents. <strong>Candour exists in this field. It is just distributed unevenly, and you have to know which vendors have it before you rely on their docs as your risk register.</strong></p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>A two-source rule you can actually apply<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Practical version, for when you are evaluating any generative tool for real work.</p>
+        <p><strong>Source one: the vendor's technical documentation, not its marketing site.</strong> Docs, help centre, API reference, system card. This gives you the hard operational limits, clip length, resolution, supported languages, regional availability. Vendors are generally accurate about these because they generate support tickets when they are wrong.</p>
+        <p><strong>Source two: the benchmark literature.</strong> This gives you the capability limits, which are the ones that decide whether the output is good enough for your brief. Physics-IQ, VideoPhy-2 and VBench-2.0 are all public, all free, and all more informative about what will go wrong than any vendor page in this category.</p>
+        <p>If a tool has only source one, you know what it will let you do and nothing about how well. That is a perfectly normal situation and it is not a reason to reject the tool. It is a reason to budget for rerolls rather than assuming the first generation ships.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 4 ============ -->
+  <section class="section" id="part-4">
+    <div class="section-kicker">
+      <span class="klabel">Part 4 · covers the failure mode nobody budgets for</span>
+      <h2>Dubbing spends meaning to buy timing</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">AI dubbing is sold as a translation problem with a voice attached. It is not. It is a scheduling problem, and the schedule was fixed the moment somebody finished the picture edit.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A fixed-length video track with an English source audio track fitting inside it, and a faithful translation thirty percent longer whose final phrase runs past the end of the picture">
+        <style>
+          .i1L { font: 700 11px Inter, sans-serif; fill: #0F172A; }
+          .i1W { font: 700 12px Inter, sans-serif; fill: #fff; }
+          .i1M { font: 700 11px Inter, sans-serif; fill: #991B1B; }
+          .i1F { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+        </style>
+
+        <line x1="700" y1="36" x2="700" y2="206" stroke="#991B1B" stroke-width="1.4" stroke-dasharray="4 4"/>
+        <text class="i1M" x="700" y="28" text-anchor="middle">end of the shot</text>
+
+        <text class="i1L" x="128" y="65" text-anchor="end">The shot (fixed)</text>
+        <rect x="140" y="44" width="560" height="34" rx="4" fill="#334155"/>
+        <text class="i1W" x="420" y="66" text-anchor="middle">the picture cannot get longer</text>
+
+        <text class="i1L" x="128" y="119" text-anchor="end">English source</text>
+        <rect x="140" y="100" width="100" height="30" rx="3" fill="#475569"/>
+        <rect x="240" y="100" width="30" height="30" rx="3" fill="#E2E8F0"/>
+        <rect x="270" y="100" width="130" height="30" rx="3" fill="#475569"/>
+        <rect x="400" y="100" width="30" height="30" rx="3" fill="#E2E8F0"/>
+        <rect x="430" y="100" width="130" height="30" rx="3" fill="#475569"/>
+        <rect x="560" y="100" width="30" height="30" rx="3" fill="#E2E8F0"/>
+        <rect x="590" y="100" width="110" height="30" rx="3" fill="#475569"/>
+
+        <text class="i1L" x="128" y="175" text-anchor="end">Faithful dub,</text>
+        <text class="i1L" x="128" y="191" text-anchor="end">30% longer</text>
+        <rect x="140" y="160" width="130" height="30" rx="3" fill="#475569"/>
+        <rect x="270" y="160" width="39" height="30" rx="3" fill="#E2E8F0"/>
+        <rect x="309" y="160" width="169" height="30" rx="3" fill="#475569"/>
+        <rect x="478" y="160" width="39" height="30" rx="3" fill="#E2E8F0"/>
+        <rect x="517" y="160" width="169" height="30" rx="3" fill="#475569"/>
+        <rect x="686" y="160" width="14" height="30" rx="3" fill="#E2E8F0"/>
+        <rect x="700" y="160" width="25" height="30" rx="3" fill="#FEE2E2"/>
+        <rect x="725" y="160" width="143" height="30" rx="3" fill="#FCA5A5" stroke="#991B1B" stroke-width="1.4"/>
+
+        <text class="i1M" x="868" y="214" text-anchor="end">this last phrase runs past the end of the picture</text>
+
+        <line x1="60" y1="248" x2="820" y2="248" stroke="#E5E7EB" stroke-width="1"/>
+        <text class="i1F" x="60" y="274">Three options, no fourth: speed up delivery, cut content, or let sync break.</text>
+        <text class="i1F" x="60" y="298">Isochrony-aware dubbing must transfer the content and the speech-pause structure.</text>
+        <text class="i1F" x="60" y="322">Lip sync is scored with LSE-D (lower is better) and LSE-C (higher is better).</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the dark blocks are speech, the pale ones are pauses, and both have to land in the same places</figcaption>
+    </figure>
+
+    <p>The formal statement of the problem, from the isochrony-aware dubbing work, is that dubbing a spoken sentence requires transferring <strong>"the content as well as the speech-pause structure of the source into the target language"</strong>. Two constraints, not one. It is not enough for the words to mean the same thing. The gaps between them have to fall in the same places, because a mouth on screen is opening and closing on the original schedule.</p>
+
+    <p><strong>Translation length is not free.</strong> Some language pairs run consistently longer than their source, and a faithful translation that comes out 30 percent longer has nowhere to go. The picture is finished. So you get three moves and there is no fourth: <strong>speed the delivery up</strong> until it sounds hurried, <strong>cut content</strong> until it no longer says what the original said, or <strong>let sync break</strong> and watch a mouth stop moving while the voice carries on.</p>
+
+    <p>Every AI dubbing product makes that choice for you. Most of them do not tell you which one they made. That is the question to ask in the demo, and it is a much better question than asking how many languages are supported.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>LSE-D and LSE-C, and why comparable numbers are rare<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Lip sync quality has two standard measurements. <strong>LSE-D</strong> is a distance, so lower is better. <strong>LSE-C</strong> is a confidence, so higher is better. You will see them reported as a pair.</p>
+        <p>The useful property is where they come from: both are produced by a <strong>frozen</strong> discriminator, a fixed pre-trained model that nobody retunes per system. That freezing is what makes them comparable across different tools, because everybody is being marked by the same marker.</p>
+        <p>Hold that up against session 4. Word error rate is a perfectly good measurement that becomes useless the moment two parties normalise their transcripts differently, and vendor WER figures are routinely not comparable for exactly that reason. LSE-D and LSE-C avoid that trap by construction. <strong>When you are handed a metric, the first question is not what it scored, it is whether anything about how it was computed is allowed to vary between the things being compared.</strong></p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 5 ============ -->
+  <section class="section" id="part-5">
+    <div class="section-kicker">
+      <span class="klabel">Part 5 · covers the number you should refuse to repeat</span>
+      <h2>Nobody has measured what a finished shot costs</h2>
+      <span class="tag concept">4 min live</span>
+    </div>
+    <p class="lede">This is the weakest evidence on the page, and it gets a section anyway, because how you handle a weak number in public says more about you than any strong one.</p>
+
+    <p>The question everybody asks, and it is the right question, is how many generations it takes to get one shot you can actually use. It decides your budget, your timeline and whether the project is viable. So you would think somebody would have measured it.</p>
+
+    <div class="callout tip">
+      <p><strong>The one large attributable figure in circulation.</strong> Coca-Cola's 2025 AI holiday advert was reported at roughly <strong>70,000 AI-generated clips</strong> for a spot of about <strong>20 shots</strong>. That figure comes from <strong>the studio's own stated clip count</strong>, in its production credits. It is not an audit, and nothing anywhere defines what counts as a "clip".</p>
+      <p>The article reporting it questions its own number and offers three different readings: first-frame image generations, machine-selected pipeline iterations, or every micro-variation, crop and version produced along the way. Those three readings differ by orders of magnitude.</p>
+    </div>
+
+    <p>Now watch what happens when somebody tidies it up. Seventy thousand divided by twenty is three and a half thousand, and <strong>"3,500 generations per usable shot"</strong> is a wonderfully quotable line. It will get into a deck. It will get repeated. It sounds like a measurement.</p>
+
+    <p><strong>It is arithmetic on an undefined denominator.</strong> If a "clip" is a first-frame still, the ratio means one thing. If it is every crop and version, it means something else entirely. Dividing a number you cannot define by a number you can does not produce a rate, it produces a decimal that inherits all the ambiguity of its numerator and hides it behind a colon.</p>
+
+    <p>So here is the honest position, and I want you to be able to say it out loud in a meeting without flinching. <strong>No independent audit of generation-to-usable-shot ratios has been published.</strong> Not a bad one, not a small one. None. Anyone quoting you a tidy ratio is quoting either this arithmetic or a vendor's content marketing.</p>
+
+    <div class="callout warn">
+      <p><strong>Teaching the absence is the lesson.</strong> This session has given you real numbers all the way through: 29.5, 22 percent, 12 percent, 88.58 percent. Every one of them is traceable to a published paper. The iteration cost is the one place where the honest answer is that the measurement does not exist, and it would have been very easy to put a plausible number here instead. <strong>A course that never says "unknown" is not being careful, it is being confident, and those are different things.</strong></p>
+    </div>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What to do when you need a number and there isn't one<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>"Nobody has measured it" does not get you out of planning a project. So measure it yourself, at your own scale, and be clear about what you have.</p>
+        <p><strong>Log every generation for one real piece of work.</strong> Prompt, model, cost, and one of three outcomes: used, rerolled, abandoned. Count the rerolls per shot that shipped. That gives you a ratio which is honest for your brief, your model and your reviewers, and it is worth more to you than any industry figure because those three things are what actually drive it.</p>
+        <p>Then say what it is when you present it. <strong>"On our last project, at our quality bar, it was eleven generations per shot"</strong> is defensible, useful and cannot be argued with. "The industry average is 3,500 to 1" is none of those things, and the first person who asks where it came from will end the conversation.</p>
+        <p>Notice which of those two sentences is more specific. Owning a small measured number beats borrowing a large unmeasured one, and this holds far outside video.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ BUILD ALONG ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Score a clip against the named dimensions</h2>
+      <span class="tag demo">★ 16 min · everyone builds</span>
+    </div>
+    <p class="lede">Bring any generated clip with a person in it, yours or a public one. You are going to review it the slow way, once per dimension, and find things you did not see the first time. Work through the steps in order.</p>
+
+    <div class="steps">
+      <div class="step"><p><strong>Watch it once, normally, and write one sentence about whether it is good.</strong> Keep that sentence. It is your control. At the end you will compare it against what six passes actually turned up, and the gap is the point of the exercise.</p></div>
+      <div class="step"><p><strong>Pass one, identity.</strong> Watch the face only. Ignore everything else in the frame. Note the timecode of any moment the face becomes a slightly different face. This is Human Temporal Consistency for Identity, and it is scored separately from the next one for a reason.</p></div>
+      <div class="step"><p><strong>Pass two, clothing.</strong> Same clip, watch the wardrobe only. Collar shape, colour, buttons, texture. The wardrobe changing mid-shot is a formally named defect, not a quirk, and it is the one people most often talk themselves out of noticing.</p></div>
+      <div class="step"><p><strong>Pass three, instance preservation.</strong> Pick one object that is not the subject: a cup, a sign, a background figure. Track only that. Does it persist for the whole clip, or does it blink out and return?</p></div>
+      <div class="step"><p><strong>Pass four, anatomy.</strong> Hands, joints, the number of things there should be a certain number of. Recall the range: the best model tested scores 88.58 percent, so about one clip in nine is wrong here even at the top of the field. If you find nothing, you may have the good one.</p></div>
+      <div class="step"><p><strong>Pass five, physics, and this is the hard one.</strong> Pick one thing that moves. A liquid, a garment, hair, a shadow, something falling. Ask only whether what happened next is what would have happened. Do not ask whether it looks real. It does look real. That is the entire problem, and Physics-IQ is the reason you are being asked to separate the two questions.</p></div>
+      <div class="step"><p><strong>Pass six, spatial relationship and plot.</strong> If two things move in relation to each other, or events happen in a required order, check them. Below 22 percent and below 12 percent respectively, across every model tested. Expect to find something.</p></div>
+      <div class="step"><p><strong>Now reread your control sentence.</strong> Count the defects you listed against what you said after one watch. That difference is why review templates exist, and it is the artefact you take back to work tomorrow.</p></div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Why one pass per dimension rather than one careful watch.</strong> Attention is not divisible. Told to look at everything, you look at the face, because you are a human being and that is what human beings do. Six deliberately narrow passes on a ten-second clip take under two minutes in total and find things that twenty minutes of general staring does not.</p>
+    </div>
+
+    <div class="scorecard" data-title="Before you approve a generated shot" data-foot="Six rows. Run them one at a time, not all at once.">
+      <div class="sc-row"><div class="sc-q">Identity holds for the whole shot<em>Watched on its own pass, face only.</em></div></div>
+      <div class="sc-row"><div class="sc-q">Clothing holds for the whole shot<em>Scored separately from identity, for good reason.</em></div></div>
+      <div class="sc-row"><div class="sc-q">Every object that should persist, persists<em>Instance preservation. Pick a non-subject object and track it.</em></div></div>
+      <div class="sc-row"><div class="sc-q">Anatomy checked, not assumed<em>Roughly one in nine is wrong even from the best scoring model.</em></div></div>
+      <div class="sc-row"><div class="sc-q">One moving thing checked for physics, not for realism<em>They are unrelated. That is the finding of the whole session.</em></div></div>
+      <div class="sc-row"><div class="sc-q">No tidy iteration ratio appears anywhere in the write-up<em>No independent audit exists. Say so, or use your own logged count.</em></div></div>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 6</h2>
+      <span class="tag exercise">40 min</span>
+    </div>
+    <ol>
+      <li><strong>Open the Physics-IQ paper and find the score table yourself.</strong> Confirm 29.5 at the top and the ceiling at 100.0 with your own eyes. Then find the sentence containing "unrelated to visual realism", and copy it out by hand. You will use it in an argument within a month.</li>
+      <li><strong>Search for VideoPhy-2 and count how many of the first ten results state 22 percent.</strong> Note how many give the higher aggregator figure instead, and how many cite the paper rather than each other. This takes ten minutes and it will change how you treat summaries permanently.</li>
+      <li><strong>Run the six-pass review on a clip somebody else made and approved.</strong> A brand advert, a product launch, anything published. Find at least one named defect that shipped. The point is not to be smug about it, it is to see that the review gap is industry-wide rather than personal.</li>
+      <li><strong>Find the technical-limitations section of a system card for any generative video model you use.</strong> If there is not one, write down that fact, with the document name and the date you checked. That absence is a finding, and it belongs in your risk register rather than in your assumptions.</li>
+      <li><strong>Start the generation log.</strong> Prompt, model, cost, and one of used, rerolled, abandoned. One project is enough. In three months you will own the only iteration number in the room that anybody can defend.</li>
+    </ol>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 5 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · Physics-IQ scores six video models against a real-world ceiling of 100.0. What did it find?</p>
+      <button class="qopt" type="button">A · The models that look most realistic also score highest, so visual quality is a reasonable proxy for physical accuracy</button>
+      <button class="qopt" type="button">B · Every model cleared 50, so the remaining gap is a matter of polish rather than capability</button>
+      <button class="qopt" type="button">C · The best model reached 29.5, and Sora, one of the most realistic looking of the set, came last at 10.0</button>
+      <p class="qwhy">The paper's own wording is that physical understanding is "severely limited, and unrelated to visual realism". Unrelated, not lagging. The most convincing-looking model in the set scored lowest, which is exactly what rules out using realism as a proxy.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · VideoPhy-2 reports the best model's joint performance on its hard subset. Which number do you use, and why?</p>
+      <button class="qopt" type="button">A · 22 percent, because that is the paper's own statement; the 47.7 percent figure circulating in aggregator summaries is not reliable</button>
+      <button class="qopt" type="button">B · 47.7 percent, because it appears in more places and is therefore better corroborated</button>
+      <button class="qopt" type="button">C · Either, since both refer to the same benchmark and the difference is within normal variation</button>
+      <p class="qwhy">Repetition is not corroboration. The higher figure circulates in secondhand summaries and roughly doubles the field's apparent capability. The paper also names where models break down: conservation laws like mass and momentum.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">3 · A client asks how many generations it takes to produce one usable shot. What is the honest answer?</p>
+      <button class="qopt" type="button">A · About 3,500, which is Coca-Cola's roughly 70,000 clips divided by its roughly 20 shots</button>
+      <button class="qopt" type="button">B · Nobody knows, because no independent audit has been published, and the one large figure is the studio's own stated clip count with no definition of what a clip is</button>
+      <button class="qopt" type="button">C · Around three, which is the widely used industry planning figure</button>
+      <p class="qwhy">Option A is arithmetic on an undefined denominator: the source article itself offers three incompatible readings of what a "clip" was. Option C traces back to vendor content marketing with no underlying study. The measurement does not exist, and the right move is to log your own.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL COVERAGE ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Physics-IQ, Google DeepMind</span><span class="note">All six scores against the 100.0 real-world ceiling, and the paper's own finding that physical understanding is severely limited and unrelated to visual realism</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">VideoPhy-2</span><span class="note">22 percent best joint performance on the hard subset, and the conservation-law failures. The circulating 47.7 percent figure is named and excluded</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">VBench-2.0</span><span class="note">Identity and Clothes as separately scored dimensions of 18, Instance Preservation, Complex Plot below 12 percent, Dynamic Spatial Relationship below 22 percent, Human Anatomy 59.72 to 88.58 percent</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The Sora 2 System Card, checked rather than assumed</span><span class="note">No technical-limitations section, verified by full extraction of the seven-page PDF, alongside claims pointing the opposite way</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Isochrony-aware dubbing, and LSE-D with LSE-C</span><span class="note">Content plus speech-pause structure as a joint constraint, the three-way trade when a translation runs longer, and why a frozen discriminator makes lip-sync scores comparable</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">The iteration cost, deliberately left unquantified</span><span class="note">Only the studio's own stated count is given, ~70,000 clips for a ~20-shot spot, with "clip" undefined and three alternative readings on record. No generations-per-usable-shot ratio is stated anywhere on this page, because no independent audit has been published and inventing one would undo everything else here</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Disclosure, provenance and the law</span><span class="note">Not covered here by design. Session 6 takes the EU AI Act, C2PA and the platform rules to primary sources</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Full source map with every URL: <span class="mono">materials/official-course-map.md</span> in this repo, including a quarantine list of what is deliberately not stated.</p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 5 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Realism tells you nothing about physics</b><span>Best Physics-IQ score 29.5 out of 100.0. Sora, the most realistic looking, came last at 10.0.</span></div>
+      <div class="cheat-item"><b>Use 22 percent, not 47.7</b><span>VideoPhy-2's best joint performance on the hard subset. The higher figure lives in aggregator summaries.</span></div>
+      <div class="cheat-item"><b>Identity and clothing are scored separately</b><span>Two of VBench-2.0's 18 dimensions. The jacket changing mid-shot has a name and a number.</span></div>
+      <div class="cheat-item"><b>One in nine, from the best model</b><span>Human Anatomy tops out at 88.58 percent. Budget rerolls on any shot with a person in it.</span></div>
+      <div class="cheat-item"><b>Dubbing has three moves and no fourth</b><span>Speed up delivery, cut content, or break sync. Ask any vendor which one they picked.</span></div>
+      <div class="cheat-item"><b>The iteration ratio does not exist</b><span>No independent audit published. Log your own generations and quote that instead.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>Tonight was about what the output gets wrong. Session 6 is about what you owe the viewer once you ship it anyway: EU AI Act Article 50, in force since 2 August 2026 with a marking deadline in December, what a C2PA Content Credential proves and what its own security documents say it cannot, and the four platform disclosure regimes that all use different trigger words.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 5 of 6 · learn-ai-media-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="../index.html">← All sessions</a> &nbsp;·&nbsp; <a href="06-say-it-was-made-with-ai.html">Next: Say it was made with AI →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

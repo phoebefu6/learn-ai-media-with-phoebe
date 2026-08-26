@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 2 of 6. Every AI video model in this category makes a few seconds at a time. Veo 3.1 stops at 8, Gemini Omni at 10, Sora at 20. Real per-second prices, real clip caps, and why a one-minute video is an assembly problem rather than a generation problem.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="What the tools cost - learn ai media with phoebe">
+<meta property="og:description" content="Session 2 of 6. Per-second pricing for Sora, Veo 3.1, Gemini Omni, Runway, ElevenLabs and Descript, and the clip-length cap that matters more than any of it.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/courses/02-what-the-tools-cost.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What the tools cost - learn ai media with phoebe">
+<meta name="twitter:description" content="Session 2 of 6. What each second actually costs, and why clip length is the constraint that decides everything.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 2 · What the tools cost - learn ai media with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=2">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-media-with-phoebe</a> / Session 2 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI Media with Phoebe · Session 2 of 6</div>
+    <h1>What the tools <span class="accent">cost</span></h1>
+    <p class="sub">Every vendor in this category sells you a price per second. None of them lead with the number that actually decides what you can make. Veo 3.1 stops at 8 seconds. Gemini Omni stops at 10. Sora stops at 20, and stops entirely on 24 September 2026. Tonight you price a one-minute video honestly, and discover that the pricing was never the hard part.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 Easy</span>
+      <span class="chip audience">Anyone about to pick a tool or sign off a budget</span>
+      <span class="chip audience">No maths beyond multiplication</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-20 · What each model actually produces</span>
+      <span class="a3" style="flex:4">20-38 · Price your own sixty seconds</span>
+      <span class="a4" style="flex:1">38-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">The thesis of this session</span>
+      <h2>Length is the constraint. Price is the consequence.</h2>
+      <span class="tag concept">3 min live</span>
+    </div>
+    <p class="lede">You will be shown a table of dollars per second and asked to choose. That is the wrong first question. Ask what the model produces in one request, because that number decides whether your video can be made at all.</p>
+
+    <div class="callout warn">
+      <p><strong>No model in this category generates a minute.</strong> Veo 3.1 and both its cheaper siblings accept exactly three lengths: 4, 6 or 8 seconds. Gemini Omni Flash runs 3 to 10 seconds. Sora 2 does 16 or 20. Runway's Aleph 2 works with up to 30 seconds of 1080p video, and that is editing footage you already have rather than generating new footage.</p>
+      <p>So anything longer than about ten seconds is <strong>an assembly problem, not a generation problem</strong>. You are not buying a video. You are buying fragments and the job of joining them, and the join count is set by the clip cap, not by the plan you chose.</p>
+    </div>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Why this session leads with length rather than price<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Price is easy to compare and easy to change. A vendor can halve it next quarter and frequently does. The clip cap is a property of the model architecture, it has barely moved in two generations, and it is the thing your production plan has to bend around.</p>
+        <p>Watch what it controls. A 60 second video built on Veo 3.1 needs <strong>8 generations and 7 joins</strong>. The same video built on Sora 2 needs 3 generations and 2 joins. Those joins are where the light shifts, the jacket changes colour and the camera move stops matching, and session 5 shows you the benchmark scores for exactly those failures. Nothing on any pricing page mentions them.</p>
+        <p>One more reason. Every figure on this page is a <strong>first-pass price</strong>: the cost of generating each second once. Nobody generates once. Session 5 covers what is and is not known about iteration counts, and the honest answer is that no independent audit exists. Treat everything below as a floor.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 1 ============ -->
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers what one request actually returns</span>
+      <h2>Everything here is short, and shorter than you think</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Put the four caps against a target most people would call modest. One minute. Nothing in the category reaches it, and only one of them gets a third of the way.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A bar chart comparing maximum clip length for Sora 2 at 20 seconds, Aleph 2 at 30 seconds of editing, Gemini Omni Flash at 10 seconds and Veo 3.1 at 8 seconds, against a 60 second target that none of them reach">
+        <style>
+          .f1L { font: 700 12px Inter, sans-serif; fill: #1F1218; }
+          .f1V { font: 700 13px Inter, sans-serif; fill: #fff; }
+          .f1N { font: 400 12px Inter, sans-serif; fill: #79616C; }
+          .f1B { font: 400 12px Inter, sans-serif; fill: #1F1218; }
+        </style>
+
+        <text class="f1L" x="196" y="48" text-anchor="end">the video you want</text>
+        <rect x="208" y="30" width="600" height="26" rx="5" fill="#FFFFFF" stroke="#79616C" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <text class="f1V" x="508" y="48" text-anchor="middle" fill="#1F1218">60s</text>
+
+        <text class="f1L" x="196" y="94" text-anchor="end">Aleph 2, edit not generate</text>
+        <rect x="208" y="76" width="300" height="26" rx="5" fill="#C4B5C7"/>
+        <text class="f1V" x="358" y="94" text-anchor="middle" fill="#1F1218">30s</text>
+        <text class="f1N" x="518" y="94">and this one only edits video you already have</text>
+
+        <text class="f1L" x="196" y="140" text-anchor="end">Sora 2, one generation</text>
+        <rect x="208" y="122" width="200" height="26" rx="5" fill="#7A5C6B"/>
+        <text class="f1V" x="308" y="140" text-anchor="middle">20s</text>
+        <text class="f1N" x="418" y="140">extendable to 120s, and switched off in September</text>
+
+        <text class="f1L" x="196" y="186" text-anchor="end">Gemini Omni Flash</text>
+        <rect x="208" y="168" width="100" height="26" rx="5" fill="#4A2F3D"/>
+        <text class="f1V" x="258" y="186" text-anchor="middle">10s</text>
+        <text class="f1N" x="318" y="186">six of these, plus five joins, to fill the target</text>
+
+        <text class="f1L" x="196" y="232" text-anchor="end">Veo 3.1, Fast, Lite</text>
+        <rect x="208" y="214" width="80" height="26" rx="5" fill="#4A2F3D"/>
+        <text class="f1V" x="248" y="232" text-anchor="middle">8s</text>
+        <text class="f1N" x="298" y="232">eight of these, plus seven joins, to fill the target</text>
+
+        <line x1="32" y1="262" x2="848" y2="262" stroke="#E3D8DE" stroke-width="1"/>
+
+        <text class="f1B" x="32" y="290">Nothing in this category generates 60 seconds. Nothing comes close.</text>
+        <text class="f1B" x="32" y="314">So a one-minute video is not one generation. It is eight, and seven joins.</text>
+        <text class="f1B" x="32" y="338">Price is the easy part. Length decides whether the thing can be made at all.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the dashed bar is the target, and no solid bar reaches it</figcaption>
+    </figure>
+
+    <p>Read the bottom three bars again. Those are the models people mean when they say "AI video". <strong>The best case is ten seconds and the common case is eight.</strong> If your brief says "a two-minute explainer", you have just committed to fifteen generations and fourteen joins before anyone has written a word.</p>
+
+    <p>The aspect ratios narrow it further. Sora offers 1280x720, 1920x1080 and 1080x1920, which is <strong>16:9 and 9:16 only</strong>, and the 1080p sizes require the pro model. Veo 3.1 is 16:9 and 9:16. Gemini Omni Flash is 16:9 and 9:16 at 720p and 24 FPS. Square does not exist. If your placement wants 1:1 or 4:5, you are cropping, and session 1 already showed what cropping is worth.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The resolution catch inside the Veo table<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Veo 3.1 and Veo 3.1 Fast both list 720p, 1080p and 4K. The footnote is the whole story: <strong>1080p and 4K are available at 8 seconds only</strong>. Pick 4 or 6 seconds and you are capped at 720p.</p>
+        <p>So the length control and the resolution control are the same control. Any shot you wanted at 4 seconds is a 720p shot. If you want the sharp version you take the long version, whether or not the shot needs 8 seconds, and you pay for all 8.</p>
+        <p>Veo 3.1 Lite drops 4K entirely and keeps 720p and 1080p. It is also the cheapest thing in this session at $0.05 per second, and the arithmetic below shows what that buys you.</p>
+        <p>One more line from the same docs, and it is the good kind: <strong>"You will only be charged if your video is successfully generated."</strong> A failed generation is free. A successful generation you dislike is not, and that is the one that happens.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2 ============ -->
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the model with a published expiry date</span>
+      <h2>Sora, taught as a retirement rather than a recommendation</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Sora 2 is in this session for one reason. It is the clearest worked example of what a tool dependency costs when the vendor walks away, and it is the only one where you can read the date on the page.</p>
+
+    <div class="callout warn">
+      <p><strong>The Sora 2 API sunsets on 24 September 2026.</strong> OpenAI's deprecations page lists <span class="mono">sora-2</span>, <span class="mono">sora-2-pro</span>, every dated variant and the Videos API itself. The column headed "recommended replacement" contains a dash. The consumer app already closed on 26 April 2026.</p>
+      <p>So do not learn Sora. Learn what it teaches: <strong>a per-second price is a rental, and the landlord is not obliged to renew.</strong> Every number in the table below is accurate today and worthless in a month.</p>
+    </div>
+
+    <table class="clean">
+      <thead>
+        <tr><th>Sora 2</th><th>What it does</th><th>Per second</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>sora-2, 720p</td><td>16 or 20 second generations, 1280x720</td><td>$0.10</td></tr>
+        <tr><td>sora-2-pro, 720p</td><td>Same lengths, higher quality tier</td><td>$0.30</td></tr>
+        <tr><td>sora-2-pro, 1024p</td><td>Pro required for anything above 720p</td><td>$0.50</td></tr>
+        <tr><td>sora-2-pro, 1080p</td><td>1920x1080 or 1080x1920, pro only</td><td>$0.70</td></tr>
+        <tr><td>Batch</td><td>Any of the above, submitted as a batch job</td><td>Half price</td></tr>
+      </tbody>
+    </table>
+
+    <p>Sixty finished seconds on <span class="mono">sora-2</span> at 720p is three generations of 20 seconds, which is <strong>$6.00 first pass</strong>. The same minute on <span class="mono">sora-2-pro</span> at 1080p is <strong>$42.00</strong>. That is a 7x spread on the same script, the same length and the same two joins.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The extension mechanic, and why 120 seconds is not what it sounds like<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Sora can extend a generation by up to 20 seconds, <strong>"up to six times, for a maximum total length of 120 seconds"</strong>. This is the highest ceiling anywhere in this session and it is worth understanding precisely, because it is the closest the category gets to long-form.</p>
+        <p>It is still assembly. Six extensions is six more requests, each one conditioned on the last, each one charged per second at the same rate. A full 120 seconds on <span class="mono">sora-2-pro</span> at 1080p is 120 times $0.70, which is <strong>$84.00 for two minutes, first pass</strong>. And every extension boundary is a join, so the ceiling did not remove the assembly problem, it moved it inside one product.</p>
+        <p>The character upload rule is the other detail worth carrying to other tools. Character references <strong>"work best with short 2- to 4-second clips"</strong>, with a maximum of two per video. That is the shape of the whole category: the input window is small, the output window is small, and consistency across the joins is your problem.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3 ============ -->
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers Google, which is the whole rest of the field</span>
+      <h2>Veo 3.1 and Gemini Omni Flash, priced honestly</h2>
+      <span class="tag concept">7 min live</span>
+    </div>
+    <p class="lede">With OpenAI gone, Google is most of the supply. Three Veo variants and one Gemini model, all of them still marked Preview, all of them producing under ten seconds, and none of them with a free tier.</p>
+
+    <table class="clean">
+      <thead>
+        <tr><th>Model</th><th>Length</th><th>Resolutions</th><th>Per second</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Veo 3.1</td><td>4, 6 or 8 s</td><td>720p, 1080p at 8s, 4K at 8s</td><td>$0.40, or $0.60 at 4K</td></tr>
+        <tr><td>Veo 3.1 Fast</td><td>4, 6 or 8 s</td><td>720p, 1080p at 8s, 4K at 8s</td><td>$0.10 at 720p</td></tr>
+        <tr><td>Veo 3.1 Lite</td><td>4, 6 or 8 s</td><td>720p, 1080p, no 4K</td><td>$0.05 at 720p</td></tr>
+        <tr><td>Gemini Omni Flash</td><td>3 to 10 s</td><td>720p only, 24 FPS</td><td>About $0.10, billed in tokens</td></tr>
+      </tbody>
+    </table>
+
+    <p>Audio is always on for every Veo variant and the price includes it. One video per request, no batching. <strong>There is no free tier for any Veo model</strong>, which puts Google in a different position from almost every other Google API you have used, and it means there is no way to evaluate quality without a card on file.</p>
+
+    <div class="callout tip">
+      <p><strong>Google's own admission about the audio, and it belongs on this page rather than in a footnote.</strong> DeepMind states that "creating videos with natural and consistent spoken audio, particularly for shorter speech segments, remains an area of active development."</p>
+      <p>Read that against the clip caps. Every segment you generate is a <em>short</em> speech segment, because 8 seconds is the maximum. The vendor is telling you the audio is weakest in precisely the regime the model forces you into. Session 3 goes further into constraints of this shape and session 5 shows what the benchmarks measure.</p>
+    </div>
+
+    <p class="lede">Now put the money side by side. This is the cost of sixty finished seconds, first pass, with no retries counted and no editing time counted.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A ladder chart of the cost of sixty finished seconds of video, ranging from three dollars on Veo 3.1 Lite and Runway Gen-4 Turbo up to forty two dollars on sora-2-pro at 1080p, a fourteen times spread">
+        <style>
+          .f2L { font: 700 12px Inter, sans-serif; fill: #1F1218; }
+          .f2V { font: 700 12px Inter, sans-serif; fill: #1F1218; }
+          .f2H { font: 400 11px Inter, sans-serif; fill: #79616C; }
+          .f2B { font: 400 12px Inter, sans-serif; fill: #1F1218; }
+        </style>
+
+        <text class="f2H" x="32" y="18">cost of 60 finished seconds, first pass, no retries counted</text>
+
+        <text class="f2L" x="238" y="42" text-anchor="end">Veo 3.1 Lite, 720p</text>
+        <rect x="250" y="26" width="40" height="22" rx="4" fill="#C4B5C7"/>
+        <text class="f2V" x="298" y="42">$3.00</text>
+
+        <text class="f2L" x="238" y="76" text-anchor="end">Runway Gen-4 Turbo</text>
+        <rect x="250" y="60" width="40" height="22" rx="4" fill="#C4B5C7"/>
+        <text class="f2V" x="298" y="76">$3.00</text>
+
+        <text class="f2L" x="238" y="110" text-anchor="end">Veo 3.1 Fast, 720p</text>
+        <rect x="250" y="94" width="80" height="22" rx="4" fill="#A48C9B"/>
+        <text class="f2V" x="338" y="110">$6.00</text>
+
+        <text class="f2L" x="238" y="144" text-anchor="end">Gemini Omni Flash, 720p</text>
+        <rect x="250" y="128" width="81" height="22" rx="4" fill="#A48C9B"/>
+        <text class="f2V" x="339" y="144">$6.08</text>
+
+        <text class="f2L" x="238" y="178" text-anchor="end">Runway Gen-4.5</text>
+        <rect x="250" y="162" width="96" height="22" rx="4" fill="#A48C9B"/>
+        <text class="f2V" x="354" y="178">$7.20</text>
+
+        <text class="f2L" x="238" y="212" text-anchor="end">Runway Aleph 2</text>
+        <rect x="250" y="196" width="224" height="22" rx="4" fill="#7A5C6B"/>
+        <text class="f2V" x="482" y="212">$16.80</text>
+
+        <text class="f2L" x="238" y="246" text-anchor="end">Veo 3.1 Standard</text>
+        <rect x="250" y="230" width="320" height="22" rx="4" fill="#7A5C6B"/>
+        <text class="f2V" x="578" y="246">$24.00</text>
+
+        <text class="f2L" x="238" y="280" text-anchor="end">Veo 3.1 Standard, 4K</text>
+        <rect x="250" y="264" width="480" height="22" rx="4" fill="#4A2F3D"/>
+        <text class="f2V" x="738" y="280">$36.00</text>
+
+        <text class="f2L" x="238" y="314" text-anchor="end">sora-2-pro, 1080p</text>
+        <rect x="250" y="298" width="560" height="22" rx="4" fill="#4A2F3D"/>
+        <text class="f2V" x="818" y="314">$42.00</text>
+
+        <line x1="32" y1="336" x2="848" y2="336" stroke="#E3D8DE" stroke-width="1"/>
+
+        <text class="f2B" x="32" y="360">Every figure is a first pass. None of them counts the takes you throw away.</text>
+        <text class="f2B" x="32" y="378">The spread is 14x, and neither end makes a clip longer than 20 seconds.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - a 14x price range across models that all produce fragments</figcaption>
+    </figure>
+
+    <p>The important thing about this chart is what it does <em>not</em> change. Move from the bottom row to the top row and you have multiplied your bill by fourteen and altered the clip cap by nothing. <strong>You cannot buy your way past 8 seconds.</strong> There is no tier where the length restriction lifts.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Gemini Omni Flash bills in tokens, and one clause excludes three regions<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Gemini Omni Flash does not publish a per-second price. It publishes a token rate: <strong>5,792 tokens per second of 720p video</strong>, charged at $17.50 per million output tokens. Multiply it out and a second costs about $0.10, and sixty finished seconds costs about $6.08.</p>
+        <p>Do the multiplication yourself before you commit to anything token-billed. The rate looks small and the multiplier is large, and a video second is nearly six thousand tokens of output. This is the same arithmetic that surprises people on their first large API bill.</p>
+        <p>Then there is the clause. From the same documentation, verbatim: <strong>"Editing uploaded videos is not currently available for users in the European Economic Area (EEA), Switzerland, and the United Kingdom."</strong> If you are in any of those, one of the model's headline capabilities is simply absent from your account, and no pricing page will tell you that.</p>
+        <p>Three more limits from the same page, all verbatim: <strong>"Video extension and video interpolation... are not supported"</strong>, <strong>"Voice editing is not supported"</strong>, and <strong>"Uploading audio references is unsupported."</strong> So no Sora-style extension, which means the 10 second cap is a hard cap. Every Gemini Omni video also carries an imperceptible <strong>SynthID</strong> watermark, and session 6 covers why that matters legally.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 4 ============ -->
+  <section class="section" id="part-4">
+    <div class="section-kicker">
+      <span class="klabel">Part 4 · covers the reseller that stopped hiding it</span>
+      <h2>Runway is now largely an aggregator, and that is the teachable fact</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Runway's own price list sells you Veo 3.1, Gemini Omni Flash and Seedance alongside its own models. It has become a front end to other people's models plus two of its own, and its published credit table lets you read the markup directly.</p>
+
+    <table class="clean">
+      <thead>
+        <tr><th>What you generate on Runway</th><th>Credits per second</th><th>At $0.01 per credit</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Gen-4 Turbo, Act-Two</td><td>5</td><td>$0.05 per second</td></tr>
+        <tr><td>Gemini Omni Flash</td><td>10</td><td>$0.10 per second</td></tr>
+        <tr><td>Gen-4.5</td><td>12</td><td>$0.12 per second</td></tr>
+        <tr><td>Veo 3.1, no audio</td><td>20</td><td>$0.20 per second</td></tr>
+        <tr><td>Seedance 2.5, by resolution</td><td>20, 30 or 68</td><td>$0.20 to $0.68 per second</td></tr>
+        <tr><td>Aleph 2</td><td>28</td><td>$0.28 per second</td></tr>
+        <tr><td>Veo 3.1, with audio</td><td>40</td><td>$0.40 per second</td></tr>
+      </tbody>
+    </table>
+
+    <p>Look at the last row against Part 3. Veo 3.1 with audio through Runway costs 40 credits per second, which at the API credit rate is <strong>$0.40, exactly what Google charges directly</strong>. The interesting one is the row above it: <strong>Veo 3.1 without audio is 20 credits</strong>, so on Runway you can buy half a Veo, which Google does not offer, because Veo's audio is always on.</p>
+
+    <p>Now the part that catches people. The plans do not sell credits at $0.01.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 365" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A grouped bar chart of how many seconds of finished video each Runway plan buys, showing the fifteen dollar plan buys fifty two seconds of Gen-4.5 and only twenty two seconds of Aleph 2, while the ninety five dollar plan buys seven hundred and ninety one seconds">
+        <style>
+          .f3L { font: 700 12px Inter, sans-serif; fill: #1F1218; }
+          .f3V { font: 700 11px Inter, sans-serif; fill: #1F1218; }
+          .f3W { font: 700 11px Inter, sans-serif; fill: #fff; }
+          .f3H { font: 400 12px Inter, sans-serif; fill: #79616C; }
+          .f3B { font: 400 12px Inter, sans-serif; fill: #1F1218; }
+        </style>
+
+        <text class="f3H" x="32" y="24">What a month of Runway buys, in seconds of finished video</text>
+
+        <text class="f3L" x="238" y="64" text-anchor="end">Free, $0, one time</text>
+        <rect x="250" y="44" width="7" height="14" rx="3" fill="#4A2F3D"/>
+        <text class="f3V" x="265" y="55">10s of Gen-4.5</text>
+        <rect x="250" y="62" width="3" height="14" rx="1.5" fill="#C4B5C7"/>
+        <text class="f3V" x="261" y="73">4s of Aleph 2</text>
+
+        <text class="f3L" x="238" y="128" text-anchor="end">Standard, $15/mo</text>
+        <rect x="250" y="108" width="34" height="14" rx="3" fill="#4A2F3D"/>
+        <text class="f3V" x="292" y="119">52s of Gen-4.5</text>
+        <rect x="250" y="126" width="15" height="14" rx="3" fill="#C4B5C7"/>
+        <text class="f3V" x="273" y="137">22s of Aleph 2</text>
+
+        <text class="f3L" x="238" y="192" text-anchor="end">Pro, $35/mo</text>
+        <rect x="250" y="172" width="122" height="14" rx="3" fill="#4A2F3D"/>
+        <text class="f3V" x="380" y="183">187s of Gen-4.5</text>
+        <rect x="250" y="190" width="52" height="14" rx="3" fill="#C4B5C7"/>
+        <text class="f3V" x="310" y="201">80s of Aleph 2</text>
+
+        <text class="f3L" x="238" y="256" text-anchor="end">Max, $95/mo</text>
+        <rect x="250" y="236" width="515" height="14" rx="3" fill="#4A2F3D"/>
+        <text class="f3W" x="757" y="247" text-anchor="end">791s of Gen-4.5</text>
+        <rect x="250" y="254" width="221" height="14" rx="3" fill="#C4B5C7"/>
+        <text class="f3V" x="479" y="265">339s of Aleph 2</text>
+
+        <line x1="32" y1="286" x2="848" y2="286" stroke="#E3D8DE" stroke-width="1"/>
+
+        <rect x="32" y="300" width="12" height="12" rx="2" fill="#4A2F3D"/>
+        <text class="f3B" x="50" y="310">Gen-4.5, 12 credits per second</text>
+        <rect x="260" y="300" width="12" height="12" rx="2" fill="#C4B5C7"/>
+        <text class="f3B" x="278" y="310">Aleph 2, 28 credits per second</text>
+
+        <text class="f3B" x="32" y="338">Only the $95 plan reaches the $0.01 per credit the API docs quote. On $15 a credit costs $0.024.</text>
+        <text class="f3B" x="32" y="360">The $15 plan buys 52 seconds of Gen-4.5, and that figure is Runway's own.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - a fifteen dollar month is fifty two seconds, and Runway prints that number itself</figcaption>
+    </figure>
+
+    <p><strong>Fifty two seconds.</strong> Runway publishes that figure on its own pricing page, which is more candour than most of this category manages, and it is the single most useful number in this session. A month of the entry plan does not produce a one-minute video. It produces most of one, once, with no retries.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Runway publishes real rate limits, which almost nobody does<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>This is worth showing because it is so rare. Most vendors in this category publish no throughput numbers at all, and OpenAI's rate-limits page has <strong>no video-specific tier entries whatsoever</strong>, so there is nothing to teach about Sora throughput. Runway prints the table.</p>
+        <p>Its headline is that there is <strong>"no maximum requests-per-minute limit"</strong> within the daily caps. What binds you is concurrency and the daily ceiling.</p>
+        <ul>
+          <li><strong>Tier 1:</strong> 1 to 2 concurrent generations, 50 to 200 generations per day, and a $100 monthly spend cap.</li>
+          <li><strong>Tier 5,</strong> reached after $5,000 of spend: 20 concurrent, and 25,000 to 30,000 generations per day.</li>
+        </ul>
+        <p>Now connect it to the thesis. At Tier 1 with 2 concurrent slots, a 60 second Veo-style piece is 8 generations queued 2 at a time. The daily ceiling of 50 is not your problem. <strong>The concurrency is</strong>, because it sets how long you wait between iterations, and iteration is the entire workflow.</p>
+        <p>The other Runway product worth knowing is <strong>Aleph 2.0 with Edit Studio</strong>, shipped 21 May 2026. It works with <strong>up to 30 seconds of 1080p video</strong> and makes targeted edits "keeping everything else just as it was". Edit Studio previews an edit as a still image before committing to video generation, which at 28 credits per second is a genuine saving rather than a convenience.</p>
+        <p>One honest gap. Runway does <em>not</em> publish per-model duration limits for Gen-4.5, Gen-4 Turbo or Act-Two in any form this course could verify, because those pages render client-side. Only Aleph 2.0's 30 seconds is first-party confirmed, so those numbers are deliberately not on this page.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 5 ============ -->
+  <section class="section" id="part-5">
+    <div class="section-kicker">
+      <span class="klabel">Part 5 · covers the audio side, where the caps are characters and hours</span>
+      <h2>ElevenLabs and Descript price two different things badly</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Audio does not bill per second. ElevenLabs bills per character and Descript bills per hour of media, and both have a cap sitting inside the plan that has nothing to do with the plan.</p>
+
+    <table class="clean">
+      <thead>
+        <tr><th>ElevenLabs plan</th><th>Monthly</th><th>Credits, 1 character each</th><th>What changes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Free</td><td>$0</td><td>10,000</td><td>No commercial licence</td></tr>
+        <tr><td>Starter</td><td>$6</td><td>30,000</td><td>Commercial licence begins here</td></tr>
+        <tr><td>Creator</td><td>$22</td><td>121,000</td><td>1 professional voice clone slot</td></tr>
+        <tr><td>Pro</td><td>$99</td><td>600,000</td><td></td></tr>
+        <tr><td>Scale</td><td>$299</td><td>1,800,000</td><td></td></tr>
+        <tr><td>Business</td><td>$990</td><td>6,000,000</td><td></td></tr>
+      </tbody>
+    </table>
+
+    <p>The cap that matters is not on that table, it is on the models. <strong>Eleven v3 accepts 5,000 characters per request</strong> across 70+ languages and is labelled <strong>alpha</strong> on the vendor's own marketing page. Multilingual v2 accepts 10,000 characters across 29 languages. Flash v2.5 accepts 40,000 characters at roughly 75 ms latency.</p>
+
+    <p>So the free tier's 10,000 credits is exactly two maximum-length v3 requests, and then it is over. And in the other direction, <strong>a single maximum-length Flash v2.5 request is 40,000 characters, which is larger than the entire 30,000-credit Starter month.</strong> One request would overdraw the plan. Neither of those facts is derivable from the pricing page alone.</p>
+
+    <div class="callout warn">
+      <p><strong>Legacy default voices expire on 31 December 2026.</strong> If a project depends on one of them, that project has a dated dependency exactly like Sora's, and this is the second one in a single session. Write the date into the project file rather than into your memory.</p>
+    </div>
+
+    <table class="clean">
+      <thead>
+        <tr><th>Descript plan</th><th>Monthly, billed annually</th><th>Media</th><th>AI credits</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Free</td><td>$0</td><td>1 hour, 720p watermarked</td><td></td></tr>
+        <tr><td>Hobbyist</td><td>$16</td><td>10 hours</td><td>400</td></tr>
+        <tr><td>Creator</td><td>$24</td><td>30 hours</td><td>800</td></tr>
+        <tr><td>Business</td><td>$50</td><td>40 hours</td><td>1,500</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>Transcription is not tier-gated.</strong> All four tiers, the free one included, get the same 25 languages. That is unusual and it is worth saying out loud, because most people assume the free tier transcribes worse. It does not. What is capped is <strong>media minutes</strong>, and that is the number to plan against.</p>
+
+    <p>Then the clause that quietly costs the most: <strong>neither media minutes nor AI credits roll over</strong>. A quiet month is money returned to the vendor. If your work is lumpy, and video work is always lumpy, the plan that fits your busiest month is the plan you pay for in all the others.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What the Descript upgrades actually buy, tier by tier<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Compare the steps rather than the prices, because the two resources scale differently and the plan names hide it.</p>
+        <ul>
+          <li><strong>Hobbyist to Creator, $8 more:</strong> media hours go 10 to 30, a 3x jump. AI credits go 400 to 800, only 2x. This step is priced for people who edit a lot of footage lightly.</li>
+          <li><strong>Creator to Business, $26 more:</strong> media hours go 30 to 40, only a third more. Credits go 800 to 1,500, nearly double. This step is priced for people who apply a lot of AI to a moderate amount of footage.</li>
+        </ul>
+        <p>So the question that picks your tier is not "how serious am I". It is <strong>how many hours of raw footage do I put in, against how many AI operations do I run on it</strong>. Those two numbers point at different plans, and answering them takes ten minutes with last month's actual files.</p>
+        <p>And remember the expiry. Because nothing rolls over, buying for your peak month means paying for headroom you burn in one month out of twelve. Sizing to your median month and topping up is usually cheaper, and you should check whether topping up is possible before you assume it.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ BUILD ALONG ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Price your own sixty seconds</h2>
+      <span class="tag demo">★ 18 min · everyone builds</span>
+    </div>
+    <p class="lede">Take a real brief, yours if you have one, and put it through the assembly arithmetic. Six steps, all of them multiplication, and the answer will be larger than the number in your head.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 352" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A diagram showing a sixty second video built as eight eight-second fragments with seven joins on Veo 3.1, compared with three twenty-second fragments and two joins on Sora 2">
+        <style>
+          .f4H { font: 700 13px Inter, sans-serif; fill: #1F1218; }
+          .f4L { font: 700 12px Inter, sans-serif; fill: #4A2F3D; }
+          .f4S { font: 700 12px Inter, sans-serif; fill: #fff; }
+          .f4N { font: 400 12px Inter, sans-serif; fill: #79616C; }
+          .f4B { font: 400 12px Inter, sans-serif; fill: #1F1218; }
+        </style>
+
+        <text class="f4H" x="42" y="28">Making 60 seconds when the model makes 8</text>
+
+        <text class="f4L" x="42" y="58">Veo 3.1 at 8 seconds: 8 generations, 7 joins</text>
+        <rect x="42" y="68" width="88" height="40" rx="4" fill="#4A2F3D"/>
+        <text class="f4S" x="86" y="93" text-anchor="middle">8s</text>
+        <rect x="136" y="68" width="88" height="40" rx="4" fill="#4A2F3D"/>
+        <text class="f4S" x="180" y="93" text-anchor="middle">8s</text>
+        <rect x="230" y="68" width="88" height="40" rx="4" fill="#4A2F3D"/>
+        <text class="f4S" x="274" y="93" text-anchor="middle">8s</text>
+        <rect x="324" y="68" width="88" height="40" rx="4" fill="#4A2F3D"/>
+        <text class="f4S" x="368" y="93" text-anchor="middle">8s</text>
+        <rect x="418" y="68" width="88" height="40" rx="4" fill="#4A2F3D"/>
+        <text class="f4S" x="462" y="93" text-anchor="middle">8s</text>
+        <rect x="512" y="68" width="88" height="40" rx="4" fill="#4A2F3D"/>
+        <text class="f4S" x="556" y="93" text-anchor="middle">8s</text>
+        <rect x="606" y="68" width="88" height="40" rx="4" fill="#4A2F3D"/>
+        <text class="f4S" x="650" y="93" text-anchor="middle">8s</text>
+        <rect x="700" y="68" width="88" height="40" rx="4" fill="#7A5C6B"/>
+        <text class="f4S" x="744" y="93" text-anchor="middle">4s</text>
+        <line x1="133" y1="62" x2="133" y2="114" stroke="#B91C1C" stroke-width="2.5"/>
+        <line x1="227" y1="62" x2="227" y2="114" stroke="#B91C1C" stroke-width="2.5"/>
+        <line x1="321" y1="62" x2="321" y2="114" stroke="#B91C1C" stroke-width="2.5"/>
+        <line x1="415" y1="62" x2="415" y2="114" stroke="#B91C1C" stroke-width="2.5"/>
+        <line x1="509" y1="62" x2="509" y2="114" stroke="#B91C1C" stroke-width="2.5"/>
+        <line x1="603" y1="62" x2="603" y2="114" stroke="#B91C1C" stroke-width="2.5"/>
+        <line x1="697" y1="62" x2="697" y2="114" stroke="#B91C1C" stroke-width="2.5"/>
+        <text class="f4N" x="42" y="134">Seven red joins. Each one is a place the light, the face or the camera move can change.</text>
+
+        <text class="f4L" x="42" y="174">Sora 2 at 20 seconds: 3 generations, 2 joins</text>
+        <rect x="42" y="184" width="220" height="40" rx="4" fill="#7A5C6B"/>
+        <text class="f4S" x="152" y="209" text-anchor="middle">20s</text>
+        <rect x="268" y="184" width="220" height="40" rx="4" fill="#7A5C6B"/>
+        <text class="f4S" x="378" y="209" text-anchor="middle">20s</text>
+        <rect x="494" y="184" width="220" height="40" rx="4" fill="#7A5C6B"/>
+        <text class="f4S" x="604" y="209" text-anchor="middle">20s</text>
+        <line x1="265" y1="178" x2="265" y2="230" stroke="#B91C1C" stroke-width="2.5"/>
+        <line x1="491" y1="178" x2="491" y2="230" stroke="#B91C1C" stroke-width="2.5"/>
+        <text class="f4N" x="42" y="250">Two joins, one third of the work, and the API is switched off on 24 September 2026.</text>
+
+        <line x1="42" y1="272" x2="838" y2="272" stroke="#E3D8DE" stroke-width="1"/>
+
+        <text class="f4B" x="42" y="296">Veo needs 60 generated seconds to deliver 60, which is $24.00 at Standard, first pass.</text>
+        <text class="f4B" x="42" y="318">The join count is set by the clip cap, not by the plan and not by the price.</text>
+        <text class="f4B" x="42" y="340">Choosing a cheaper model does not reduce the joins. It only reduces the invoice.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the red marks are the joins, and nobody sells you those</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step"><p><strong>Write down the finished duration in seconds.</strong> Not "about a minute". The number. Every calculation below is driven by it, and rounding it up front is how budgets go wrong.</p></div>
+      <div class="step"><p><strong>Divide by the model's clip cap and round up.</strong> Veo 3.1 is 8. Gemini Omni Flash is 10. Sora 2 is 20. Sixty seconds on Veo is 7.5, which rounds to <strong>8 generations</strong>. You now have your fragment count.</p></div>
+      <div class="step"><p><strong>Subtract one. That is your join count.</strong> Eight fragments means seven joins. Write it next to the fragment count, because it is the number that will cost you time rather than money, and it never appears on a pricing page.</p></div>
+      <div class="step"><p><strong>Multiply generated seconds by the per-second rate.</strong> Careful here: Veo accepts only 4, 6 and 8 second lengths, so your remainder has to be one of those three, and 1080p exists at 8 seconds only. Seven 8s clips plus one 4s clip is exactly 60 generated seconds, which at Veo 3.1 Standard is <strong>$24.00</strong>. At Lite it is $3.00. At sora-2-pro 1080p it is $42.00.</p></div>
+      <div class="step"><p><strong>Now check whether your plan can even hold it.</strong> On Runway's $15 Standard plan, 625 credits at 12 per second is 52 seconds of Gen-4.5. Your 60 second brief does not fit in one month. On Aleph 2 at 28 credits it is 22 seconds, and you are three months from a minute.</p></div>
+      <div class="step"><p><strong>Finally, multiply the whole thing by your retry assumption and label it a guess.</strong> There is no published figure for generations per usable shot, and session 5 explains exactly why the ones circulating are not trustworthy. Say "I am assuming three attempts" out loud, so that the assumption is visible when somebody questions the invoice.</p></div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>The one sentence to take into the budget meeting.</strong> "This is a sixty second video, so it is eight generations and seven joins, and the eight generations are the cheap part." You will be asked why you cannot just generate the minute. The answer is that no model in the category does, at any price, on any tier.</p>
+    </div>
+
+    <div class="scorecard" data-title="Before you sign up for anything" data-foot="Six rows. The first two are about length, and they are the ones people skip.">
+      <div class="sc-row"><div class="sc-q">You know the model's clip cap, in seconds<em>8 for Veo 3.1, 10 for Gemini Omni, 20 for Sora 2.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You have counted the joins, not just the fragments<em>Fragments minus one. It is where the continuity work lives.</em></div></div>
+      <div class="sc-row"><div class="sc-q">The price you quoted is labelled first pass<em>No published figure for retries exists. Say so rather than guessing quietly.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You checked whether the plan holds one finished piece<em>Runway's $15 tier is 52 seconds of Gen-4.5 for the whole month.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You know which resources expire<em>Descript rolls nothing over. ElevenLabs legacy voices end 31 December 2026.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You checked the feature exists in your region<em>Gemini Omni video editing is unavailable in the EEA, Switzerland and the UK.</em></div></div>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 3</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Price one real brief three ways.</strong> Take something you actually have to make, and cost it on Veo 3.1 Lite, Veo 3.1 Standard and Runway Gen-4.5. Write the fragment count and the join count next to each. The join count will be identical on two of the three, which is the point.</li>
+      <li><strong>Open Google's Veo pricing page and confirm there is no free tier.</strong> Look for it properly, because your instinct will be that you have missed it. There is nothing to miss. Then check whether your organisation is willing to put a card on file to evaluate quality.</li>
+      <li><strong>Do the Gemini Omni token multiplication yourself.</strong> 5,792 tokens per second at $17.50 per million. Get to roughly $0.10 per second with your own arithmetic rather than believing this page. Token-billed pricing hides magnitude and this is the habit that fixes it.</li>
+      <li><strong>Check your own last month against a Descript tier.</strong> Two numbers only: hours of raw footage in, and AI operations run. See which tier those two numbers point at, and whether they point at the same one.</li>
+      <li><strong>Find the expiry dates in your own stack.</strong> Sora 2 on 24 September 2026, ElevenLabs legacy voices on 31 December 2026. Then go looking for the ones in whatever else you use, and put them in a file rather than in your head. This is the habit session 1 started and it does not stop.</li>
+    </ol>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 2 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · You have budget for any tier of any model in this session. What can you still not do?</p>
+      <button class="qopt" type="button">A · Generate at 4K, because 4K is restricted to enterprise agreements</button>
+      <button class="qopt" type="button">B · Generate with synchronised audio, because audio is a separate product everywhere</button>
+      <button class="qopt" type="button">C · Generate a single clip longer than 20 seconds, because no tier lifts the clip cap</button>
+      <p class="qwhy">Veo 3.1 tops out at 8 seconds, Gemini Omni Flash at 10, Sora 2 at 20. Money moves you across a 14x price range and leaves the length untouched. 4K exists on Veo 3.1 at $0.60 a second, and Veo audio is always on and included, so A and B are both wrong on the facts.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · A one-minute piece on Veo 3.1 Standard. What do you tell the person paying for it?</p>
+      <button class="qopt" type="button">A · Eight generations, seven joins, $24.00 first pass, and the retry count is an assumption rather than a published figure</button>
+      <button class="qopt" type="button">B · One generation at $0.40 per second, so $24.00, and the price is fixed</button>
+      <button class="qopt" type="button">C · Roughly $24.00, which includes a normal amount of iteration</button>
+      <p class="qwhy">The dollar figure is the same in all three and only A is honest about how it was reached. Sixty seconds divided by an 8 second cap rounds to 8 generations and therefore 7 joins. B pretends the minute is a single generation, which no model offers. C smuggles in an iteration allowance that no published number supports, and session 5 shows why the circulating ratios are unusable.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">3 · Which statement about Descript's tiers is correct?</p>
+      <button class="qopt" type="button">A · Transcription quality improves with each paid tier, and unused media minutes carry into next month</button>
+      <button class="qopt" type="button">B · Transcription is the same 25 languages on every tier including free, media hours are capped, and neither hours nor credits roll over</button>
+      <button class="qopt" type="button">C · Transcription is capped by tier, but AI credits roll over indefinitely once you are on a paid plan</button>
+      <p class="qwhy">Transcription is deliberately not tier-gated, which surprises almost everyone and is worth knowing before you upgrade for the wrong reason. What is gated is media hours: 1, 10, 30 and 40 across the four tiers. And nothing rolls over, so a quiet month is money returned to the vendor.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL COVERAGE ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Sora 2 lengths, sizes, extension and per-second pricing</span><span class="note">16 and 20 second generations, 16:9 and 9:16 only, extension to a 120s maximum, $0.10 to $0.70 per second, batch at half, plus the 24 September 2026 API sunset</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Veo 3.1, Fast and Lite: the full model table</span><span class="note">4, 6 or 8 seconds, 1080p and 4K at 8 seconds only, $0.05 to $0.60 per second with audio included, no free tier, and DeepMind's own note that consistent spoken audio remains an area of active development</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Gemini Omni Flash spec, token billing and the regional exclusion</span><span class="note">3 to 10 seconds, 720p, 24 FPS, 5,792 tokens per second of video, no extension or interpolation, and editing uploaded video unavailable in the EEA, Switzerland and the UK</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Runway credits per second, plan tiers and published rate limits</span><span class="note">The full credits table at $0.01 per credit, the four plans, Runway's own 52 seconds of Gen-4.5 figure, the Tier 1 to Tier 5 concurrency and daily caps, and Aleph 2.0's 30 seconds of 1080p</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">ElevenLabs plans and per-model character limits</span><span class="note">Six tiers from $0 to $990, 1 character per credit, Eleven v3 at 5,000 characters and labelled alpha, Multilingual v2 at 10,000, Flash v2.5 at 40,000, and the 31 December 2026 legacy voice expiry</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Descript plans, and what is and is not tier-gated</span><span class="note">Four tiers to $50, media hours capped at 1, 10, 30 and 40, transcription identical across all tiers at 25 languages, and no rollover for either media minutes or AI credits</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Adobe pricing is deliberately absent from this page</span><span class="note">Adobe's pricing URLs return 404 or empty shells, so no Adobe dollar figure could be verified from a first-party source and none is stated here. Session 3 quotes Adobe's documented feature limits, which are verifiable</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Runway per-model durations and Sora rate limits</span><span class="note">Duration limits for Gen-4.5, Gen-4 Turbo and Act-Two render client-side and are not first-party confirmed. OpenAI publishes no video-specific rate-limit tiers at all. Both omitted rather than estimated</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Iteration cost, feature constraints and disclosure duties</span><span class="note">Not covered here by design. Session 3 takes the hidden constraints, session 5 takes the measured failure modes and what is unknown about retries, session 6 takes the law</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Full source map with every URL: <span class="mono">materials/official-course-map.md</span> in this repo, including a quarantine list of what is deliberately not stated.</p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 2 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Nothing generates a minute</b><span>Veo 3.1 stops at 8 seconds, Gemini Omni at 10, Sora 2 at 20. No tier lifts it.</span></div>
+      <div class="cheat-item"><b>Fragments minus one is your join count</b><span>Sixty seconds on Veo is 8 generations and 7 joins. The joins cost time, not money.</span></div>
+      <div class="cheat-item"><b>A minute costs $3.00 to $42.00</b><span>Veo 3.1 Lite to sora-2-pro at 1080p. A 14x spread, first pass, no retries counted.</span></div>
+      <div class="cheat-item"><b>$15 of Runway is 52 seconds</b><span>Runway's own figure. And only the $95 plan reaches the $0.01 per credit the docs quote.</span></div>
+      <div class="cheat-item"><b>Descript gates hours, not transcription</b><span>All four tiers get the same 25 languages. Nothing rolls over, ever.</span></div>
+      <div class="cheat-item"><b>Two expiry dates already in your stack</b><span>Sora 2 on 24 September 2026. ElevenLabs legacy voices on 31 December 2026.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>Tonight was the numbers the vendors do publish. Session 3 is the ones they do not: the filler-word remover that only speaks English, the eye-contact fix that needs exactly one face, the audio cleaner that can hand you a silent waveform, and the generative extend that stops at two seconds. Every one of them is quotable from the vendor's own documentation, and none of them appears on the page that sold you the feature.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 2 of 6 · learn-ai-media-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="../index.html">← All sessions</a> &nbsp;·&nbsp; <a href="03-the-constraints-they-hide.html">Next: The constraints they hide →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Six sessions on AI audio and video. Run real silence detection in your browser, climb a retention ladder from 16 to 72 percent, and learn the constraints the feature pages never mention. Free, by Phoebe Fu.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Learn AI Media with Phoebe">
+<meta property="og:description" content="Six sessions, one video you can defend. Real silence detection in your browser, and the tool limits nobody advertises.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/assets/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Learn AI Media with Phoebe">
+<meta name="twitter:description" content="The biggest lever is free. The tools have a half-life of a year. Both are measurable.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Learn AI Media with Phoebe</title>
+<link rel="stylesheet" href="assets/style.css?v=2">
+<style>
+
+  .stats-row { display: flex; gap: 2.4rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .stat b { display: block; font-size: 2.1rem; font-weight: 800; line-height: 1.05; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: .72rem; opacity: .85; text-transform: uppercase; letter-spacing: .09em; font-weight: 600; }
+
+  .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .course-card {
+    border: 1px solid var(--hairline);
+    border-top: 4px solid var(--diff, var(--indigo));
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-decoration: none;
+    color: var(--ink);
+    background: #fff;
+    transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+    position: relative;
+  }
+  .course-card:hover { border-color: var(--indigo-soft); border-top-color: var(--diff, var(--indigo)); box-shadow: 0 8px 28px rgba(21,128,61,.14); transform: translateY(-3px); }
+  .course-card .cicon { font-size: 1.7rem; line-height: 1; }
+  .course-card .cnum { font-size: .72rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: .1em; }
+  .course-card h3 { font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
+  .course-card p { font-size: .85rem; color: var(--muted); flex: 1; }
+  .course-card .meta { display: flex; gap: .4rem; flex-wrap: wrap; }
+
+  .diff-legend { display: flex; gap: 1rem; margin-top: 1.6rem; font-size: .74rem; color: var(--muted); font-weight: 600; flex-wrap: wrap; }
+  .diff-legend i { display: inline-block; width: .85rem; height: .35rem; border-radius: 999px; margin-right: .35rem; vertical-align: middle; }
+
+  .paths { margin-top: 2.6rem; }
+  .paths h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .3rem; }
+  .paths .plede { color: var(--muted); font-size: .92rem; margin-bottom: .8rem; }
+  .path { display: flex; gap: .55rem; align-items: center; padding: .75rem 0; border-bottom: .5px solid var(--hairline); flex-wrap: wrap; }
+  .path:last-child { border-bottom: none; }
+  .path b { min-width: 15.5rem; font-size: .9rem; }
+  .path .pstep { background: var(--indigo-50); color: var(--indigo); border-radius: 999px; padding: .16rem .68rem; font-weight: 700; font-size: .8rem; text-decoration: none; transition: all .12s ease; }
+  .path .pstep:hover { background: var(--indigo); color: #fff; }
+  .path .parr { color: var(--faint); font-weight: 700; }
+
+  .mm-section { margin-top: 1.6rem; }
+  .mm-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .2rem; }
+  .mm-section .mm-lede { color: var(--muted); font-size: .92rem; margin-bottom: .4rem; }
+  .mm-wrap { border: 1px solid var(--hairline); border-radius: var(--radius); background: linear-gradient(180deg,#fff,#F5FAF6); padding: .6rem; overflow-x: auto; }
+  .mm-svg { width: 100%; height: auto; display: block; max-width: 60rem; margin: 0 auto; min-width: 34rem; }
+  .mm-link { cursor: pointer; text-decoration: none; }
+  .mm-node rect { transition: opacity .15s ease, filter .15s ease; }
+  .mm-node text { pointer-events: none; }
+  .mm-link:hover .mm-node rect { filter: brightness(1.06); }
+  .mm-edge { transition: opacity .15s ease; }
+
+  .hero-art { position: relative; margin: 1.8rem 0 0; border-radius: var(--radius); overflow: hidden; background: #0D1A12; }
+  .hero-art img { display: block; width: 100%; height: auto; }
+  .hero-art figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 1.1rem 1.3rem;
+    background: linear-gradient(to top, rgba(13,26,18,.94), rgba(13,26,18,0));
+    color: #fff; font-size: .84rem; line-height: 1.6;
+  }
+  .hero-art figcaption b { color: #BBF7D0; }
+  @media (max-width: 720px) { .hero-art figcaption { position: static; background: #0D1A12; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn with Phoebe · Applied AI</div>
+    <h1>Learn AI <span class="accent">Media</span> with Phoebe</h1>
+    <p class="sub">Six sessions, 45 minutes each, and one sixty-second video that gets genuinely better across all of them. The largest improvement available to you costs nothing and needs no tool: saying the point in the first three seconds takes retention from 16 percent to 38. Every rung above that is smaller and every rung above that needs software. This course teaches the ordering, because the tools change every year and the ordering does not.</p>
+    <div class="stats-row">
+      <div class="stat"><b data-count="6">6</b><span>sessions</span></div>
+      <div class="stat"><b data-count="16">16</b><span>% retention, raw cut</span></div>
+      <div class="stat"><b data-count="72">72</b><span>% after five changes</span></div>
+      <div class="stat"><b data-count="12">12</b><span>seconds of dead air found</span></div>
+      <div class="stat"><b data-count="45">45</b><span>min per session</span></div>
+    </div>
+    <figure class="hero-art">
+      <img src="assets/hero.png" alt="A cutting-room bench holding a long ribbon of film. Four sections have been marked with pale tape and set aside, and a pair of hands is lifting the trimmed strip back towards the light.">
+      <figcaption><b>Twelve seconds of nothing, in four pieces.</b> The person who recorded it heard four small pauses. The viewer heard a fifth of the runtime.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>The six sessions 🎬 <span style="font-size:.85rem;font-weight:600;color:var(--muted)">· one artifact, built across all of them</span></h2>
+      <p class="plede">Bring sixty seconds of your own footage. Something real that you would publish. By session 6 you have a video that holds attention, carries usable captions, and says how it was made.</p>
+    </div>
+
+    <div class="course-grid">
+      <a class="course-card" href="courses/01-the-first-three-seconds.html" style="--diff:#34D399">
+        <span class="cicon">⏱️</span>
+        <span class="cnum">Session 1 · easy</span>
+        <h3>The first three seconds</h3>
+        <p>Where video actually loses people, and the one lever that costs nothing. Run a real silence detector, then watch both obvious improvements go backwards.</p>
+        <span class="meta"><span class="pill amber">▶ Start here</span></span>
+      </a>
+      <a class="course-card" href="courses/02-what-the-tools-cost.html" style="--diff:#34D399">
+        <span class="cicon">💸</span>
+        <span class="cnum">Session 2 · easy</span>
+        <h3>What the tools cost</h3>
+        <p>Per-second pricing, clip lengths and resolution caps for Veo, Runway, ElevenLabs and Descript. Plus the model that is being switched off next month.</p>
+        <span class="meta"><span class="pill">real prices</span></span>
+      </a>
+      <a class="course-card" href="courses/03-the-constraints-they-hide.html" style="--diff:#FBBF24">
+        <span class="cicon">🔒</span>
+        <span class="cnum">Session 3 · medium</span>
+        <h3>The constraints they hide</h3>
+        <p>English-only. Single-face-only. Two seconds maximum. Every real limit in this category is three clicks deeper than the page that sold it to you.</p>
+        <span class="meta"><span class="pill">read the docs</span></span>
+      </a>
+      <a class="course-card" href="courses/04-captions-are-not-optional.html" style="--diff:#FBBF24">
+        <span class="cicon">💬</span>
+        <span class="cnum">Session 4 · medium</span>
+        <h3>Captions are not optional</h3>
+        <p>The Level A escape hatch that disappears at Level AA, what auto-captions actually score, and the error-rate gap that holds across every vendor.</p>
+        <span class="meta"><span class="pill">the legal floor</span></span>
+      </a>
+      <a class="course-card" href="courses/05-how-it-fails-measured.html" style="--diff:#FB923C">
+        <span class="cicon">🧪</span>
+        <span class="cnum">Session 5 · hands-on</span>
+        <h3>How it fails, measured</h3>
+        <p>Best model scores 29.5 out of 100 on physics. Identity and wardrobe drift are formally scored defects. And the iteration cost nobody has actually audited.</p>
+        <span class="meta"><span class="pill">benchmarks</span></span>
+      </a>
+      <a class="course-card" href="courses/06-say-it-was-made-with-ai.html" style="--diff:#FB923C">
+        <span class="cicon">🏷️</span>
+        <span class="cnum">Session 6 · hands-on</span>
+        <h3>Say it was made with AI</h3>
+        <p>Article 50 has been law since August. What C2PA proves, what its own documents say it cannot, and what each platform actually requires of you.</p>
+        <span class="meta"><span class="pill amber">🔒 unlocks the ceiling</span></span>
+      </a>
+    </div>
+
+    <div class="diff-legend">
+      <span><i style="background:#34D399"></i>easy - everyone</span>
+      <span><i style="background:#FBBF24"></i>medium</span>
+      <span><i style="background:#FB923C"></i>hands-on</span>
+      <span><i style="background:#F87171"></i>hardest</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>Your passport 🎫</h2>
+      <p class="plede">Clear all three quiz questions in a session and it gets stamped. Stamps live in this browser only.</p>
+    </div>
+    <div class="pp-strip"></div>
+  </section>
+
+  <section class="section">
+    <div class="paths">
+      <h2>Choose your path 🗺️</h2>
+      <p class="plede">Three doors into the same conviction: the tools are perishable and attention is not.</p>
+      <div class="path"><b>🔥 I have one video to fix tonight</b>
+        <a class="pstep" href="courses/01-the-first-three-seconds.html">1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/04-captions-are-not-optional.html">4</a>
+        <span style="font-size:.82rem;color:var(--muted)">the free lever, then the one obligation you cannot skip</span>
+      </div>
+      <div class="path"><b>💸 I am choosing a tool and a budget</b>
+        <a class="pstep" href="courses/02-what-the-tools-cost.html">2</a><span class="parr">→</span>
+        <a class="pstep" href="courses/03-the-constraints-they-hide.html">3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/05-how-it-fails-measured.html">5</a>
+        <span style="font-size:.82rem;color:var(--muted)">what it costs, what it will not do, and how it fails</span>
+      </div>
+      <div class="path"><b>🎬 The whole journey</b>
+        <a class="pstep" href="courses/01-the-first-three-seconds.html">1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/02-what-the-tools-cost.html">2</a><span class="parr">→</span>
+        <a class="pstep" href="courses/03-the-constraints-they-hide.html">3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/04-captions-are-not-optional.html">4</a><span class="parr">→</span>
+        <a class="pstep" href="courses/05-how-it-fails-measured.html">5</a><span class="parr">→</span>
+        <a class="pstep" href="courses/06-say-it-was-made-with-ai.html">6</a>
+        <span style="font-size:.82rem;color:var(--muted)">from a cut you hope is fine to one you can publish and defend</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>What is real here 🧾</h2>
+      <p class="plede">This course has a simulator, so it owes you a precise answer about which numbers are measured and which are modelled.</p>
+    </div>
+    <table class="clean">
+      <tr><th>Claim</th><th>Status</th></tr>
+      <tr><td>The silence detection, cut points and resulting runtime</td><td>Real. Computed from the audio envelope in your browser at the moment you click, not stored</td></tr>
+      <tr><td>The retention curve and its ladder</td><td>A teaching model, labelled as one on the widget itself. Directionally honest, not a measurement of any audience</td></tr>
+      <tr><td>Every tool price, clip length and resolution limit</td><td>Quoted from the vendor's own pricing or documentation page, each with the URL, dated August 2026</td></tr>
+      <tr><td>Caption error rates and the disparities across speakers</td><td>Peer-reviewed. 221 hours across 11 services for the error rates; PNAS 2020 for the disparities, replicated on identical phrases</td></tr>
+      <tr><td>Physics and consistency scores</td><td>Published benchmarks, Physics-IQ and VBench-2.0, with the caveat that vendor documentation currently admits less than the literature measures</td></tr>
+      <tr><td>The iteration cost per usable shot</td><td>Deliberately not stated. No independent audit exists, and the one large public figure has an undefined denominator</td></tr>
+    </table>
+  </section>
+
+  <section class="section mm-section">
+    <h2>The knowledge map 🧠</h2>
+    <p class="mm-lede">The whole course at a glance - hover a session to spotlight its concepts, click any node to jump in.</p>
+    <div class="mm-wrap"><div id="mindmap"></div></div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>learn-ai-media-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span>Pairs with <a href="https://phoebefu6.github.io/learn-ai-digital-human-with-phoebe/">Learn AI Digital Human ↗</a> · source map: <span class="mono">materials/official-course-map.md</span></span>
+  </footer>
+
+</main>
+
+<script>
+window.MINDMAP_DATA = {
+  "title": "Learn\nAI Media",
+  "centerColor": "#831843",
+  "sessions": [
+    {
+      "label": "The first three\nseconds",
+      "href": "courses/01-the-first-three-seconds.html",
+      "color": "#34D399",
+      "concepts": [
+        {
+          "label": "Where attention is lost",
+          "href": "courses/01-the-first-three-seconds.html"
+        },
+        {
+          "label": "Real silence detection",
+          "href": "courses/01-the-first-three-seconds.html"
+        },
+        {
+          "label": "Both traps backfire",
+          "href": "courses/01-the-first-three-seconds.html"
+        }
+      ]
+    },
+    {
+      "label": "What the tools\ncost",
+      "href": "courses/02-what-the-tools-cost.html",
+      "color": "#34D399",
+      "concepts": [
+        {
+          "label": "Per-second pricing",
+          "href": "courses/02-what-the-tools-cost.html"
+        },
+        {
+          "label": "Clip length limits",
+          "href": "courses/02-what-the-tools-cost.html"
+        },
+        {
+          "label": "Sora is being retired",
+          "href": "courses/02-what-the-tools-cost.html"
+        }
+      ]
+    },
+    {
+      "label": "The constraints\nthey hide",
+      "href": "courses/03-the-constraints-they-hide.html",
+      "color": "#FBBF24",
+      "concepts": [
+        {
+          "label": "English-only features",
+          "href": "courses/03-the-constraints-they-hide.html"
+        },
+        {
+          "label": "Single-face-only",
+          "href": "courses/03-the-constraints-they-hide.html"
+        },
+        {
+          "label": "Two-second maximums",
+          "href": "courses/03-the-constraints-they-hide.html"
+        }
+      ]
+    },
+    {
+      "label": "Captions are\nnot optional",
+      "href": "courses/04-captions-are-not-optional.html",
+      "color": "#FBBF24",
+      "concepts": [
+        {
+          "label": "The 1.2.3 vs 1.2.5 trap",
+          "href": "courses/04-captions-are-not-optional.html"
+        },
+        {
+          "label": "7 percent average WER",
+          "href": "courses/04-captions-are-not-optional.html"
+        },
+        {
+          "label": "Measured disparities",
+          "href": "courses/04-captions-are-not-optional.html"
+        }
+      ]
+    },
+    {
+      "label": "How it fails,\nmeasured",
+      "href": "courses/05-how-it-fails-measured.html",
+      "color": "#FB923C",
+      "concepts": [
+        {
+          "label": "Physics-IQ 29.5 of 100",
+          "href": "courses/05-how-it-fails-measured.html"
+        },
+        {
+          "label": "Identity and clothes drift",
+          "href": "courses/05-how-it-fails-measured.html"
+        },
+        {
+          "label": "The undefined denominator",
+          "href": "courses/05-how-it-fails-measured.html"
+        }
+      ]
+    },
+    {
+      "label": "Say it was\nmade with AI",
+      "href": "courses/06-say-it-was-made-with-ai.html",
+      "color": "#FB923C",
+      "concepts": [
+        {
+          "label": "Article 50 is live",
+          "href": "courses/06-say-it-was-made-with-ai.html"
+        },
+        {
+          "label": "What C2PA cannot prove",
+          "href": "courses/06-say-it-was-made-with-ai.html"
+        },
+        {
+          "label": "Four platform policies",
+          "href": "courses/06-say-it-was-made-with-ai.html"
+        }
+      ]
+    }
+  ]
+};
+</script>
+<script src="assets/mindmap.js?v=1"></script>
+<script src="assets/app.js?v=1"></script>
+</body>
+</html>

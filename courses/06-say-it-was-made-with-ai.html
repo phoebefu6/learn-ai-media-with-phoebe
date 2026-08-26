@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 6 of 6. EU AI Act Article 50 has been law since 2 August 2026. Learn who the duty actually lands on, what a Content Credential proves and what C2PA's own documents say it cannot, and what YouTube, TikTok, Meta and LinkedIn each require of you.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Say it was made with AI - learn ai media with phoebe">
+<meta property="og:description" content="Session 6 of 6. Article 50 is live, C2PA proves less than you think, and the video that forced Meta's AI labelling policy was not AI.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/courses/06-say-it-was-made-with-ai.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Say it was made with AI - learn ai media with phoebe">
+<meta name="twitter:description" content="Session 6 of 6. The disclosure law that is already in force, and the provenance standard that admits its own limits.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 6 · Say it was made with AI - learn ai media with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=2">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-media-with-phoebe</a> / Session 6 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI Media with Phoebe · Session 6 of 6</div>
+    <h1>Say it was <span class="accent">made with AI</span></h1>
+    <p class="sub">Most people think disclosure is a compliance chore that arrives later. It arrived on 2 August 2026 and it landed on you, not on the model vendor. Tonight you learn which article names you, what a Content Credential actually proves once you read C2PA's own security documents rather than its marketing, and why the video that forced Meta's AI labelling policy into existence contained no AI at all.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 Hands-on</span>
+      <span class="chip audience">Anyone publishing AI-assisted video or audio to a real audience</span>
+      <span class="chip audience">No legal background assumed</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:5">3-20 · Who the duty names, and what provenance proves</span>
+      <span class="a3" style="flex:4">20-38 · Build-along: write your disclosure line</span>
+      <span class="a4" style="flex:1">38-45 · Close the course</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Why this is the last session and not an appendix</span>
+      <h2>The law did not get delayed. You just were not told</h2>
+      <span class="tag concept">3 min live</span>
+    </div>
+    <p class="lede">There is a widespread belief that the EU pushed its AI transparency rules back. It did not. The part that governs what you publish has been in force since the start of this month, and the confusion has a specific cause worth naming.</p>
+
+    <div class="callout warn">
+      <p><strong>EU AI Act Article 50 is live.</strong> It has applied since <strong>2 August 2026</strong>. The Digital Omnibus, Regulation (EU) 2026/1744 of 8 July 2026, moved the <strong>high-risk</strong> deadlines out to December 2027 and August 2028. It did not touch Article 50. Every headline you read about the AI Act being delayed was about a different set of obligations entirely.</p>
+      <p>That matters because Article 50 is the one article in the whole regulation that speaks directly to a person making a video. It does not care whether your system is high risk. <strong>It cares whether a viewer can tell.</strong></p>
+    </div>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The one real carve-out, and the date it expires<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>There is exactly one genuine grace period, and it is narrower than people hope.</p>
+        <ul>
+          <li><strong>Generative systems placed on the market before 2 August 2026</strong> must comply with the Article 50(2) marking obligation only from <strong>2 December 2026</strong>. That is a provider-side extension on machine-readable marking for tools that already existed.</li>
+          <li><strong>It does not extend your own duty.</strong> The deployer obligation in 50(4) has no such grace period. If you publish a deep fake today, the disclosure duty applies today.</li>
+        </ul>
+        <p>There is also a voluntary layer sitting next to the law. The <strong>Code of Practice on Transparency of AI-generated Content</strong>, published 10 June 2026, had roughly 190 signatory organisations by late July 2026. Voluntary means voluntary. Signing it is a signal, not a defence, and not signing it is not a violation.</p>
+        <p>So the working position for tonight is this. The obligation on you is already running, the obligation on your tools finishes phasing in on 2 December 2026, and by the time anyone gets round to enforcing either one you will already have published the thing.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 1 ============ -->
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers who Article 50 actually names</span>
+      <h2>Two duties, and only one of them is yours</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Article 50 splits cleanly in half. One half is a duty on the people who build the model. The other half is a duty on the person who presses publish. Almost everybody reads the first half and assumes it covers them.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 366" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A diagram splitting EU AI Act Article 50 into the provider duty under paragraph 2 to mark outputs machine-readably and the deployer duty under paragraph 4 to disclose deep fakes, with a timeline showing Article 50 in force from 2 August 2026 and the marking grace period for pre-existing systems ending 2 December 2026">
+        <style>
+          .a1H { font: 700 13px Inter, sans-serif; fill: #0F172A; }
+          .a1T { font: 700 13px Inter, sans-serif; fill: #0F172A; }
+          .a1B { font: 400 11px Inter, sans-serif; fill: #334155; }
+          .a1M { font: 400 11px Inter, sans-serif; fill: #6B7280; }
+          .a1D { font: 700 12px Inter, sans-serif; fill: #0F172A; }
+          .a1N { font: 400 11px Inter, sans-serif; fill: #6B7280; }
+          .a1F { font: 400 12px Inter, sans-serif; fill: #B45309; }
+        </style>
+        <text class="a1T" x="40" y="24">Two duties in one article, and they land on two different people</text>
+
+        <rect x="40" y="44" width="390" height="176" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+        <text class="a1H" x="58" y="68">Article 50(2) · providers</text>
+        <text class="a1B" x="58" y="92">The duty sits on whoever built the system.</text>
+        <text class="a1B" x="58" y="108">Outputs shall be marked in a machine-readable</text>
+        <text class="a1B" x="58" y="124">format and detectable as artificially generated</text>
+        <text class="a1B" x="58" y="140">or manipulated, by solutions that are effective,</text>
+        <text class="a1B" x="58" y="156">interoperable, robust and reliable.</text>
+        <text class="a1M" x="58" y="178">Exempt: assistive editing that does not</text>
+        <text class="a1M" x="58" y="194">substantially alter the input.</text>
+
+        <rect x="450" y="44" width="390" height="176" rx="6" fill="#FFFBEB" stroke="#B45309" stroke-width="1.5"/>
+        <text class="a1H" x="468" y="68">Article 50(4) · deployers, meaning you</text>
+        <text class="a1B" x="468" y="92">The duty sits on you, the moment you publish.</text>
+        <text class="a1B" x="468" y="108">Anyone deploying a system that produces a deep</text>
+        <text class="a1B" x="468" y="124">fake shall disclose that the content has been</text>
+        <text class="a1B" x="468" y="140">artificially generated or manipulated.</text>
+        <text class="a1M" x="468" y="162">Reduced for work that is evidently artistic,</text>
+        <text class="a1M" x="468" y="178">creative, satirical, fictional or analogous,</text>
+        <text class="a1M" x="468" y="194">where it must not hamper display or enjoyment.</text>
+
+        <line x1="40" y1="258" x2="840" y2="258" stroke="#CBD5E1" stroke-width="2"/>
+        <circle cx="170" cy="258" r="7" fill="#0F172A"/>
+        <circle cx="560" cy="258" r="7" fill="#B45309"/>
+
+        <text class="a1D" x="170" y="282" text-anchor="middle">2 August 2026</text>
+        <text class="a1N" x="170" y="300" text-anchor="middle">Article 50 obligations in force</text>
+
+        <text class="a1D" x="560" y="282" text-anchor="middle">2 December 2026</text>
+        <text class="a1N" x="560" y="300" text-anchor="middle">grace period ends for systems placed on the</text>
+        <text class="a1N" x="560" y="316" text-anchor="middle">market before 2 August 2026</text>
+
+        <text class="a1F" x="40" y="348">The Digital Omnibus moved only the high-risk deadlines. Article 50 did not move.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the amber panel is the one with your name on it</figcaption>
+    </figure>
+
+    <p>Read the right-hand panel again. <strong>The deployer is the person putting the content in front of an audience.</strong> That is you, whether you generated the footage yourself or commissioned it, whether you are a company or a person with a phone. The provider duty in 50(2) is real and it is being built into the tools, but it does not discharge yours.</p>
+
+    <p>The artistic carve-out is the part people over-read. It is a <em>reduced</em> obligation, not an exemption. The regulation says disclosure for evidently artistic, creative, satirical, fictional or analogous work must not hamper the display or enjoyment of the work. That is an instruction about <strong>placement and proportion</strong>, not permission to say nothing. A credit at the end of a short film satisfies it. A film with no mention anywhere does not.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why "deep fake" is a wider word than you think<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The word carries baggage from politics, and the baggage causes people to assume it does not apply to them.</p>
+        <p>The 50(4) duty attaches to content that has been <strong>artificially generated or manipulated</strong> in a way that resembles real people, places or events. A synthetic presenter reading your product update is inside that description. So is a voice clone of your CEO reading a script the CEO never read, even if the CEO approved it. <strong>Consent from the person depicted is not the same thing as disclosure to the viewer</strong>, and Article 50(4) is about the viewer.</p>
+        <p>What is outside it is the ordinary invisible use of AI in production. Cutting silence, cleaning up audio, generating captions, colour work. Nothing there resembles a real person doing something they did not do, so nothing there triggers a deep fake disclosure. That distinction, generation of apparent reality versus assistance with real footage, is the line every platform policy in the next section is also trying to draw, with varying success.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2 ============ -->
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers what provenance actually proves</span>
+      <h2>A Content Credential is a claim, not a verdict</h2>
+      <span class="tag concept">7 min live</span>
+    </div>
+    <p class="lede">C2PA is the standard everyone points at when asked how we will know what is real. It is genuinely good engineering. It also does far less than the people citing it believe, and the most honest description of its limits is published by C2PA itself.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two columns comparing what a C2PA Content Credential does attest, namely a signed and untampered claim about an asset's history, against what it does not attest, namely that the content is true, accurate or fairly presented, with C2PA's own statement that it offers no protection against complete removal of manifests">
+        <style>
+          .c2T { font: 700 13px Inter, sans-serif; fill: #0F172A; }
+          .c2G { font: 700 13px Inter, sans-serif; fill: #166534; }
+          .c2R { font: 700 13px Inter, sans-serif; fill: #991B1B; }
+          .c2B { font: 400 11px Inter, sans-serif; fill: #334155; }
+          .c2Q { font: 400 12px Inter, sans-serif; fill: #0F172A; }
+        </style>
+        <text class="c2T" x="40" y="24">A signed claim about history, not a claim about truth</text>
+
+        <rect x="40" y="48" width="390" height="148" rx="6" fill="#F0FDF4" stroke="#166534" stroke-width="1.2"/>
+        <text class="c2G" x="58" y="72">What it does attest</text>
+        <circle cx="64" cy="96" r="3" fill="#166534"/>
+        <text class="c2B" x="76" y="100">That a claim about this asset's history was</text>
+        <text class="c2B" x="76" y="118">signed by an identifiable actor.</text>
+        <circle cx="64" cy="132" r="3" fill="#166534"/>
+        <text class="c2B" x="76" y="136">That the manifest is correctly formed and</text>
+        <text class="c2B" x="76" y="154">free from tampering.</text>
+        <circle cx="64" cy="168" r="3" fill="#166534"/>
+        <text class="c2B" x="76" y="172">That the bytes match the hard binding hash.</text>
+
+        <rect x="450" y="48" width="390" height="148" rx="6" fill="#FEF2F2" stroke="#991B1B" stroke-width="1.2"/>
+        <text class="c2R" x="468" y="72">What it does not attest</text>
+        <circle cx="474" cy="96" r="3" fill="#991B1B"/>
+        <text class="c2B" x="486" y="100">That the content is true.</text>
+        <circle cx="474" cy="114" r="3" fill="#991B1B"/>
+        <text class="c2B" x="486" y="118">That the content is accurate.</text>
+        <circle cx="474" cy="132" r="3" fill="#991B1B"/>
+        <text class="c2B" x="486" y="136">That the content is fairly presented.</text>
+        <circle cx="474" cy="150" r="3" fill="#991B1B"/>
+        <text class="c2B" x="486" y="154">That missing credentials mean untrustworthy.</text>
+        <circle cx="474" cy="168" r="3" fill="#991B1B"/>
+        <text class="c2B" x="486" y="172">That the manifest survived a screenshot.</text>
+
+        <rect x="40" y="214" width="800" height="72" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+        <text class="c2Q" x="58" y="240">C2PA, in its own Security Considerations: "C2PA does not offer any protection against the</text>
+        <text class="c2Q" x="58" y="264">complete removal of C2PA manifests from assets." Screenshots and re-encoding bypass it.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the harshest line about C2PA is published by C2PA</figcaption>
+    </figure>
+
+    <p>Take the strongest sentences one at a time, because their source is what makes them usable. From the Security Considerations document: <strong>"C2PA does not offer any protection against the complete removal of C2PA manifests from assets."</strong> Screenshot the video, re-encode it, re-render it, and the credential is gone. Nothing about the pixels changed. The provenance did.</p>
+
+    <p>From the Harms Modelling document, two lines that should end most arguments in most meeting rooms. The presence of valid manifests does not mean that anything is true, and assets can carry valid C2PA manifests and still be disinformation. And the mirror image, which matters more in practice: <strong>"The fact that any digital asset does not have Content Credentials does not mean that its contents are not to be trusted."</strong></p>
+
+    <p>And from the specification's own scope, C2PA should not provide value judgments about whether a given set of provenance data is good or bad, only whether the assertions inside it validate, are correctly formed and are free from tampering. That is a standards body telling you, in its normative text, not to use it as a truth signal.</p>
+
+    <div class="callout tip">
+      <p><strong>The one sentence to carry out of this session.</strong> A Content Credential attests to a signed claim about an asset's history. It does not attest that the content is true, accurate, or fairly presented. Anyone who tells you provenance solves misinformation has not read the specification they are citing.</p>
+    </div>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The air-gap attack, admitted in YouTube's own help docs<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>YouTube runs a label reading "Captured with a camera", derived from C2PA data. Its own help page tells you what the label's absence means, and it is refreshingly blunt: if it is missing, that does not mean the content has modified audio or visuals.</p>
+        <p>The same documentation describes the attack that breaks the label's presence. <strong>Point a C2PA-enabled camera at a screen showing synthetic content.</strong> The camera did genuinely capture what was in front of it, so it signs a genuine capture credential. The result is fully synthetic footage carrying a valid, honestly issued "captured with a camera" claim.</p>
+        <p>This is not a bug anyone can patch. It is the boundary of what a cryptographic binding can say: the camera can attest to what reached its sensor, and it cannot attest to what was in the room. Every provenance system built on capture-time signing has this hole, and the reason to teach it is not cynicism. It is so that when a credential is produced as evidence in front of you, you ask the right next question.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>SynthID, the layer that survives what C2PA does not<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>If manifests can be stripped, the obvious complement is a mark that lives in the content rather than beside it. That is what a <strong>soft binding</strong> is, and SynthID is the largest deployed example.</p>
+        <p>It embeds a signal directly in the pixels or the audio samples, and it is designed to survive <strong>cropping, filters, frame-rate change and lossy compression</strong>. Google reported over <strong>10 billion pieces of content</strong> watermarked as of May 2025.</p>
+        <p>Read the two layers together rather than as rivals. The hard binding gives you a cryptographically strong claim that is easy to remove. The soft binding gives you a weaker claim that is hard to remove. Durable Content Credentials are the attempt to combine metadata, watermark and fingerprint so that stripping one does not strip them all. <strong>Neither layer, alone or together, tells you whether the content is honest.</strong> They tell you how it was made, and only when they survive.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3 ============ -->
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers what each platform requires of you</span>
+      <h2>Four platforms asking four different questions</h2>
+      <span class="tag concept">7 min live</span>
+    </div>
+    <p class="lede">There is no single disclosure rule and there is no chance of one arriving. Each platform wrote its own trigger, gave you a different control, shows the viewer a different string, and puts it in a different place. Publishing the same video to four places means answering four questions.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 396" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four cards comparing the AI disclosure policies of YouTube, TikTok, Meta and LinkedIn across their trigger, what the viewer sees, where the label appears, and their C2PA role">
+        <style>
+          .p4T { font: 700 13px Inter, sans-serif; fill: #0F172A; }
+          .p4H { font: 700 13px Inter, sans-serif; fill: #0F172A; }
+          .p4K { font: 700 9px Inter, sans-serif; fill: #9CA3AF; letter-spacing: .08em; }
+          .p4B { font: 400 11px Inter, sans-serif; fill: #334155; }
+          .p4V { font: 700 11px Inter, sans-serif; fill: #B45309; }
+          .p4N { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+        </style>
+        <text class="p4T" x="42" y="24">Same video, four different questions to answer</text>
+
+        <rect x="42" y="44" width="190" height="290" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+        <text class="p4H" x="54" y="66">YouTube</text>
+        <text class="p4K" x="54" y="90">TRIGGER</text>
+        <text class="p4B" x="54" y="106">photorealistic content</text>
+        <text class="p4B" x="54" y="120">that AI meaningfully</text>
+        <text class="p4B" x="54" y="134">alters or generates</text>
+        <text class="p4K" x="54" y="160">VIEWER SEES</text>
+        <text class="p4V" x="54" y="176">Made with AI</text>
+        <text class="p4K" x="54" y="216">WHERE</text>
+        <text class="p4B" x="54" y="232">on the player if</text>
+        <text class="p4B" x="54" y="246">photorealistic, in the</text>
+        <text class="p4B" x="54" y="260">description if animated</text>
+        <text class="p4K" x="54" y="286">C2PA</text>
+        <text class="p4B" x="54" y="302">reads v2.1 and up</text>
+
+        <rect x="244" y="44" width="190" height="290" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+        <text class="p4H" x="256" y="66">TikTok</text>
+        <text class="p4K" x="256" y="90">TRIGGER</text>
+        <text class="p4B" x="256" y="106">AI or a significant</text>
+        <text class="p4B" x="256" y="120">edit showing realistic</text>
+        <text class="p4B" x="256" y="134">scenes or people</text>
+        <text class="p4K" x="256" y="160">VIEWER SEES</text>
+        <text class="p4V" x="256" y="176">AI-generated, via</text>
+        <text class="p4V" x="256" y="190">the AIGC label</text>
+        <text class="p4K" x="256" y="216">WHERE</text>
+        <text class="p4B" x="256" y="232">on the video itself</text>
+        <text class="p4K" x="256" y="286">C2PA</text>
+        <text class="p4B" x="256" y="302">reads and writes;</text>
+        <text class="p4B" x="256" y="316">on the committee</text>
+
+        <rect x="446" y="44" width="190" height="290" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+        <text class="p4H" x="458" y="66">Meta</text>
+        <text class="p4K" x="458" y="90">TRIGGER</text>
+        <text class="p4B" x="458" y="106">photorealistic video</text>
+        <text class="p4B" x="458" y="120">or realistic-sounding</text>
+        <text class="p4B" x="458" y="134">audio, organic posts</text>
+        <text class="p4K" x="458" y="160">VIEWER SEES</text>
+        <text class="p4V" x="458" y="176">AI info, clickable</text>
+        <text class="p4K" x="458" y="216">WHERE</text>
+        <text class="p4B" x="458" y="232">on the post if AI-</text>
+        <text class="p4B" x="458" y="246">generated; in the</text>
+        <text class="p4B" x="458" y="260">menu if only edited</text>
+        <text class="p4K" x="458" y="286">C2PA</text>
+        <text class="p4B" x="458" y="302">reads C2PA and IPTC</text>
+
+        <rect x="648" y="44" width="190" height="290" rx="6" fill="#FFFBEB" stroke="#B45309" stroke-width="1.2"/>
+        <text class="p4H" x="660" y="66">LinkedIn</text>
+        <text class="p4K" x="660" y="90">TRIGGER</text>
+        <text class="p4B" x="660" y="106">synthetic media of a</text>
+        <text class="p4B" x="660" y="120">person saying or doing</text>
+        <text class="p4B" x="660" y="134">what they did not</text>
+        <text class="p4K" x="660" y="160">VIEWER SEES</text>
+        <text class="p4V" x="660" y="176">a C2PA panel, and</text>
+        <text class="p4V" x="660" y="190">no platform badge</text>
+        <text class="p4K" x="660" y="216">WHERE</text>
+        <text class="p4B" x="660" y="232">next to the media</text>
+        <text class="p4K" x="660" y="286">C2PA</text>
+        <text class="p4B" x="660" y="302">display only. No</text>
+        <text class="p4B" x="660" y="316">manifest, no display</text>
+
+        <text class="p4N" x="42" y="360">YouTube exempts beauty filters, colour adjustment, caption creation, and cloning your own voice for your own dubs.</text>
+        <text class="p4N" x="42" y="380">LinkedIn is deception-scoped with a parody carve-out, and its panel renders only if a manifest survived the upload.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the amber card is the one that is not a label at all</figcaption>
+    </figure>
+
+    <div class="tablescroll">
+      <table class="clean">
+        <thead>
+          <tr><th></th><th>YouTube</th><th>TikTok</th><th>Meta</th><th>LinkedIn</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Trigger</td>
+            <td>AI meaningfully alters or generates <strong>photorealistic</strong> content</td>
+            <td>AI or a significant edit showing <strong>realistic-looking scenes or people</strong></td>
+            <td><strong>Photorealistic video or realistic-sounding audio</strong>, organic posts</td>
+            <td>Synthetic media depicting a person <strong>saying or doing what they did not</strong></td>
+          </tr>
+          <tr>
+            <td>Creator control</td>
+            <td>Studio, then Attributes, then <strong>"AI use"</strong></td>
+            <td><strong>AIGC label</strong>, or your own caption, sticker or watermark</td>
+            <td>The <strong>AI-disclosure tool</strong></td>
+            <td>No dedicated tool found</td>
+          </tr>
+          <tr>
+            <td>Viewer sees</td>
+            <td><strong>"Made with AI"</strong></td>
+            <td><strong>"AI-generated"</strong>, or the AIGC label</td>
+            <td><strong>"AI info"</strong>, clickable</td>
+            <td>A <strong>C2PA panel</strong>, not a platform badge</td>
+          </tr>
+          <tr>
+            <td>Where it appears</td>
+            <td>On the player if photorealistic, in the description if animated</td>
+            <td>On the video</td>
+            <td>On the post if AI-generated, in the <strong>overflow menu</strong> if only AI-edited</td>
+            <td>Next to the media</td>
+          </tr>
+          <tr>
+            <td>C2PA role</td>
+            <td>Reads v2.1 and up</td>
+            <td><strong>Reads and writes</strong>, and sits on the Steering Committee</td>
+            <td>Reads C2PA and IPTC</td>
+            <td><strong>Display only</strong>. No manifest, no display</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Two things fall out of that table immediately. First, <strong>none of these is a blanket label-all-AI rule</strong>. Every one of them is scoped to something, and the scope is usually realism. Second, the placement differences are not cosmetic. A label on the player and a label three taps into an overflow menu are different products, and one of them is a decision about how much the platform wants the viewer to notice.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Four exemptions that surprise people every single time<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Most disclosure anxiety is spent on things nobody is asking you to disclose. From YouTube's own policy page, no disclosure is required for:</p>
+        <ul>
+          <li><strong>Beauty filters.</strong> The thing people assume is the most obviously synthetic layer on the internet is explicitly out of scope.</li>
+          <li><strong>Colour adjustment.</strong> Grading, correction, look-up tables. Out.</li>
+          <li><strong>Caption creation.</strong> Everything session 4 was about generates no disclosure duty at all.</li>
+          <li><strong>Cloning your own voice for your own dubs.</strong> This is the one that stops the room. Your voice, your content, another language: no label required.</li>
+        </ul>
+        <p>TikTok adds one of its own. Generic text-to-speech does not require disclosure <strong>when the voice is not a recognisable voice of a known individual</strong>. The pivot is not synthesis, it is identity. A synthetic narrator is fine. A synthetic narrator that sounds like a specific real person is not.</p>
+        <p>Notice how closely that tracks Article 50(4). The law and the platforms have converged, from different directions, on the same underlying question: <strong>does this content make a viewer believe a real person did something they did not do?</strong> Once you hold that question, most of the rules stop needing to be memorised.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 4 ============ -->
+  <section class="section" id="part-4">
+    <div class="section-kicker">
+      <span class="klabel">Part 4 · covers how these policies actually get written</span>
+      <h2>The video that forced the AI policy was not AI</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">If you only remember one causal chain from this course, make it this one. It explains why platform AI policies look the way they do, and it explains why the first version of Meta's label had to be renamed within three months.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 292" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A dated timeline of Meta's AI labelling policy running from an altered Biden video that was not AI-made, through Oversight Board case 2023-029-FB-UA in February 2024, Meta adopting labelling in April, the rename to AI info in July, and the placement split in September">
+        <style>
+          .m6T { font: 700 13px Inter, sans-serif; fill: #0F172A; }
+          .m6D { font: 700 11px Inter, sans-serif; fill: #0F172A; }
+          .m6B { font: 400 11px Inter, sans-serif; fill: #334155; }
+          .m6R { font: 700 11px Inter, sans-serif; fill: #991B1B; }
+          .m6Q { font: 400 12px Inter, sans-serif; fill: #0F172A; }
+          .m6K { font: 700 12px Inter, sans-serif; fill: #991B1B; }
+        </style>
+        <text class="m6T" x="40" y="22">How a policy about AI got written because of something that was not AI</text>
+
+        <line x1="60" y1="64" x2="820" y2="64" stroke="#CBD5E1" stroke-width="2"/>
+        <circle cx="120" cy="64" r="7" fill="#991B1B"/>
+        <circle cx="280" cy="64" r="7" fill="#475569"/>
+        <circle cx="440" cy="64" r="7" fill="#475569"/>
+        <circle cx="600" cy="64" r="7" fill="#475569"/>
+        <circle cx="760" cy="64" r="7" fill="#0F172A"/>
+
+        <text class="m6D" x="120" y="46" text-anchor="middle">the trigger</text>
+        <text class="m6D" x="280" y="46" text-anchor="middle">5 Feb 2024</text>
+        <text class="m6D" x="440" y="46" text-anchor="middle">5 April 2024</text>
+        <text class="m6D" x="600" y="46" text-anchor="middle">1 July 2024</text>
+        <text class="m6D" x="760" y="46" text-anchor="middle">12 Sept 2024</text>
+
+        <text class="m6B" x="120" y="90" text-anchor="middle">an altered Biden</text>
+        <text class="m6B" x="120" y="106" text-anchor="middle">video, looped from</text>
+        <text class="m6B" x="120" y="122" text-anchor="middle">real footage</text>
+
+        <text class="m6B" x="280" y="90" text-anchor="middle">Oversight Board</text>
+        <text class="m6B" x="280" y="106" text-anchor="middle">decides case</text>
+        <text class="m6B" x="280" y="122" text-anchor="middle">2023-029-FB-UA</text>
+
+        <text class="m6B" x="440" y="90" text-anchor="middle">Meta adopts</text>
+        <text class="m6B" x="440" y="106" text-anchor="middle">AI labelling</text>
+
+        <text class="m6B" x="600" y="90" text-anchor="middle">Made with AI is</text>
+        <text class="m6B" x="600" y="106" text-anchor="middle">renamed AI info,</text>
+        <text class="m6B" x="600" y="122" text-anchor="middle">real photos were</text>
+        <text class="m6B" x="600" y="138" text-anchor="middle">being labelled</text>
+
+        <text class="m6B" x="760" y="90" text-anchor="middle">placement splits:</text>
+        <text class="m6B" x="760" y="106" text-anchor="middle">generated stays</text>
+        <text class="m6B" x="760" y="122" text-anchor="middle">visible, edited moves</text>
+        <text class="m6B" x="760" y="138" text-anchor="middle">into the post menu</text>
+
+        <rect x="62" y="148" width="116" height="20" rx="4" fill="#FEE2E2"/>
+        <text class="m6R" x="120" y="162" text-anchor="middle">NOT made with AI</text>
+
+        <rect x="40" y="186" width="800" height="86" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+        <text class="m6Q" x="58" y="210">The Board called Meta's policy "incoherent, lacking in persuasive justification and</text>
+        <text class="m6Q" x="58" y="230">inappropriately focused on how content has been created".</text>
+        <text class="m6K" x="58" y="256">The video that forced Meta's AI labelling policy contained no AI at all.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - five dates, and the first one is the one everybody gets wrong</figcaption>
+    </figure>
+
+    <p>The Oversight Board's phrasing is the part worth memorising, because it is a diagnosis rather than a complaint. A policy <strong>inappropriately focused on how content has been created</strong> is a policy that asks the wrong question. It asks which tool touched this. The question that matters to a viewer is whether they are being misled.</p>
+
+    <p>Meta then walked straight into the consequence of asking the tool question. "Made with AI" launched on 5 April 2024 and was renamed to "AI info" on 1 July 2024 because content with only minor AI modifications, retouching tools and the like, carried industry standard indicators and was being labelled as AI. <strong>Real photographs were being flagged as artificial.</strong> On 12 September 2024 the placement split followed: AI-generated content keeps a visible label, AI-edited content moves into the post menu.</p>
+
+    <p>That is a complete failure loop in five months, and it is not a story about Meta being careless. It is what happens when a detection signal, the C2PA indicator, gets used as an editorial signal. <strong>The manifest was doing exactly what it was designed to do</strong>, which is to record that a tool touched the file. Meta read that as a claim about the nature of the content, which C2PA's own scope explicitly says it is not.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>LinkedIn is the contrast case, and it is the better design<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Set LinkedIn against the other three and the difference is structural, not cosmetic.</p>
+        <p><strong>Its duty is deception-scoped.</strong> Disclosure is required for synthetic media that misrepresents a real person or real events, with an explicit parody carve-out. It is not a blanket label-all obligation. That is the Oversight Board's diagnosis, implemented: the question is about misleading the viewer, not about which tool was used.</p>
+        <p><strong>Its label is not a label.</strong> LinkedIn renders a C2PA provenance panel built from the manifest the upstream tool signed. It is display-only. It does not sign anything, does not assert anything of its own, and if no manifest survived the upload there is <strong>nothing to display</strong>.</p>
+        <p>Both halves are honest, and the second one has a sharp edge. A LinkedIn post with no provenance panel tells you nothing whatsoever. That is not a flaw in their implementation, it is the strippability problem from Part 2 showing up in a real product. Which is exactly why the deception-scoped duty has to exist next to it, and why it is doing more work than the panel is.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The US position, in about ninety seconds<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Three live instruments and one that keeps getting cited as though it were law.</p>
+        <ul>
+          <li><strong>TAKE IT DOWN Act.</strong> The platform notice-and-removal duty went live on <strong>19 May 2026</strong>. Removal as soon as possible and <strong>not later than 48 hours</strong>, plus reasonable efforts to find known identical copies. Enforced by the <strong>FTC</strong>. Its digital forgery definition explicitly covers content made using software, machine learning or artificial intelligence.</li>
+          <li><strong>California AI Transparency Act</strong>, SB 942 as amended by AB 853, <strong>operative 2 August 2026</strong>. Above <strong>1,000,000 monthly users</strong>: a free public AI detection tool with an API, optional manifest disclosure, mandatory latent disclosure. Large online platforms above <strong>2,000,000 unique monthly users</strong> pick up provenance duties from 1 January 2027. Penalty: <strong>$5,000 per violation, each day counting separately.</strong></li>
+          <li><strong>The detail that matters for procurement.</strong> The California statute <strong>does not name C2PA</strong>. It says "widely adopted specifications adopted by an established standards-setting body". If a vendor tells you the law requires C2PA specifically, they are selling, not citing.</li>
+          <li><strong>NO FAKES Act is still only a bill.</strong> Introduced, not passed. Treat every article describing it as a rule as a warning about that publication.</li>
+        </ul>
+        <p>Note the shape across both jurisdictions. Europe puts the duty on the publisher and the provider. California puts it on the very large platform and the very large developer. <strong>Neither of them lets the individual creator off, and neither of them will arrive as a notification in your editing software.</strong></p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ BUILD ALONG ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Write the disclosure line for the video you have been building</h2>
+      <span class="tag demo">★ 18 min · everyone builds</span>
+    </div>
+    <p class="lede">You have carried the same sixty seconds through five sessions. Tonight it gets the last thing it needs, which is a sentence you would be willing to defend. Work in order. Step 3 is the one that decides everything after it.</p>
+
+    <div class="steps">
+      <div class="step"><p><strong>List every AI touch in the file, honestly.</strong> Silence cutting, filler removal, captions, generated b-roll, voice clone, upscale, colour. Write them down even if you are certain they are exempt. You cannot reason about a list you have not made.</p></div>
+      <div class="step"><p><strong>Cross off everything that is assistance rather than apparent reality.</strong> Caption generation, colour adjustment, beauty filters, cloning your own voice for your own dub. These are named exemptions on YouTube's own policy page, and they sit outside Article 50(4) too because nothing there depicts a real person doing what they did not do.</p></div>
+      <div class="step"><p><strong>Ask the one question that survives every jurisdiction.</strong> Does anything left on the list make a viewer believe a real person said or did something they did not? If yes, you have a 50(4) duty and a platform duty, and the rest of this is about wording. If no, you may still choose to disclose, and that is now a taste decision rather than a legal one.</p></div>
+      <div class="step"><p><strong>Write the sentence at the length the work can carry.</strong> One line, plain, in the voice of the piece. If the work is evidently artistic, creative, satirical or fictional, the obligation is reduced and must not hamper display or enjoyment, so an end credit is enough. If it is presented as a record of something real, it goes where a viewer meets it, not in the description.</p></div>
+      <div class="step"><p><strong>Set the platform control on every destination separately.</strong> YouTube: Studio, Attributes, "AI use". TikTok: the AIGC label, or your own caption or sticker. Meta: the AI-disclosure tool. LinkedIn: no tool exists, so your disclosure has to live in the post copy. Four destinations, four actions.</p></div>
+      <div class="step"><p><strong>Test what survives.</strong> Export, screenshot the export, and inspect both for a manifest. Whatever the screenshot lost is what a re-upload will lose. This is the two-minute version of the Part 2 lesson, and it is the one that makes it stick.</p></div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Why the disclosure line is written last but decided first.</strong> If you cannot write the sentence without it sounding like an apology, the problem is usually upstream in the edit rather than in the wording. A piece that is honest about what it is does not find this sentence hard. Take the ten minutes here rather than the ten minutes arguing about it later.</p>
+    </div>
+
+    <div class="scorecard" data-title="Before you publish this specific video" data-foot="Five rows. The last one is the one people discover after publishing.">
+      <div class="sc-row"><div class="sc-q">Every AI touch in the file is written down, including the exempt ones<em>You cannot reason about a list you have not made.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You can answer whether it makes a viewer believe a real person did something they did not<em>That question drives Article 50(4) and all four platform policies.</em></div></div>
+      <div class="sc-row"><div class="sc-q">The disclosure line exists as a sentence, not as an intention<em>Written, in the voice of the piece, at a length the work can carry.</em></div></div>
+      <div class="sc-row"><div class="sc-q">Each destination platform's own control has been set<em>Four platforms, four separate actions. None of them inherits from another.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You have checked what provenance survives a screenshot<em>Whatever the screenshot lost, a re-upload will lose too.</em></div></div>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>After the last session</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Read Article 50 yourself, paragraphs 2 and 4 only.</strong> It is two paragraphs and it takes six minutes. Find the words "machine-readable" in one and "deep fake" in the other, and notice which paragraph names you. Reading the primary text once is worth more than reading ten explainers about it.</li>
+      <li><strong>Open C2PA's Harms Modelling document and find the sentence about absent credentials.</strong> Then decide, in writing, what you will say the next time someone in a meeting treats a missing credential as evidence of anything.</li>
+      <li><strong>Publish one thing to two platforms and compare what the viewer sees.</strong> Same file, same disclosure, two destinations. Screenshot both. The gap between them is the thing this session exists to make visible.</li>
+      <li><strong>Audit one piece of your own back catalogue against the exemption list.</strong> Find one video you worried about disclosing that you did not need to, and one you did not think about that you probably did. Both exist. That asymmetry is the normal state.</li>
+      <li><strong>Optional, and it is the most useful thing on this list:</strong> take any article claiming the EU delayed its AI transparency rules, open Regulation (EU) 2026/1744, and find out which deadlines actually moved. Then notice how many people you know believe the headline.</li>
+    </ol>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and the last stamp goes in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · You publish a video containing a synthetic presenter. Under EU AI Act Article 50, whose duty is it to disclose that to the viewer?</p>
+      <button class="qopt" type="button">A · The model provider's, under 50(2), because they must mark outputs in a machine-readable format</button>
+      <button class="qopt" type="button">B · Yours, as the deployer, under 50(4), and the artistic carve-out reduces the obligation rather than removing it</button>
+      <button class="qopt" type="button">C · Nobody's until 2 December 2026, when the grace period expires</button>
+      <p class="qwhy">50(2) is a provider duty about machine-readable marking, and it does not discharge yours. 50(4) names the deployer, which is whoever puts the content in front of an audience. The reduced obligation for evidently artistic, creative, satirical or fictional work is an instruction about placement, disclosure must not hamper display or enjoyment, not a permission to say nothing. And the 2 December 2026 date applies only to the 50(2) marking duty for systems placed on the market before 2 August 2026.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · A clip arrives carrying a valid Content Credential. What has that established?</p>
+      <button class="qopt" type="button">A · That the content is accurate and has not been misrepresented</button>
+      <button class="qopt" type="button">B · Nothing at all, because manifests can be stripped from any asset</button>
+      <button class="qopt" type="button">C · That a signed claim about the asset's history is correctly formed and untampered, and nothing about whether the content is true</button>
+      <p class="qwhy">C2PA's own scope says it should not provide value judgments about whether provenance data is good or bad, only whether the assertions validate. Harms Modelling adds that valid manifests do not mean anything is true, and that assets can carry them and still be disinformation. B overcorrects: strippability limits what an absent credential can prove, not what a present one proves. C2PA is equally clear that missing Content Credentials do not mean the contents are not to be trusted.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Meta's AI labelling policy exists because a specific video went to the Oversight Board. What was in that video?</p>
+      <button class="qopt" type="button">A · A looped edit of real footage of Biden, which was not AI-made at all</button>
+      <button class="qopt" type="button">B · A fully AI-generated video of a public figure that Meta had refused to remove</button>
+      <button class="qopt" type="button">C · A synthetic voice clone posted as a Reel</button>
+      <p class="qwhy">Case 2023-029-FB-UA, decided 5 February 2024, concerned an altered video that was a looped edit of real footage. The Board called the policy incoherent, lacking in persuasive justification and inappropriately focused on how content has been created, and Meta adopted labelling on 5 April 2024. B and C are what everyone assumes, and the assumption is the point: the policy governing AI content was forced by content that was not AI, which is why it asked the wrong question and had to be renamed within three months.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL COVERAGE ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">EU AI Act Article 50, and Regulation (EU) 2026/1744</span><span class="note">The 2 August 2026 application date, the 50(2) and 50(4) split, the artistic carve-out wording, and the 2 December 2026 grace period</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">C2PA specification 2.4, its Security Considerations and Harms Modelling</span><span class="note">Every limitation quoted here is C2PA's own text, including the removal sentence and the absent-credentials sentence</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Platform policy and help pages for YouTube, TikTok, Meta and LinkedIn</span><span class="note">Triggers, creator controls, label strings, placement, C2PA role, the four exemptions, and YouTube's own air-gap admission</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Meta's labelling announcement and Oversight Board case 2023-029-FB-UA</span><span class="note">The five dates, the verbatim criticism, and the rename rationale about minor modifications carrying industry standard indicators</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">TAKE IT DOWN Act, Public Law 119-12, and California SB 942 as amended by AB 853</span><span class="note">The 19 May 2026 platform duty, the 48-hour window, the user thresholds, the penalty, and the fact that the statute does not name C2PA</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">SynthID and the 10 billion figure</span><span class="note">Google DeepMind's own page, dated May 2025. Vendor-reported, taught as the complementary soft-binding layer rather than as an audit</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">NO FAKES Act</span><span class="note">Taught only as a bill that has not passed, because a great deal of published material describes it as though it were law</span></div>
+      <div class="covered-row"><span class="status pill bare">✗</span><span class="name">Camera-maker and Adobe C2PA adoption</span><span class="note">Deliberately not claimed anywhere on this page. Could not be verified first-party. Only TikTok, YouTube, Meta and OpenAI adoption is asserted</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Content Credentials Foundations, the only provenance course found anywhere</span><span class="note">3 modules, 10 lessons, 1h 37m, free, and no certificate. Certificates stay with the providers, and this course does not pretend otherwise</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Full source map with every URL: <span class="mono">materials/official-course-map.md</span> in this repo, including a quarantine list of what is deliberately not stated.</p>
+  </section>
+
+  <!-- ============ FINAL COURSE SCORECARD ============ -->
+  <section class="section" id="final-check">
+    <div class="section-kicker">
+      <span class="klabel">The whole course</span>
+      <h2>Six sessions, one checklist</h2>
+    </div>
+    <p class="lede">The scorecard above is about tonight's video. This one is about whether the course took. Score it honestly, because the rows you cannot claim are the sessions worth revisiting rather than the ones worth forgetting.</p>
+
+    <div class="scorecard" data-title="What you should be able to do now" data-foot="Six rows, one per session. Anything under a 2 tells you where to go back.">
+      <div class="sc-row"><div class="sc-q">You state the point of a video before you greet anybody<em>Session 1. The largest available gain, and it costs nothing.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You can price a piece of work before you start making it<em>Session 2. Per-second cost, clip length and resolution caps decide the shape of the idea.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You look for the real constraint before you trust a feature page<em>Session 3. English-only, single-face-only, two seconds maximum. Always three clicks deeper.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You treat captions as an obligation with a legal floor, not a nicety<em>Session 4. Somebody reads them before publication, every time.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You can name how these models fail, using published measurements<em>Session 5. And you can say out loud which numbers nobody has audited.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You can say who owes the disclosure duty, and what provenance does not prove<em>Session 6. 50(4) names you, and a credential is a claim about history, not a verdict on truth.</em></div></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 6 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Article 50 is already law</b><span>In force 2 August 2026. The Digital Omnibus moved only the high-risk deadlines.</span></div>
+      <div class="cheat-item"><b>50(2) is theirs, 50(4) is yours</b><span>Providers mark machine-readably. Deployers disclose deep fakes. You are the deployer.</span></div>
+      <div class="cheat-item"><b>2 December 2026</b><span>The marking grace period ends for systems placed on the market before 2 August 2026.</span></div>
+      <div class="cheat-item"><b>A credential is a claim, not a verdict</b><span>C2PA's own words: no protection against complete removal, and absence proves nothing.</span></div>
+      <div class="cheat-item"><b>The policy was forced by a non-AI video</b><span>Case 2023-029-FB-UA, then labelling in April 2024, then the rename on 1 July.</span></div>
+      <div class="cheat-item"><b>The exemptions are wider than you fear</b><span>Beauty filters, colour, captions, and cloning your own voice for your own dubs.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">That is the course</span>
+    <p>Six sessions ago you had sixty seconds of footage you hoped was fine. You now have one that says its point in three seconds, was priced before it was made, respects the constraints the vendors do not advertise, carries captions somebody actually read, fails in ways you can name from published measurements, and says how it was made in a sentence you would defend in a room.</p>
+    <p>None of that came from a tool, which is the point. <strong>Every model named in this course has a shorter life than the judgment you built around it.</strong> Sora is already gone, Veo 2 and 3 were shut with fifteen days' notice, and Article 50's next deadline lands in December. Come back to the source map rather than to the sessions when a date moves, and hold anything you read about this field to the standard you have just been holding this course to.</p>
+    <p>If you want the next thing: <a href="https://phoebefu6.github.io/learn-ai-digital-human-with-phoebe/">Learn AI Digital Human with Phoebe ↗</a> picks up exactly where this stops, at the point where the synthetic presenter is the product rather than a clip inside one, and where every disclosure question in tonight's session becomes the first design decision rather than the last.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 6 of 6 · learn-ai-media-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="../index.html">← All sessions</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

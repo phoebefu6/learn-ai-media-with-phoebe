@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 3 of 6. English only. One clear face. Two seconds. File level, not clip level. Three days, then it stops exporting. Every real limit in AI video is three clicks deeper than the page that sold it to you, and they cluster into five types you can learn.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="The constraints they hide - learn ai media with phoebe">
+<meta property="og:description" content="Session 3 of 6. Five gate types, quoted from vendor documentation, that let you predict the limits of a tool this course never mentions.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/courses/03-the-constraints-they-hide.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The constraints they hide - learn ai media with phoebe">
+<meta name="twitter:description" content="Session 3 of 6. The advertised feature is never the real constraint. Here are the five gates that always are.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-ai-media-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 3 · The constraints they hide - learn ai media with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=2">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-media-with-phoebe</a> / Session 3 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI Media with Phoebe · Session 3 of 6</div>
+    <h1>The constraints <span class="accent">they hide</span></h1>
+    <p class="sub">Nothing in this session is a secret. Every limit you are about to read is published, in the vendor's own words, on the vendor's own site. It is just never on the page that sold you the feature. Tonight you learn the five shapes these limits come in, so that the next time a tool launches, you know which question to ask before you have spent a pound or an afternoon on it.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Medium</span>
+      <span class="chip audience">Anyone about to pay for an AI editing tool</span>
+      <span class="chip audience">Session 2 helps but is not required</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:5">3-22 · The five gates</span>
+      <span class="a3" style="flex:4">22-40 · Build-along: read the docs</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">The claim this session has to earn</span>
+      <h2>The advertised feature is never the real constraint</h2>
+      <span class="tag concept">3 min live</span>
+    </div>
+    <p class="lede">Session 2 gave you prices. Prices are the easy part, because vendors publish them loudly and in one place. What they do not publish loudly is the sentence that decides whether the feature works on your footage at all.</p>
+
+    <div class="callout warn">
+      <p><strong>Across every vendor in this category, the real constraint sits about three clicks deeper than the page that sold you the tool.</strong> Not hidden, not illegal, not even unusual. Just filed one level down, in a help article that the marketing page does not link to, written in a flat voice that assumes you already committed.</p>
+      <p>Here is the version of that sentence you will meet tonight, quoted exactly: Studio Sound <strong>"only works on recorded audio, not AI-generated speech".</strong> Remove Filler Words <strong>"currently detects filler words in English transcripts only".</strong> Eye Contact is <strong>"single person only: the effect works when one clear face is in frame".</strong> Regenerate <strong>"currently supports English audio and video only".</strong> None of those four sentences appears anywhere near where you make the buying decision.</p>
+    </div>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Why this is a lesson and not a list of gripes<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A list of limits goes stale in a quarter. Every one of the quotes above will be edited, renamed or superseded, probably before this course is a year old, and session 1 showed you exactly how fast that happens.</p>
+        <p>What does not go stale is the <strong>shape</strong> of the limits. Read enough of these pages and you stop seeing twelve unrelated footnotes and start seeing five recurring gates: a language gate, a count gate, a duration gate, a scope gate and an expiry gate. Every constraint in this session is one of those five wearing a different product name.</p>
+        <p>That is the portable part. A reader who knows the five gates can open the docs of a tool this course has never mentioned, find the real limit in about ninety seconds, and decide before paying. That is the whole point of tonight, and everything else on this page is evidence for it.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 1 ============ -->
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the taxonomy</span>
+      <h2>Five gates, and the question each one answers</h2>
+      <span class="tag concept">7 min live</span>
+    </div>
+    <p class="lede">Learn this diagram and you can stop memorising vendor footnotes. Each row is a question, and the docs of any AI media tool will answer at least three of them if you go looking.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A taxonomy of five constraint types in AI media tools: language-gated, count-gated, duration-gated, scope-gated and expiry-gated, each shown with the question it answers and one real vendor example">
+        <style>
+          .t1R { font: 700 12px Inter, sans-serif; fill: #0F172A; }
+          .t1Q { font: 400 11px Inter, sans-serif; fill: #334155; }
+          .t1E { font: 400 11px Inter, sans-serif; fill: #991B1B; }
+          .t1H { font: 700 10px Inter, sans-serif; fill: #9CA3AF; }
+          .t1C { font: 700 12px Inter, sans-serif; fill: #0F172A; }
+          .t1F { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+        </style>
+
+        <rect x="180" y="16" width="520" height="34" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text class="t1C" x="440" y="38" text-anchor="middle">Five gate types. Learn these and you can predict any tool.</text>
+        <line x1="440" y1="50" x2="440" y2="64" stroke="#CBD5E1" stroke-width="1.4"/>
+
+        <text class="t1H" x="40" y="70">the gate</text>
+        <text class="t1H" x="228" y="70">what it asks</text>
+        <text class="t1H" x="510" y="70">where you meet it tonight</text>
+
+        <rect x="40" y="80" width="176" height="30" rx="5" fill="#FEF3C7" stroke="#B45309"/>
+        <text class="t1R" x="52" y="100">language-gated</text>
+        <rect x="228" y="80" width="270" height="30" rx="5" fill="#F8FAFC" stroke="#E2E8F0"/>
+        <text class="t1Q" x="240" y="100">Which language is it in?</text>
+        <rect x="510" y="80" width="330" height="30" rx="5" fill="#FFF7ED" stroke="#FDBA74"/>
+        <text class="t1E" x="522" y="100">Remove Filler Words: English only</text>
+
+        <rect x="40" y="138" width="176" height="30" rx="5" fill="#FEF3C7" stroke="#B45309"/>
+        <text class="t1R" x="52" y="158">count-gated</text>
+        <rect x="228" y="138" width="270" height="30" rx="5" fill="#F8FAFC" stroke="#E2E8F0"/>
+        <text class="t1Q" x="240" y="158">How many faces are in frame?</text>
+        <rect x="510" y="138" width="330" height="30" rx="5" fill="#FFF7ED" stroke="#FDBA74"/>
+        <text class="t1E" x="522" y="158">Eye Contact: one clear face only</text>
+
+        <rect x="40" y="196" width="176" height="30" rx="5" fill="#FEF3C7" stroke="#B45309"/>
+        <text class="t1R" x="52" y="216">duration-gated</text>
+        <rect x="228" y="196" width="270" height="30" rx="5" fill="#F8FAFC" stroke="#E2E8F0"/>
+        <text class="t1Q" x="240" y="216">How many seconds can it touch?</text>
+        <rect x="510" y="196" width="330" height="30" rx="5" fill="#FFF7ED" stroke="#FDBA74"/>
+        <text class="t1E" x="522" y="216">Generative Extend: video 2s, audio 10s</text>
+
+        <rect x="40" y="254" width="176" height="30" rx="5" fill="#FEF3C7" stroke="#B45309"/>
+        <text class="t1R" x="52" y="274">scope-gated</text>
+        <rect x="228" y="254" width="270" height="30" rx="5" fill="#F8FAFC" stroke="#E2E8F0"/>
+        <text class="t1Q" x="240" y="274">Clip level or whole file?</text>
+        <rect x="510" y="254" width="330" height="30" rx="5" fill="#FFF7ED" stroke="#FDBA74"/>
+        <text class="t1E" x="522" y="274">Studio Sound: file level, not clip</text>
+
+        <rect x="40" y="312" width="176" height="30" rx="5" fill="#FEF3C7" stroke="#B45309"/>
+        <text class="t1R" x="52" y="332">expiry-gated</text>
+        <rect x="228" y="312" width="270" height="30" rx="5" fill="#F8FAFC" stroke="#E2E8F0"/>
+        <text class="t1Q" x="240" y="332">How long do the outputs live?</text>
+        <rect x="510" y="312" width="330" height="30" rx="5" fill="#FFF7ED" stroke="#FDBA74"/>
+        <text class="t1E" x="522" y="332">Opus Clip free: 3 days, then no export</text>
+
+        <text class="t1F" x="40" y="374">A reader who knows these five gates asks the right question first.</text>
+        <text class="t1F" x="40" y="398">The page that sold you the tool will not answer it. The docs one level down will.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - five rows, and every constraint tonight is one of them</figcaption>
+    </figure>
+
+    <p>Notice what the five gates have in common. <strong>None of them is about quality.</strong> None says the output will look bad. Each one says the feature will simply not engage, or will engage on something other than what you pointed it at. That is a much worse failure than a mediocre result, because a mediocre result tells you it happened.</p>
+
+    <p>It is also why the gates are worth memorising rather than looking up. You will meet them at the moment of highest pressure, which is the moment you have already recorded the thing and already promised the delivery.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why vendors file it this way, without anybody being dishonest<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>It is tempting to read this as deception. Mostly it is not, and the more accurate story is more useful to you.</p>
+        <p>A feature page has one job: explain what the thing does to somebody who has never seen it. Adding "single person only, and it fails on variable frame rate footage" to that page would be honest and would also make it unreadable. So the limit goes to the help article, which is written later, by a different team, for somebody who already has the problem.</p>
+        <p>The result is structural rather than malicious, and it is completely predictable. <strong>Which means you can route around it.</strong> The habit is one line long: before you buy or before you commit a deadline, open the help documentation for that exact feature and read to the bottom. The bottom is where the gate lives, every time, because that is where the writer put the caveats they could not fit above.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2 ============ -->
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers three features, side by side</span>
+      <h2>What the page says, and what the docs say</h2>
+      <span class="tag concept">7 min live</span>
+    </div>
+    <p class="lede">Three features, three pairs of columns. The left column is the promise you formed in your head. The right column is quoted from the vendor's own help pages, and nothing in it is disputed by anybody.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A two column comparison for Studio Sound, Eye Contact and Regenerate, showing the marketing promise on the left and the documented constraint on the right for each">
+        <style>
+          .c2N { font: 700 12px Inter, sans-serif; fill: #0F172A; }
+          .c2L { font: 400 11px Inter, sans-serif; fill: #475569; }
+          .c2R { font: 400 11px Inter, sans-serif; fill: #991B1B; }
+          .c2H { font: 700 11px Inter, sans-serif; fill: #6B7280; }
+          .c2W { font: 700 11px Inter, sans-serif; fill: #B45309; }
+          .c2F { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+        </style>
+
+        <text class="c2H" x="40" y="40">Feature</text>
+        <text class="c2H" x="192" y="40">What the product page says</text>
+        <text class="c2W" x="522" y="40">What the documentation says</text>
+
+        <rect x="180" y="52" width="310" height="84" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+        <rect x="510" y="52" width="330" height="84" rx="6" fill="#FFF7ED" stroke="#FDBA74"/>
+        <text class="c2N" x="40" y="82">Studio Sound</text>
+        <text class="c2L" x="192" y="78">One click and it sounds like a studio.</text>
+        <text class="c2L" x="192" y="98">Podcast quality audio, instantly.</text>
+        <text class="c2R" x="522" y="78">Recorded audio only, not AI speech.</text>
+        <text class="c2R" x="522" y="98">Applies per file, never per clip.</text>
+        <text class="c2R" x="522" y="118">Loud noise can return silence.</text>
+
+        <rect x="180" y="146" width="310" height="84" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+        <rect x="510" y="146" width="330" height="84" rx="6" fill="#FFF7ED" stroke="#FDBA74"/>
+        <text class="c2N" x="40" y="176">Eye Contact</text>
+        <text class="c2L" x="192" y="172">Look at the camera even when you</text>
+        <text class="c2L" x="192" y="192">were reading off your notes.</text>
+        <text class="c2R" x="522" y="172">Single person only: one clear face.</text>
+        <text class="c2R" x="522" y="192">Sideways and VFR footage fail.</text>
+        <text class="c2R" x="522" y="212">Doc's own fix: re-encode in HandBrake.</text>
+
+        <rect x="180" y="240" width="310" height="84" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+        <rect x="510" y="240" width="330" height="84" rx="6" fill="#FFF7ED" stroke="#FDBA74"/>
+        <text class="c2N" x="40" y="270">Regenerate</text>
+        <text class="c2L" x="192" y="266">Fix a line by retyping it in the</text>
+        <text class="c2L" x="192" y="286">script. The video follows.</text>
+        <text class="c2R" x="522" y="266">English audio and video only.</text>
+        <text class="c2R" x="522" y="286">No sequences, B-roll, multi-speaker.</text>
+        <text class="c2R" x="522" y="306">No shots without a clear face.</text>
+
+        <text class="c2F" x="40" y="356">Nothing on the right is hidden. It is published, one level below the page that sold it.</text>
+        <text class="c2F" x="40" y="380">The gap between the two columns is the entire subject of this session.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the right column is quoted, not paraphrased for effect</figcaption>
+    </figure>
+
+    <p>Take the Studio Sound row seriously, because it contains the worst outcome on this page. The documentation says that with extremely loud background noise the model <strong>"may not be able to separate the speech from the noise, resulting in a silent waveform"</strong>. Read that again. The failure mode of an audio cleanup tool is that it hands you back silence.</p>
+
+    <p>And because the same feature is <strong>scope-gated to the file, not the clip</strong>, you cannot switch it on for the one noisy interview and leave the rest alone. You are making a decision about the whole file. Those two facts are on the same help page and neither is on the feature page.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The filler word count that people report as a bug<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>This one is worth knowing because you will be asked about it, and the intuitive answer is wrong.</p>
+        <p>Remove Filler Words shows you a count of what it detected. It then removes fewer than that, and people file bug reports. It is not a bug. The option called <strong>"avoid harsh cuts"</strong> deliberately skips filler words that cannot be removed without clipping into nearby words or leaving an awkward cut behind.</p>
+        <p>So <strong>the removed count will never equal the detected count</strong>, and it should not. A tool that removed all of them would be a tool that clipped the first syllable off the word after every skipped "um". The gap between the two numbers is the feature protecting your audio.</p>
+        <p>The other constraint on the same feature is the language gate: it <strong>"currently detects filler words in English transcripts only"</strong>. If you work in any other language, this feature does not exist for you, and it will not tell you that. It will just find nothing.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Eye Contact, and the remedy the docs recommend<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Eye Contact is a count-gated feature and states it plainly: <strong>"single person only: the effect works when one clear face is in frame"</strong>. Two-hander interviews, panels, anything with a second person drifting into shot, all out of scope. That is a hard gate, not a quality warning.</p>
+        <p>The second gate is technical and catches far more people. It fails on sideways footage, and it fails on <strong>variable frame rate video</strong>. Variable frame rate is what a lot of screen recorders and phone capture apps produce by default, which means a large share of the footage people actually want to fix is exactly the footage the feature refuses.</p>
+        <p>The tell that this is a real limit rather than a temporary one: <strong>the documentation's own suggested remedy is to re-encode your file in HandBrake first.</strong> A vendor sending you to a third-party transcoder before its own feature will run is a vendor telling you, politely, that this is not getting fixed soon. Read that as a signal whenever you see it.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3 ============ -->
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers the duration gate</span>
+      <h2>Two seconds is the whole feature</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Duration gates are the easiest to check and the most often skipped, because a number that small does not feel like it can be the real answer. Here is Adobe Generative Extend drawn to scale.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A to-scale bar chart of Adobe Generative Extend limits, showing video can be extended up to two seconds from a minimum two second source, while audio can be extended up to ten seconds from a minimum three second source">
+        <style>
+          .g3T { font: 700 12px Inter, sans-serif; fill: #0F172A; }
+          .g3S { font: 400 11px Inter, sans-serif; fill: #475569; }
+          .g3B { font: 700 12px Inter, sans-serif; fill: #0F172A; }
+          .g3G { font: 700 12px Inter, sans-serif; fill: #166534; }
+          .g3N { font: 400 11px Inter, sans-serif; fill: #6B7280; }
+          .g3A { font: 400 10px Inter, sans-serif; fill: #9CA3AF; }
+          .g3W { font: 700 12px Inter, sans-serif; fill: #991B1B; }
+        </style>
+
+        <text class="g3T" x="40" y="32">Adobe Generative Extend, drawn to scale</text>
+        <text class="g3S" x="40" y="54">Two numbers decide whether the feature can help you at all.</text>
+        <text class="g3A" x="160" y="76">drawn to scale, 1 second = 40 pixels</text>
+
+        <text class="g3T" x="148" y="106" text-anchor="end">Video</text>
+        <rect x="160" y="88" width="80" height="26" rx="4" fill="#E2E8F0" stroke="#94A3B8"/>
+        <text class="g3B" x="200" y="106" text-anchor="middle">2s</text>
+        <rect x="240" y="88" width="80" height="26" rx="4" fill="#DCFCE7" stroke="#166534"/>
+        <text class="g3G" x="280" y="106" text-anchor="middle">+2s</text>
+        <text class="g3N" x="336" y="106">minimum source 2s, extension caps at 2s</text>
+
+        <text class="g3T" x="148" y="168" text-anchor="end">Audio</text>
+        <rect x="160" y="150" width="120" height="26" rx="4" fill="#E2E8F0" stroke="#94A3B8"/>
+        <text class="g3B" x="220" y="168" text-anchor="middle">3s</text>
+        <rect x="280" y="150" width="400" height="26" rx="4" fill="#DCFCE7" stroke="#166534"/>
+        <text class="g3G" x="480" y="168" text-anchor="middle">+10s</text>
+        <text class="g3N" x="696" y="168">5x the video</text>
+
+        <line x1="40" y1="192" x2="840" y2="192" stroke="#E5E7EB" stroke-width="1"/>
+
+        <text class="g3W" x="40" y="216">Under the minimum, the button is simply not there.</text>
+        <text class="g3N" x="40" y="240">Two seconds is not a bug and it is not going to grow. It is the shape of the feature.</text>
+        <text class="g3N" x="40" y="262">If your gap is three seconds, this is not the tool. Find that out now, not at 6pm.</text>
+        <text class="g3A" x="40" y="286">Cloud only, which also means it does not run on a plane.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the grey bar is the minimum source you must already have</figcaption>
+    </figure>
+
+    <p>The asymmetry is the interesting part. <strong>Audio gets five times the allowance video does</strong>, and that is not arbitrary. Extending room tone convincingly is a far smaller problem than inventing two seconds of a person continuing to move. The gate is telling you where the technology actually is, if you read it as evidence rather than as a limitation.</p>
+
+    <p>There is a second gate stacked on top: it is cloud only, and it requires a minimum of two seconds of source video or three seconds of source audio before it will engage at all. So the feature has a floor and a ceiling, and the usable window between them is narrow enough to plan around. Which is good news, as long as you know the numbers before the shoot rather than after.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Expiry gates, the one that is invisible until it fires<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The other four gates announce themselves at the moment you try to use the feature. Expiry gates do not. They announce themselves later, usually when you go back for something.</p>
+        <p>Opus Clip's free tier states it in one line: <strong>"After 3 days, the clips will no longer be exportable."</strong> Not deleted. Not hidden. Not exportable. You can still see the work you did, which is arguably worse, because the thing that is gone is the only part that mattered.</p>
+        <p>Treat any free tier as expiry-gated until proven otherwise, and go and find the sentence. The question to ask is not "is it free" but <strong>"for how long can I get my work back out"</strong>. Those are completely different questions and only one of them is answered on the pricing page in large type.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 4 ============ -->
+  <section class="section" id="part-4">
+    <div class="section-kicker">
+      <span class="klabel">Part 4 · covers the renames</span>
+      <h2>Two renames that broke every tutorial about them</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">A gate you can read is a solvable problem. A gate you cannot find because the feature changed its name is a different kind of problem, and it is the reason most third-party material about these tools is now misleading rather than merely dated.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two feature renames: Descript's Overdub is now AI Speech or AI Speaker with zero mentions across its 398 entry docs index, and Premiere Pro is now documented as Adobe Premiere while its URL paths still read premiere-pro">
+        <style>
+          .r4O { font: 700 13px Inter, sans-serif; fill: #991B1B; }
+          .r4N { font: 700 12px Inter, sans-serif; fill: #166534; }
+          .r4T { font: 400 11px Inter, sans-serif; fill: #475569; }
+          .r4H { font: 700 12px Inter, sans-serif; fill: #0F172A; }
+          .r4B { font: 400 11px Inter, sans-serif; fill: #6B7280; }
+        </style>
+
+        <rect x="40" y="64" width="180" height="34" rx="5" fill="#FEE2E2" stroke="#991B1B"/>
+        <text class="r4O" x="130" y="86" text-anchor="middle">Overdub</text>
+        <line x1="100" y1="81" x2="160" y2="81" stroke="#991B1B" stroke-width="1.6"/>
+        <line x1="228" y1="81" x2="280" y2="81" stroke="#94A3B8" stroke-width="1.6"/>
+        <polygon points="280,76 292,81 280,86" fill="#94A3B8"/>
+        <rect x="294" y="64" width="200" height="34" rx="5" fill="#DCFCE7" stroke="#166534"/>
+        <text class="r4N" x="394" y="86" text-anchor="middle">AI Speech / AI Speaker</text>
+        <text class="r4T" x="510" y="78">Zero hits across all 398 docs entries.</text>
+        <text class="r4T" x="510" y="96">Legacy Overdub blog posts still live.</text>
+
+        <rect x="40" y="134" width="180" height="34" rx="5" fill="#FEE2E2" stroke="#991B1B"/>
+        <text class="r4O" x="130" y="156" text-anchor="middle">Premiere Pro</text>
+        <line x1="84" y1="151" x2="176" y2="151" stroke="#991B1B" stroke-width="1.6"/>
+        <line x1="228" y1="151" x2="280" y2="151" stroke="#94A3B8" stroke-width="1.6"/>
+        <polygon points="280,146 292,151 280,156" fill="#94A3B8"/>
+        <rect x="294" y="134" width="200" height="34" rx="5" fill="#DCFCE7" stroke="#166534"/>
+        <text class="r4N" x="394" y="156" text-anchor="middle">Adobe Premiere</text>
+        <text class="r4T" x="510" y="148">The URL paths still read premiere-pro.</text>
+        <text class="r4T" x="510" y="166">So search sends you to the old name.</text>
+
+        <line x1="40" y1="200" x2="840" y2="200" stroke="#E5E7EB" stroke-width="1"/>
+
+        <text class="r4H" x="40" y="228">What this breaks, and why it matters to you</text>
+        <text class="r4B" x="40" y="254">Every tutorial written before the rename still teaches the old name. Searching</text>
+        <text class="r4B" x="40" y="274">the vendor docs for it now returns nothing, so the reader concludes the feature</text>
+        <text class="r4B" x="40" y="294">was removed. It was not. It was renamed, and the search is the thing that failed.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the docs index is the source of truth, not the blog</figcaption>
+    </figure>
+
+    <p><strong>"Overdub" no longer exists.</strong> The word appears zero times across Descript's complete 398-entry documentation index. The feature is now AI Speech, AI Speaker, or a custom voice clone depending on where you look, and the Terms of Service section governing it is headed "Use of AI Speakers". Meanwhile the legacy Overdub blog posts are still live on the marketing site, which is precisely why third-party courses are stale without knowing it.</p>
+
+    <p>The Adobe one is quieter and just as awkward. The product is now documented as <strong>"Adobe Premiere"</strong>, while the URL paths still contain the string "premiere-pro". So the name you search for and the name the documentation uses have separated, and you can land on a current page while believing you are looking at an old one.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The vendor candour worth copying<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>It would be unfair to leave this session sounding like every vendor buries everything. One of them writes a warning so blunt it is worth quoting as a model of what good documentation looks like.</p>
+        <p>Descript, describing the output of ElevenLabs v3: <strong>"You may notice inconsistencies in how the output from this model sounds across paragraphs. This can include shifts in tone, volume, accent, or even speaker identity."</strong></p>
+        <p>Sit with the last three words. The vendor is telling you, in its own help pages, that the synthetic voice may stop sounding like the same person partway through. That is not a small caveat, and putting it in writing costs them something.</p>
+        <p>Use it as your calibration. When a vendor writes at that level of candour, the rest of its documentation is probably trustworthy. When a feature page has no limitations section at all, that absence is itself information, and session 5 shows you a system card that has exactly that shape.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ BUILD ALONG ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Find the gate in a tool you already pay for</h2>
+      <span class="tag demo">★ 18 min · everyone reads</span>
+    </div>
+    <p class="lede">No simulator tonight. The skill is a reading habit, and the only way to acquire it is to do it once, slowly, on a tool you actually use. Pick that tool now, before step one.</p>
+
+    <div class="tick" data-stages="Feature|Pricing|Docs page|The gate" data-title="Three clicks deeper, in four moves" data-foot="The gate is almost always in the last third of the docs page, under a heading like Limitations or Requirements.">
+      <p class="tick-note" data-stage="0"><b>Feature page.</b> This is where you formed your belief about what the tool does. Write that belief down in one sentence, now, before you read anything else. You will want the exact wording later.</p>
+      <p class="tick-note" data-stage="1"><b>Pricing page.</b> Tiers, credits, media minutes. Useful, and it is session 2's territory. What is almost never here is whether the feature works on your footage.</p>
+      <p class="tick-note" data-stage="2"><b>Documentation page for that one feature.</b> Not the docs home. The article about the single feature you care about. Scroll to the bottom third and read every sentence that starts with a qualifier.</p>
+      <p class="tick-note" data-stage="3"><b>The gate.</b> Language, count, duration, scope or expiry. There is usually more than one. Write them next to your sentence from step one and look at the distance between them.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step"><p><strong>Name your tool and your one sentence.</strong> "It cleans up bad audio in one click." "It makes me look at the camera." Whatever you actually believe. The point of writing it down is that you cannot quietly revise it once you have read the docs.</p></div>
+      <div class="step"><p><strong>Open the help documentation for that exact feature, not the product.</strong> Search the vendor's own help domain. If your search returns marketing pages and blog posts, add the word that appears in their navigation, usually "help" or "docs". This is where the Overdub problem bites: search the current docs index, never the blog.</p></div>
+      <div class="step"><p><strong>Scan for the five gate words.</strong> Language, English, only, single, maximum, minimum, seconds, per file, per clip, days, expires. Any one of them is a gate. Highlight every sentence containing one.</p></div>
+      <div class="step"><p><strong>Classify each one.</strong> Language-gated, count-gated, duration-gated, scope-gated, expiry-gated. Most features have two or three at once, and the combination is what actually decides whether the feature is usable for you. Eye Contact is count-gated and format-gated together, and either one alone would be survivable.</p></div>
+      <div class="step"><p><strong>Now check your sentence from step one.</strong> Would you still write it? For most people the honest answer is that they would add three words, and those three words are the ones that would have changed a purchase decision or a deadline promise.</p></div>
+      <div class="step"><p><strong>Test the worst gate on real footage before you need it.</strong> Take thirty seconds of your actual material and run it through. This is the whole exercise in one line: you want the feature to fail on a Tuesday afternoon with nothing at stake, not on the evening of the deadline.</p></div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Why this is worth eighteen minutes rather than a bullet list.</strong> Everyone agrees in principle that you should read the documentation. Almost nobody does it before buying, because the feature page is persuasive and the docs page is boring. Doing it once, on a tool you already own, converts a piece of advice into a reflex. The reflex is the thing you are buying with tonight.</p>
+    </div>
+
+    <div class="scorecard" data-title="Halfway scorecard: the tool you are about to rely on" data-foot="Five rows. If any row is a zero, you have not finished evaluating the tool.">
+      <div class="sc-row"><div class="sc-q">You know which languages the feature actually supports<em>Not which languages the product supports. The feature.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You know whether it applies per clip or to the whole file<em>Studio Sound is file level. That decision is not reversible per clip.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You know the maximum and the minimum, in seconds<em>Two seconds of video, ten of audio, and a floor underneath both.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You know what happens to your outputs on a free tier, and when<em>Three days is a real answer somebody is publishing right now.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You have run it once on your own footage with nothing at stake<em>A gate you have hit yourself is a gate you will never forget.</em></div></div>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 4</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Write the gate card for the one tool you would miss most.</strong> Five lines, one per gate type, each answered or marked "not stated". The "not stated" lines are the valuable ones, because they are the questions you will have to answer by testing.</li>
+      <li><strong>Deliberately trigger one gate.</strong> Run a filler-word pass on non-English audio, or an Eye Contact pass on a two-person clip. Watch exactly how it fails. Most gates fail silently, and knowing what silence looks like in your tool is worth more than the reading.</li>
+      <li><strong>Search the vendor docs for a feature name from any tutorial you have followed.</strong> If it returns nothing, do not assume the feature was removed. Look for what it was renamed to. Overdub is the reference case: gone from the docs, alive on the blog.</li>
+      <li><strong>Find one vendor sentence that is unusually candid.</strong> The ElevenLabs v3 note about speaker identity is the standard to measure against. A vendor willing to write that is a vendor whose other numbers you can probably trust.</li>
+      <li><strong>Optional, and it will change how you buy:</strong> take any AI feature you have not paid for yet and try to find its constraint in under ninety seconds. If you cannot find one at all, that is not reassurance. It means the limitations section does not exist, and session 5 shows you what that usually indicates.</li>
+    </ol>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 3 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · You run Studio Sound over an interview recorded in a loud cafe, and the result comes back as a silent waveform. What happened?</p>
+      <button class="qopt" type="button">A · The upload was corrupted and the file needs exporting again</button>
+      <button class="qopt" type="button">B · Studio Sound applies per clip, so only the noisy clip was skipped and the rest is fine</button>
+      <button class="qopt" type="button">C · Documented behaviour: with extremely loud background noise the model "may not be able to separate the speech from the noise, resulting in a silent waveform"</button>
+      <p class="qwhy">This is on Descript's own help page for the feature. Two things make it worse than an ordinary bad result. It destroys your audio rather than degrading it, and because Studio Sound is scope-gated to the file rather than the clip, you were never able to apply it to just the one interview in the first place.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · Remove Filler Words reports 41 detected and 33 removed. A colleague wants to file a bug. What do you tell them?</p>
+      <button class="qopt" type="button">A · It is correct behaviour. The "avoid harsh cuts" option deliberately skips fillers that cannot be removed without clipping into nearby words, so removed will never equal detected</button>
+      <button class="qopt" type="button">B · It is a known counter bug, and re-running the transcript fixes it</button>
+      <button class="qopt" type="button">C · The eight missing ones were in a language the tool does not support, and it silently skipped them</button>
+      <button class="qopt" type="button">D · The detection pass and the removal pass use different models, so the counts are never expected to match</button>
+      <p class="qwhy">The gap between the two numbers is the feature protecting your audio. A tool that removed all 41 would be a tool that clipped the first syllable off the word after every skipped filler. Worth remembering separately: the same feature is language-gated to English transcripts only, and in any other language it does not report a problem, it just finds nothing.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">3 · A tool this course has never mentioned launches an AI editing feature next month. What is the first question you ask?</p>
+      <button class="qopt" type="button">A · What does it cost per minute of finished output</button>
+      <button class="qopt" type="button">B · Which of the five gates is on it, language, count, duration, scope or expiry, and where is that written down</button>
+      <button class="qopt" type="button">C · Which underlying model is it built on, and who trained it</button>
+      <p class="qwhy">Price is session 2 and it is genuinely easy to find. The model lineage is interesting and rarely decisive. The gate is the thing that determines whether the feature engages on your footage at all, and it is the one answer the marketing page will not give you. Learning the five types is what makes this portable to tools that do not exist yet.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL COVERAGE ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Descript Studio Sound documentation</span><span class="note">Recorded audio only and not AI-generated speech, file level rather than clip level, and the silent waveform outcome under extreme noise</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Descript Remove Filler Words documentation</span><span class="note">English transcripts only, and why "avoid harsh cuts" means the removed count never equals the detected count</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Descript Eye Contact documentation</span><span class="note">Single person only with one clear face, failure on sideways and variable frame rate footage, and the documentation's own HandBrake remedy</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Descript Regenerate overview</span><span class="note">English audio and video only, and video regeneration unsupported for sequences, B-roll, multi-speaker recordings and shots without a clearly visible face</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Adobe Generative Extend documentation</span><span class="note">Video up to 2 seconds and audio up to 10, cloud only, with a 2 second video or 3 second audio source minimum</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Opus Clip pricing page</span><span class="note">The free tier expiry, quoted: after 3 days the clips are no longer exportable</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The two renames</span><span class="note">Overdub absent from all 398 entries of Descript's docs index and now AI Speaker, and Premiere Pro documented as Adobe Premiere while URL paths still read premiere-pro</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Descript's ElevenLabs v3 candour note</span><span class="note">Output can shift in tone, volume, accent or even speaker identity, quoted as the standard of documentation worth trusting</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">The five gate types</span><span class="note">Phoebe's taxonomy, not any vendor's. The examples underneath every gate are quoted from primary sources; the grouping is a teaching device</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Adobe pricing</span><span class="note">Deliberately absent. No Adobe USD figure appears anywhere in this course, because the pricing URLs return 404s or empty shells and nothing could be verified</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Measured failure rates and caption obligations</span><span class="note">Not covered here. Session 4 takes the accessibility law to primary sources, session 5 takes the benchmarks</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Full source map with every URL: <span class="mono">materials/official-course-map.md</span> in this repo, including a quarantine list of what is deliberately not stated.</p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 3 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Five gates to check, in order</b><span>Language, count, duration, scope, expiry. Ask which one is on before you ask the price.</span></div>
+      <div class="cheat-item"><b>Studio Sound can hand you silence</b><span>Recorded audio only, file level not clip, and extreme noise can return a silent waveform.</span></div>
+      <div class="cheat-item"><b>Removed never equals detected</b><span>"Avoid harsh cuts" skips fillers it cannot cut cleanly. English transcripts only, and it fails quietly.</span></div>
+      <div class="cheat-item"><b>One clear face, or nothing</b><span>Eye Contact is single person only, and variable frame rate breaks it. The doc's own fix is HandBrake.</span></div>
+      <div class="cheat-item"><b>Two seconds is the whole extension</b><span>Generative Extend: video 2s, audio 10s, cloud only, needing 2s of video or 3s of audio to start.</span></div>
+      <div class="cheat-item"><b>Names expire, and so do exports</b><span>Overdub is now AI Speaker, Premiere Pro is Adobe Premiere, and Opus Clip free clips stop exporting after 3 days.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>Tonight every constraint was a vendor's choice, and a vendor can change its mind. Session 4 is about the one requirement nobody in this stack gets to set, where "we have transcripts" turns out to be a Level A claim being sold as Level AA, and where the automatic captions you were about to ship score an average of 7 percent error and a worst individual file of 53.8.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 3 of 6 · learn-ai-media-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="../index.html">← All sessions</a> &nbsp;·&nbsp; <a href="04-captions-are-not-optional.html">Next: Captions are not optional →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>
